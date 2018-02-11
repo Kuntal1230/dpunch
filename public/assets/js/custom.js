@@ -1,0 +1,1 @@
+if(Validation){Validation.addAllThese([['validate-bangladeshPhone','Please enter a valid 11 digit phone number. Format :12345678901.',function(v){return Validation.get('IsEmpty').test(v)||/^\d{11}$/.test(v);}]])}

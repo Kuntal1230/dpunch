@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon">
   <title>@yield('title') | Dpunch</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -25,6 +26,7 @@
   <link rel="stylesheet" href="{{ asset('admin-assets/bootstrap-daterangepicker/daterangepicker.css') }}">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="{{ asset('admin-assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('admin-assets/css/custom.css') }}">
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -160,7 +162,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li class="@yield('dashboard-class') treeview">
-          <a href="{{route('admin.dashboard')}}">
+          <a href="{{route('admin.dashboard') }}">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
@@ -188,7 +190,7 @@
           </a>
           <ul class="treeview-menu">
             <li class="@yield('all-product-class')"><a href="{{ route('admin.allproduct') }}"><i class="fa fa-circle-o"></i> All product</a></li>
-            <li class="@yield('add-product-class')"><a href=""><i class="fa fa-circle-o"></i> Add Product</a></li>
+            <li class="@yield('add-product-class')"><a href="{{ route('admin.addproduct') }}"><i class="fa fa-circle-o"></i> Add Product</a></li>
           </ul>
         </li>
 
@@ -228,13 +230,22 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class=""><a href=""><i class="fa fa-circle-o"></i> Logo </a></li>
-            <li class=""><a href=""><i class="fa fa-circle-o"></i> Slider</a></li>
-            <li class=""><a href=""><i class="fa fa-circle-o"></i> Social Link</a></li>
+            <li class="@yield('site-setting-class')"><a href="{{ route('admin.generalsetting') }}"><i class="fa fa-circle-o"></i> General Setting</a></li>
+            <li class="@yield('menu-class') treeview">
+              <a href="#"><i class="fa fa-circle-o"></i> Menu manage
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li class="@yield('menu-view-class')"><a href="{{ route('admin.menumanage') }}"><i class="fa fa-circle-o"></i>View Menu</a></li>
+                <li class="@yield('menu-add-class')"><a href="{{ route('admin.addmenu') }}"><i class="fa fa-circle-o"></i>Add Menu</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
 
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Visit Site</span></a></li>
+        <li><a href="{{ url('/') }}"><i class="fa fa-circle-o text-aqua"></i> <span>Visit Site</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -282,6 +293,8 @@
 <script src="{{ asset('admin-assets/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('admin-assets/js/pages/dashboard.js') }}"></script>
+<!-- CK Editor -->
+@yield('ckeditor')
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('admin-assets/js/demo.js') }}"></script>
 </body>

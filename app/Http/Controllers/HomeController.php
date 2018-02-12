@@ -25,4 +25,9 @@ class HomeController extends Controller
     {
         return view('home.home');
     }
+
+    public function SingleProduct()
+    {
+      return view('home.single-product');
+    }
 }

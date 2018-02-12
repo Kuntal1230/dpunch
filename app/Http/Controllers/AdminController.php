@@ -16,6 +16,7 @@ class AdminController extends Controller
     {
         $this->middleware('auth:admin');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -24,6 +25,20 @@ class AdminController extends Controller
     public function index()
     {
         return view('admin.home');
+    }
+    public function generalSetting()
+    {
+      return view('admin.setting.site-setting');
+    }
+
+    public function menuManage()
+    {
+      return view('admin.setting.menu');
+    }
+
+    public function addMenu()
+    {
+      return view('admin.setting.add-menu');
     }
 
     public function allSeller()
@@ -34,6 +49,11 @@ class AdminController extends Controller
     public function allProduct()
     {
       return view('admin.product');
+    }
+
+    public function addProduct()
+    {
+      return view('admin.product-add');
     }
 
     public function allCustomer()

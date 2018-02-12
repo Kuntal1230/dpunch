@@ -2,7 +2,7 @@
 
 @section('title',"All Order")
 
-@section('order-classs',"active")
+@section('order-class',"active")
 
 @section('all-order-class',"active")
 

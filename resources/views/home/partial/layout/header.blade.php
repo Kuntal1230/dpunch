@@ -6,7 +6,7 @@
         <title>Online Shopping </title>
         <meta name="keywords" content=""><meta name="robots" content="INDEX,FOLLOW">
         <meta property="og:site_name" content="">
-        <link rel="icon" href="" type="image/x-icon">
+        <link rel="icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon">
         <link rel="shortcut icon" href="" type="image/x-icon">
         <meta http-equiv="" content="IE=edge">
 
@@ -668,7 +668,8 @@
                                                                             <span>
                                                                                 Mobiles &amp; Tablets				</span>
                                                                         </a>
-                                                                        <ul class="menu-container">                                                                                    <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col19 grid_22 bkg-menu01 menu-item-parent" style="">
+                                                                        <ul class="menu-container">
+                                                                          <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col19 grid_22 bkg-menu01 menu-item-parent" style="">
                                                                                 <ul class="menu-container">                                                                                                            <li class="menu-item-vbox menu-item-depth-2 col-sm-7 menu-item-parent" style="">
                                                                                         <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
                                                                                                 <h5><a href=""><span style="color: #000000;">Mobile Phones</span></a></h5>
@@ -769,6 +770,114 @@
                                                                             </li><!-- 1 -->
                                                                         </ul><!-- 1 -->
                                                                     </li><!-- 0 -->
+                                                                    <li class="menu-item-link menu-item-depth-0  menu-item-parent"><a href="javascript:void(0)" class="arrow"><span>&gt;</span></a>
+                                                                        <a class="em-menu-link" href="">
+                                                                            <span>
+                                                                                Cars &amp; Bickes</span>
+                                                                        </a>
+                                                                        <ul class="menu-container">
+                                                                          <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col19 grid_22 bkg-menu01 menu-item-parent" style="">
+                                                                                <ul class="menu-container">                                                                                                            <li class="menu-item-vbox menu-item-depth-2 col-sm-7 menu-item-parent" style="">
+                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                                                <h5><a href=""><span style="color: #000000;">Mobile Phones</span></a></h5>
+                                                                                                <div class="row">
+                                                                                                    <div class="col-sm-12">
+                                                                                                        <ul class="list-text">
+                                                                                                            <li><a href="">iPhone</a></li>
+                                                                                                            <li><a href="">Samsung</a></li>
+                                                                                                            <li><a href="">Nokia</a></li>
+                                                                                                            <li><a href="">Huawei</a></li>
+                                                                                                            <li><a href="">Xiaomi</a></li>
+                                                                                                            <li><a href="">LG</a></li>
+                                                                                                            <li><a href="">HTC</a></li>
+                                                                                                            <li><a href="">Lenovo</a></li>
+                                                                                                            <li><a href="">LAVA</a></li>
+                                                                                                            <li><a href="">Micromax</a></li>
+                                                                                                            <li><a href="">Asus</a></li>
+                                                                                                            <li><a href="">Helio</a></li>
+
+
+
+                                                                                                        </ul>
+                                                                                                    </div>
+                                                                                                    <div class="col-sm-12">
+                                                                                                        <ul class="list-text">
+                                                                                                            <li><a href="">BlackBerry</a></li>
+                                                                                                            <li><a href="">OnePlus</a></li>
+                                                                                                            <li><a href="">Symphony</a></li>
+                                                                                                            <li><a href="">Maximus</a></li>
+                                                                                                            <li><a href="">Meizu</a></li>
+                                                                                                            <li><a href="">WE</a></li>
+                                                                                                            <li><a href="">Infinix</a></li>
+                                                                                                            <li><a href="">Linnex</a></li>
+                                                                                                            <li><a href="">INOVA</a></li>
+                                                                                                        </ul>
+                                                                                                    </div>
+                                                                                                </div>                                                                                                                           </li><!-- 3 -->
+                                                                                        </ul><!-- 3 -->
+                                                                                    </li><!-- 2 -->
+                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-3 menu-item-parent" style="">
+                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                                                <h5><a href=""><span style="color: #000000;">Tablets</span></a></h5>
+                                                                                                <ul class="list-text">
+                                                                                                    <li><a href="">Apple</a></li>
+                                                                                                    <li><a href="">Samsung</a></li>
+                                                                                                    <li><a href="">Lenovo</a></li>
+                                                                                                    <li><a href="">Huawei</a></li>
+                                                                                                    <li><a href="">Symphony</a></li>
+                                                                                                    <li><a href="">Asus</a></li>
+                                                                                                    <li><a href="">Ainol</a></li>
+                                                                                                </ul>                                                                                                                           </li><!-- 3 -->
+                                                                                        </ul><!-- 3 -->
+                                                                                    </li><!-- 2 -->
+                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
+                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                                                <h5><a href=""><span style="color: #000000;">Feature Phones</span></a></h5>
+                                                                                                <ul class="list-text">
+                                                                                                    <li><a href="">Nokia</a></li>
+                                                                                                    <li><a href="">Samsung</a></li>
+                                                                                                    <li><a href="">Symphony </a></li>
+                                                                                                    <li><a href="">Maximus</a></li>
+                                                                                                    <li><a href="">Micromax</a></li>
+                                                                                                    <li><a href="">Metrocem</a></li>
+                                                                                                </ul>                                                                                                                           </li><!-- 3 -->
+                                                                                        </ul><!-- 3 -->
+                                                                                    </li><!-- 2 -->
+                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-7 menu-item-parent" style="">
+                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                                                <h5><a href=""><span style="color: #000000;">Mobile &amp; Tablet Accessories</span></a></h5>
+                                                                                                <div class="row">
+                                                                                                    <div class="col-sm-12">
+                                                                                                        <ul class="list-text">
+                                                                                                            <li><a href="">Flip Cover</a></li>
+                                                                                                            <li><a href="">Back Cover</a></li>
+                                                                                                            <li><a href="">Screen Protector</a></li>
+                                                                                                            <li><a href="">Charger</a></li>
+                                                                                                            <li><a href="">Power Bank</a></li>
+                                                                                                            <li><a href="">Selfie Stick</a></li>
+                                                                                                            <li><a href="">OTG &amp; Cables </a></li>
+                                                                                                            <li><a href="">Headphones</a></li>
+                                                                                                            <li><a href="">Bluetooth Speaker</a></li>
+                                                                                                            <li><a href="">Memory Card</a></li>
+                                                                                                            <li><a href="">Smart Watch</a></li>
+                                                                                                            <li><a href="">Battery</a></li>
+
+                                                                                                        </ul>
+                                                                                                    </div>
+                                                                                                    <div class="col-sm-12">
+                                                                                                        <ul class="list-text">
+                                                                                                            <li><a href="">VR Box</a></li>
+                                                                                                            <li><a href="">Wearables</a></li>
+                                                                                                        </ul>
+                                                                                                    </div>
+                                                                                                </div>                                                                                                                           </li><!-- 3 -->
+                                                                                        </ul><!-- 3 -->
+                                                                                    </li><!-- 2 -->
+                                                                                </ul><!-- 2 -->
+                                                                            </li><!-- 1 -->
+                                                                        </ul><!-- 1 -->
+
+                                                                    </li>
                                                                     <li class="menu-item-link menu-item-depth-0  menu-item-parent"><a href="javascript:void(0)" class="arrow"><span>&gt;</span></a>
                                                                         <a class="em-menu-link" href="">
                                                                             <span>Computers</span>

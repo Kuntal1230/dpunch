@@ -17,8 +17,12 @@ Route::GET('password/reset/{token}','Admin\ResetPasswordController@showResetForm
 Route::get('dashboard','AdminController@index')->name('admin.dashboard');
 Route::get('manageseller','AdminController@allSeller')->name('admin.allseller');
 Route::get('manageproduct','AdminController@allProduct')->name('admin.allproduct');
+Route::get('add-product','AdminController@addProduct')->name('admin.addproduct');
 Route::get('managecustomer','AdminController@allCustomer')->name('admin.allcustomer');
 Route::get('manageorder','AdminController@allOrder')->name('admin.allorder');
+Route::get('managesite','AdminController@generalSetting')->name('admin.generalsetting');
+Route::get('managemenu','AdminController@menuManage')->name('admin.menumanage');
+Route::get('addmenu','AdminController@addMenu')->name('admin.addmenu');
 
 });
 

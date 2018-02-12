@@ -26,8 +26,8 @@
         <div class="col-xs-12">
 
           <div class="box">
-            <div class="box-header">
-              <h3 class="box-title text-center">Data Table With Full Features</h3>
+            <div class="box-header text-center">
+              <h3 class="box-title">Product Table</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">

@@ -17,12 +17,23 @@ Route::GET('password/reset/{token}','Admin\ResetPasswordController@showResetForm
 Route::get('dashboard','AdminController@index')->name('admin.dashboard');
 Route::get('manageseller','AdminController@allSeller')->name('admin.allseller');
 Route::get('manageproduct','AdminController@allProduct')->name('admin.allproduct');
-Route::get('add-product','AdminController@addProduct')->name('admin.addproduct');
+Route::get('add-product','AdminController@addProductForm')->name('admin.addproduct');
+Route::post('add-product','AdminController@addProduct')->name('admin.addproduct');
+Route::get('edit-product/{id}','AdminController@editProductForm')->name('admin.editproduct');
+Route::post('edit-product','AdminController@editProduct')->name('admin.editproduct');
 Route::get('managecustomer','AdminController@allCustomer')->name('admin.allcustomer');
 Route::get('manageorder','AdminController@allOrder')->name('admin.allorder');
 Route::get('managesite','AdminController@generalSetting')->name('admin.generalsetting');
 Route::get('managemenu','AdminController@menuManage')->name('admin.menumanage');
 Route::get('addmenu','AdminController@addMenu')->name('admin.addmenu');
+Route::post('addcategory','AdminController@addCategory')->name('admin.addcategory');
+Route::post('addsubcategory','AdminController@addSubcategory')->name('admin.addsubcategory');
+Route::post('addundersubcategory','AdminController@addUndersubcategory')->name('admin.addundersubcategory');
+Route::post('addbrand','AdminController@addBrand')->name('admin.addbrand');
+Route::post('ajaxsubcategory','AdminController@ajaxForSubCategory')->name('admin.ajaxsubcategory');
+Route::post('ajaxundersubcategory','AdminController@ajaxForUnderSubCategory')->name('admin.ajaxundersubcategory');
+Route::post('ajaxbrand','AdminController@ajaxForBrand')->name('admin.ajaxbrand');
+Route::post('ajaxbrandbysubcat','AdminController@ajaxForBrandBySubcat')->name('admin.ajaxbrandbysubcat');
 
 });
 

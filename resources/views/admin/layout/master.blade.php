@@ -3,12 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon">
   <title>@yield('title') | Dpunch</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="{{ asset('admin-assets/bootstrap/dist/css/bootstrap.min.css') }}">
+  <!--File Input -->
+  @yield('page-style')
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('admin-assets/font-awesome/css/font-awesome.min.css') }}">
   <!-- Ionicons -->
@@ -24,8 +27,6 @@
   <link rel="stylesheet" href="{{ asset('admin-assets/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="{{ asset('admin-assets/bootstrap-daterangepicker/daterangepicker.css') }}">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="{{ asset('admin-assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
   <link rel="stylesheet" href="{{ asset('admin-assets/css/custom.css') }}">
 
   <!-- Google Font -->
@@ -121,7 +122,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="{{ asset('admin-assets/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs">{{ Auth::user()->name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- Menu Footer-->
@@ -154,7 +155,7 @@
           <img src="{{ asset('admin-assets/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>{{ Auth::user()->name }}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -258,7 +259,7 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2018 <a href="">Webtechsoft</a>.</strong> All rights
+    <strong>Copyright &copy; {{date('Y')}} <a href="">Webtechsoft</a>.</strong> All rights
     reserved.
   </footer>
 
@@ -283,8 +284,6 @@
 <script src="{{ asset('admin-assets/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
 <!-- datepicker -->
 <script src="{{ asset('admin-assets/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="{{ asset('admin-assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
 <!-- Slimscroll -->
 <script src="{{ asset('admin-assets/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
 <!-- FastClick -->
@@ -292,10 +291,13 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('admin-assets/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{ asset('admin-assets/js/pages/dashboard.js') }}"></script>
+{{-- <script src="{{ asset('admin-assets/js/pages/dashboard.js') }}"></script> --}}
 <!-- CK Editor -->
 @yield('ckeditor')
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('admin-assets/js/demo.js') }}"></script>
+
+@yield('custom_script')
+
 </body>
 </html>

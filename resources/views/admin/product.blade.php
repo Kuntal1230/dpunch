@@ -28,44 +28,43 @@
           <div class="box">
             <div class="box-header text-center">
               <h3 class="box-title">Product Table</h3>
+
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
+                  <th>#</th>
+                  <th>Seller</th>
+                  <th>Category</th>
+                  <th>Brand</th>
+                  <th>Title</th>
+                  <th class="text-center">Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
-                  <td>X</td>
-                </tr>
-                <tr>
-                  <td>Other browsers</td>
-                  <td>All others</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>U</td>
-                </tr>
+                  @foreach ($allprodutcs as $product)
+
+                    <tr>
+                      <td>{{ $product->sku }}</td>
+                      <td>{{ $product->seller }}</td>
+                      <td>{{ $product->category->name }}</td>
+                      <td>{{ $product->brand->name }}</td>
+                      <td>{{ $product->title }}</td>
+                      <td class="text-center"><a href="#">View <i class="fa fa-eye" aria-hidden="true"></i></a> | <a href="{{ URL('/admin/edit-product/'.$product->id )}}">Edit <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> | <a href="#">Delete <i class="fa fa-trash-o" aria-hidden="true"></i></a> </td>
+                    </tr>
+
+                  @endforeach
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
+                  <th>#</th>
+                  <th>Seller</th>
+                  <th>Category</th>
+                  <th>Brand</th>
+                  <th>Title</th>
+                  <th class="text-center">Action</th>
                 </tr>
                 </tfoot>
               </table>

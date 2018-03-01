@@ -42,7 +42,8 @@ class CreateProductsTable extends Migration
             $table->string('image5')->nullable();
             $table->text('detailes');
             $table->text('specification');
-            $table->text('return_replacement');
+            $table->integer('status')->default('0');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

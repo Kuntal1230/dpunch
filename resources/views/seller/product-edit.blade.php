@@ -1,6 +1,6 @@
-@extends('admin.layout.master')
+@extends('seller.layout.master')
 
-@section('title',"All Product")
+@section('title',"Edit Product")
 
 @section('page-style')
 <link rel="stylesheet" href="{{ asset('admin-assets/css/fileinput.css') }}">

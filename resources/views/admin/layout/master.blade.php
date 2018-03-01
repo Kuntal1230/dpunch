@@ -10,6 +10,7 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="{{ asset('admin-assets/bootstrap/dist/css/bootstrap.min.css') }}">
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
   <!--File Input -->
   @yield('page-style')
   <!-- Font Awesome -->
@@ -22,7 +23,7 @@
   <link rel="stylesheet" href="{{ asset('admin-assets/css/AdminLTE.min.css') }}">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="{{ asset('admin-assets/css/skins/_all-skins.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('admin-assets/css/skins/skin-blue.min.css') }}">
   <!-- Date Picker -->
   <link rel="stylesheet" href="{{ asset('admin-assets/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
   <!-- Daterange picker -->
@@ -31,6 +32,15 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <style>
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      margin: 0;
+    }
+  </style
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -205,7 +215,6 @@
           </a>
           <ul class="treeview-menu">
             <li class="@yield('all-customar-class')"><a href="{{ route('admin.allcustomer') }}"><i class="fa fa-circle-o"></i> All Customer</a></li>
-            <li class="@yield('add-customar-class')"><a href=""><i class="fa fa-circle-o"></i> Add Customer</a></li>
           </ul>
         </li>
 
@@ -246,6 +255,7 @@
           </ul>
         </li>
 
+        <li class="@yield('archive-view-class')"><a href="{{ route('admin.archiveproduct') }}"><i class="fa fa-circle-o text-aqua"></i> <span>Archive</span></a></li>
         <li><a href="{{ url('/') }}"><i class="fa fa-circle-o text-aqua"></i> <span>Visit Site</span></a></li>
       </ul>
     </section>
@@ -276,6 +286,7 @@
 </script>
 <!-- Bootstrap 3.3.7 -->
 <script src="{{ asset('admin-assets/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 @yield('page-script')
 

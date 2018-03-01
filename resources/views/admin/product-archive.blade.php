@@ -1,22 +1,20 @@
-@extends('seller.layout.master')
+@extends('admin.layout.master')
 
 @section('title',"All Product")
 
-@section('product-classs',"active")
-
-@section('all-product-class',"active")
+@section('archive-view-class',"active")
 
 @section('content')
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Product page
-        <small>all products</small>
+        Product archive
+        <small>archive products</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">Products</a></li>
-        <li class="active">All product</li>
+        <li class="active">Archive product</li>
       </ol>
     </section>
 
@@ -26,8 +24,15 @@
         <div class="col-xs-12">
 
           <div class="box">
-            <div class="box-header">
-              <h3 class="box-title text-center">Data Table With Full Features</h3>
+            <div class="box-header text-center">
+              <h3 class="box-title">Archive Product Table</h3>
+
+              @if (session('message'))
+                  <div class="alert alert-success">
+                      {{ session('message') }}
+                  </div>
+              @endif
+
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -39,12 +44,11 @@
                   <th>Category</th>
                   <th>Brand</th>
                   <th>Title</th>
-                  <th>Status</th>
-                  <th class="text-center" style="width:130px">Action</th>
+                  <th>Delete date</th>
                 </tr>
                 </thead>
                 <tbody>
-                  @foreach ($allprodutcs as $product)
+                  @foreach ($archiveproducts as $product)
 
                     <tr>
                       <td>{{ $product->sku }}</td>
@@ -52,21 +56,7 @@
                       <td>{{ $product->category->name }}</td>
                       <td>{{ $product->brand->name }}</td>
                       <td>{{ $product->title }}</td>
-                      <td>
-                        @if ($product->status == 1)
-                          Unpublished
-                        @else
-                          Published
-                        @endif
-                      </td>
-                      <td class="text-right">
-                        <a class="btn btn-primary" href="{{ route('seller.editproduct', $product->id) }}">Edit <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> |
-                        <form class="pull-right" action="{{ route('seller.deleteproduct', $product->id) }}" method="post">
-                            <input type="hidden" name="_method" value="delete" />
-                            <button class="btn btn-danger"> Delete <i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                            {!! csrf_field() !!}
-                        </form>
-                      </td>
+                      <td>{{ $product->deleted_at }}</td>
                     </tr>
                     {{-- <a href="#">View <i class="fa fa-eye" aria-hidden="true"></i></a> |  --}}
 
@@ -79,8 +69,7 @@
                   <th>Category</th>
                   <th>Brand</th>
                   <th>Title</th>
-                  <th>Status</th>
-                  <th class="text-center">Action</th>
+                  <th>Delete date</th>
                 </tr>
                 </tfoot>
               </table>

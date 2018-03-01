@@ -1,210 +1,7 @@
     @extends('home.partial.master')
 
     @section('slider')
-      <div class="em-wrapper-area01-02-03">
-                  <div class="container"><div class="row">
-                          <div class="col-sm-16">
-                              <div class="em-wrapper-area02"><div class="em-slideshow">
-                                      <div class="em-owlcarousel-slideshow em-minislideshow-stop-on-hover">
-                                          <div id="em_owlcarousel_26_26596_sync1" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
-                                              <div id="progressBar">
-                                                  <div id="bar" style="width: 33%;">
 
-                                                  </div>
-
-                                              </div>
-                                              <div class="owl-wrapper-outer">
-                                                  <div class="owl-wrapper" style="width: 9360px; left: 0px; display: block; transition: all 0ms ease 0s; transform: translate3d(-2340px, 0px, 0px); transform-origin: 2925px center 0px; perspective-origin: 2925px center;">
-                                                      <div class="owl-item" style="width: 1170px;">
-                                                          <div class="item">
-                                                              <a href=""> <img alt="img/1516537790_0_under-999-big-banner1.jpg" class="lazyOwl img-responsive" src="{{ asset('assets/img/1516537790_0_under-999-big-banner1.jpg') }}" style="display: block;"> </a>
-                                                          </div>
-                                                      </div>
-                                                      <div class="owl-item" style="width: 1170px;">
-                                                          <div class="item">
-                                                              <a href=""> <img alt="img/1516537790_0_under-999-big-banner1.jpg" class="lazyOwl img-responsive" src="{{ asset('assets/img/1516537790_0_under-999-big-banner1.jpg') }}" style="display: block;"> </a>
-                                                          </div>
-                                                      </div>
-                                                      <div class="owl-item" style="width: 1170px;">
-                                                          <div class="item">
-                                                              <a href=""> <img alt="img/1516537790_0_under-999-big-banner1.jpg" class="lazyOwl img-responsive" src="{{ asset('assets/img/1516537790_0_under-999-big-banner1.jpg') }}" style="display: block;"> </a>
-                                                          </div>
-                                                      </div>
-                                                      <div class="owl-item loading" style="width: 1170px;">
-                                                          <div class="item">
-                                                              <a href=""> <img alt="1516537790_0_under-999-big-banner1" class="lazyOwl img-responsive" src="{{ asset('assets/img/Look-Sharp-category-Banner_1_.jpg') }}" style="display: block;"> </a>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                              <div class="owl-controls clickable">
-                                                  <div class="owl-pagination">
-                                                      <div class="owl-page">
-                                                          <span class=""></span>
-                                                        </div>
-                                                      <div class="owl-page">
-                                                          <span class=""></span>
-                                                      </div>
-                                                      <div class="owl-page active">
-                                                          <span class=""></span>
-                                                      </div>
-                                                      <div class="owl-page">
-                                                          <span class=""></span>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                          <div id="em_owlcarousel_26_26596_sync2" class="owl-carousel syn-thumb-fullwidth owl-theme" style="opacity: 1; display: block;">
-                                              <div class="owl-wrapper-outer">
-                                                  <div class="owl-wrapper" style="width: 2336px; left: 0px; display: block;">
-                                                      <div class="owl-item" style="width: 292px;">
-                                                          <div class="item em-owlcarousel-thumbs-00 syn-mainslider-thumb">
-                                                              <strong>Under 999</strong>
-                                                          </div>
-                                                      </div>
-                                                      <div class="owl-item" style="width: 292px;">
-                                                          <div class="item em-owlcarousel-thumbs-01 syn-mainslider-thumb">
-                                                              <strong>HUAWEI Mate 10 Pro <br>Pre-Book</strong>
-                                                          </div>
-                                                      </div>
-                                                      <div class="owl-item synced" style="width: 292px;">
-                                                          <div class="item em-owlcarousel-thumbs-02 syn-mainslider-thumb">
-                                                              <strong>Great offers on <br>smartphones</strong>
-                                                          </div>
-                                                      </div>
-                                                      <div class="owl-item" style="width: 292px;">
-                                                          <div class="item em-owlcarousel-thumbs-03 syn-mainslider-thumb">
-                                                              <strong>Philips <br>Mega Sale</strong>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                       <script type="text/javascript"> (function ($) {
-                                              $(document).ready(function () {
-                                                  var sync1 = $('#em_owlcarousel_26_26596_sync1');
-                                                  sync1.owlCarousel({
-                                                      singleItem: true,
-                                                      scrollPerPage: false,
-                                                      stopOnHover: true,
-                                                      lazyLoad: true,
-                                                      pagination: true, navigationText: ["Pre", "Next"],
-                                                      afterAction: syncPosition,
-                                                      transitionStyle: 'fade',
-                                                      slideSpeed: 500,
-                                                      paginationSpeed: 500,
-                                                      afterInit: progressBar,
-                                                      afterMove: moved,
-                                                      startDragging: pauseOnDragging
-                                                  });
-                                                  var sync2 = $('#em_owlcarousel_26_26596_sync2');
-                                                  sync2.owlCarousel({
-                                                      items: 4,
-                                                      itemsMobile: [479, 2],
-                                                      pagination: false,
-                                                      responsiveRefreshRate: 100,
-                                                      lazyLoad: true,
-                                                      afterInit: function (el) {
-                                                          el.find('.owl-item').eq(0).addClass('synced');
-                                                      }
-                                                  });
-                                                  function syncPosition(el) {
-                                                      var current = this.currentItem;
-                                                      $('#em_owlcarousel_26_26596_sync2').find('.owl-item').removeClass('synced').eq(current).addClass('synced')
-                                                      if ($('#em_owlcarousel_26_26596_sync2').data('owlCarousel') !== undefined) {
-                                                          center(current);
-                                                      }
-                                                  }
-                                                  $('#em_owlcarousel_26_26596_sync2').on('click', '.owl-item', function (e) {
-                                                      e.preventDefault();
-                                                      var number = $(this).data('owlItem');
-                                                      sync1.trigger('owl.goTo', number);
-                                                  });
-                                                  function center(number) {
-                                                      var sync2visible = sync2.data('owlCarousel').owl.visibleItems;
-                                                      var num = number;
-                                                      var found = false;
-                                                      for (var i in sync2visible) {
-                                                          if (num === sync2visible[i]) {
-                                                              var found = true;
-                                                          }
-                                                      }
-                                                      if (found === false) {
-                                                          if (num > sync2visible[sync2visible.length - 1]) {
-                                                              sync2.trigger('owl.goTo', num - sync2visible.length + 2)
-                                                          } else {
-                                                              if (num - 1 === -1) {
-                                                                  num = 0;
-                                                              }
-                                                              sync2.trigger('owl.goTo', num);
-                                                          }
-                                                      } else if (num === sync2visible[sync2visible.length - 1]) {
-                                                          sync2.trigger('owl.goTo', sync2visible[1])
-                                                      } else if (num === sync2visible[0]) {
-                                                          sync2.trigger('owl.goTo', num - 1)
-                                                      }
-                                                  }
-                                                  //Init progressBar where elem is $("#owl-demo")
-                                                  var time = 5; // time in seconds
-                                                  var $progressBar, $bar, $elem, isPause, tick, percentTime;
-                                                  function progressBar(elem) {
-                                                      $elem = elem;
-                                                      //build progress bar elements
-                                                      buildProgressBar();
-                                                      //start counting
-                                                      start();
-                                                  }
-                                                  //create div#progressBar and div#bar then prepend to $("#owl-demo")
-                                                  function buildProgressBar() {
-                                                      $progressBar = $("<div>", {
-                                                          id: "progressBar"
-                                                      });
-                                                      $bar = $("<div>", {
-                                                          id: "bar"
-                                                      });
-                                                      $progressBar.append($bar).prependTo($elem);
-                                                  }
-                                                  function start() {
-                                                      //reset timer
-                                                      percentTime = 0;
-                                                      isPause = false;
-                                                      //run interval every 0.01 second
-                                                      tick = setInterval(interval, 10);
-                                                  }
-                                                  ;
-                                                  function interval() {
-                                                      if (isPause === false) {
-                                                          percentTime += 1 / time;
-                                                          $bar.css({
-                                                              width: percentTime + "%"
-                                                          });
-                                                          //if percentTime is equal or greater than 100
-                                                          if (percentTime >= 100) {
-                                                              //slide to next item
-                                                              $elem.trigger('owl.next')
-                                                          }
-                                                      }
-                                                  }
-                                                  //pause while dragging
-                                                  function pauseOnDragging() {
-                                                      isPause = true;
-                                                  }
-                                                  //moved callback
-                                                  function moved() {
-                                                      //clear interval
-                                                      clearTimeout(tick);
-                                                      //start again
-                                                      start();
-                                                  }
-                                              });
-                                          })(jQuery);</script>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
     @endsection
 
     @section('banner_hotdeals')
@@ -229,6 +26,38 @@
               </div>
           </div>
           <div>
+            <div class="syn-mobmenu">
+								<div class="row syn-mrow">
+									<div class="syn-mmenu-header">
+										<h3>* SHOP BY CATEGORY *</h3></div>
+									<div class="syn-mmenu-list">
+										<p class="col-xs-12 ">
+                      <a href="mobile-tablet.html/index.html">
+                        <img title="Mobile &amp; Smartphone" alt="" src="{{ asset('assets/img/Mobile-_-Tablet.png')}} " />Mobile &amp; Tablet</a>
+                    </p>
+										<p class="col-xs-12 ">
+                      <a href="electronics-appliances.html/index.html">
+                        <img title="Electronics &amp; Appliances" alt="" src="{{ asset('assets/img/Electronics-_-Appliances.png')}}" />Electronics &amp; Appliances</a>
+                    </p>
+											<p class="col-xs-12 ">
+                        <a href="lifestyle-entertainment.html/index.html">
+                          <img title="Entertainment" alt="" src="{{ asset('assets/img/Lifestyle-_-Entertainment.png')}}" />Entertainment</a>
+                      </p>
+												<p class="col-xs-12 ">
+                          <a href="computer-pc.html/index.html">
+                            <img title="Computers" alt="" src="{{ asset('assets/img/Computers.png')}}" />Computers</a>
+                        </p>
+												<p class="col-xs-12 ">
+                          <a href="daily-need.html/index.html">
+                            <img title="Daily Needs" alt="" src="{{ asset('assets/img/Daily-Needs.png')}}" />Daily Needs</a>
+                        </p>
+												<p class="col-xs-12 ">
+                          <a href="fashion-beauty.html/index.html">
+                            <img title="Fashion &amp; Beauty" alt="" src="{{ asset('assets/img/Deals-_-Offers.png')}}" />Fashion &amp; Beauty</a>
+                        </p>
+									</div>
+								</div>
+							</div>
             <div class="syn-hot-deals">
                   <div class="row syn-row">
                       <div class="syn-cat-name"> * HOT DEALS *</div>
@@ -856,7 +685,7 @@
                                 </div>
                                 <div class="syn-category row red mone">
                                     <div class="syn-category-products">
-                                        <div id="em_ajax_products_723af370dc7f900c85b98fdf79faf706bc01a209076d26f9f9407cfc08b83413" class="emfilter-ajaxblock-loaded">
+                                        <div id="" class="emfilter-ajaxblock-loaded">
                                             <div class="syn-homepage-category">
                                                 <div class="syn-category-tab">
                                                     <div class="syn-category-header">

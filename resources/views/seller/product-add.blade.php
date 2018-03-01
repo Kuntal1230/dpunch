@@ -1,6 +1,6 @@
-@extends('admin.layout.master')
+@extends('seller.layout.master')
 
-@section('title',"All Product")
+@section('title',"Add Product")
 
 @section('page-style')
 <link rel="stylesheet" href="{{ asset('admin-assets/css/fileinput.css') }}">
@@ -8,19 +8,19 @@
 
 @section('product-classs',"active")
 
-@section('all-product-class',"active")
+@section('add-product-class',"active")
 
 @section('content')
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
         Product page
-        <small>edit products</small>
+        <small>add products</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">Products</a></li>
-        <li class="active">Edit product</li>
+        <li class="active">Add product</li>
       </ol>
     </section>
 
@@ -30,24 +30,24 @@
         <div class="col-xs-12">
           <div class="box box-info">
             <div class="box-header with-border text-center">
-              <h3 class="box-title">Edit Product</h3>
+              <h3 class="box-title">Add Product</h3>
               <br>
-              @if (session('productstatus'))
+              @if (session('message'))
                   <div class="alert alert-success">
-                      {{ session('productstatus') }}
+                      {{ session('message') }}
                   </div>
               @endif
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal" method="post" action="{{ route('admin.updateproduct',$product->id) }}" enctype="multipart/form-data">
+            <form class="form-horizontal" method="post" action="{{ route('seller.addproduct') }}" enctype="multipart/form-data">
               {{ csrf_field() }}
               <div class="box-body">
                 <div class="form-group">
                    <label for="" class="col-sm-3 control-label">Select Category <span class="text-red">* </span> :</label>
                    <div class="col-sm-9">
                      <select class="form-control select2" id="category" name="category_id" style="width: 100%;" required>
-                       <option value="{{ $product->category_id }}" selected>{{ $product->category->name }}</option>
+                       <option value="" disabled selected>Select Category</option>
                        @foreach ($allcategory as $category)
                          <option value="{{ $category->id }}">{{ $category->name }}</option>
                        @endforeach
@@ -59,7 +59,7 @@
                    <label for="" class="col-sm-3 control-label">Select Sub-Category <span class="text-red">* </span> :</label>
                    <div class="col-sm-9">
                      <select class="form-control select2" id="subcategory" name="subcategory_id" style="width: 100%;" required>
-                       <option value="{{ $product->subcategory_id }}" selected>{{ $product->subcategory->name }}</option>
+                       <option value="" disabled selected>Select Sub-category</option>
                      </select>
                    </div>
                 </div>
@@ -68,7 +68,7 @@
                    <label for="" class="col-sm-3 control-label">Select Product Category <span id="child_cat" class="text-red hidden">* </span> :</label>
                    <div class="col-sm-9">
                      <select class="form-control select2" id="undersubcategory" name="undersubcategory_id" style="width: 100%;">
-                       <option value="{{ $product->undersubcategory_id }}" selected>{{ $product->undersubcategory->name }}</option>
+                       <option value="" disabled selected>Select Product Category</option>
                      </select>
                    </div>
                 </div>
@@ -77,7 +77,7 @@
                    <label for="" class="col-sm-3 control-label">Product Brand <span class="text-red">* </span> :</label>
                    <div class="col-sm-9">
                      <select class="form-control select2" id="brand" name="brand_id" style="width: 100%;">
-                       <option value="{{ $product->brand_id }}" selected>{{ $product->brand->name }}</option>
+                       <option value="" disabled selected>Select Product Brand</option>
                      </select>
                    </div>
                 </div>
@@ -86,7 +86,7 @@
                    <label for="" class="col-sm-3 control-label">Product Condition :</label>
                    <div class="col-sm-9">
                      <select class="form-control select2" name="product_condition" style="width: 100%;">
-                       <option value="{{ $product->product_condition }}" selected>{{ $product->product_condition }}</option>
+                       <option value="" disabled selected>Select Product Condition</option>
                        <option value="New">New</option>
                        <option value="Refurnished">Refurnished</option>
                      </select>
@@ -97,7 +97,7 @@
                    <label for="" class="col-sm-3 control-label">Product Orgin :</label>
                    <div class="col-sm-9">
                      <select class="form-control select2" name="product_origin" style="width: 100%;">
-                       <option value="{{ $product->product_origin }}" selected>{{ $product->product_origin }}</option>
+                       <option value="" disabled selected>Select Product Orgin</option>
                        <option value="Original">Original</option>
                        <option value="Copy">Copy</option>
                        <option value="OME">OME</option>
@@ -109,7 +109,7 @@
                   <label for="title" class="col-sm-3 control-label">Product Title <span class="text-red">* </span> :</label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Product Title" required value="{{ $product->title }}">
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Product Title" required value="{{ old('title') }}">
                   </div>
                 </div>
                 <!-- /.form-group -->
@@ -117,7 +117,7 @@
                   <label for="color" class="col-sm-3 control-label">Product Color <span class="text-red">* </span> :</label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="color" name="color" placeholder="Product Color" required value="{{ $product->color }}">
+                    <input type="text" class="form-control" id="color" name="color" placeholder="Product Color" required value="{{ old('color') }}">
                   </div>
                 </div>
                 <!-- /.form-group -->
@@ -127,25 +127,21 @@
                       <label for="price" class="col-sm-6 control-label">Product Price <span class="text-red">* </span> :</label>
 
                       <div class="col-sm-6 input-group">
-                        <input type="number" class="form-control" id="price" name="price" placeholder="0.00" required value="{{ $product->price }}">
+                        <input type="number" class="form-control" id="price" name="price" placeholder="0.00" required value="{{ old('price') }}">
                         <div class="input-group-addon">৳</div>
                       </div>
                     </div>
-
                   </div>
-
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="discount" class="col-sm-6 control-label">Product Discount :</label>
 
                       <div class="col-sm-6 input-group">
-                        <input type="number" class="form-control" id="discount" name="discount" placeholder="00" value="{{ $product->discount }}">
+                        <input type="number" class="form-control" id="discount" name="discount" placeholder="00" value="{{ old('discount') }}">
                         <div class="input-group-addon">%</div>
                       </div>
                     </div>
-
                   </div>
-
                 </div>
 
                 <div class="form-group">
@@ -153,22 +149,22 @@
                   <div class="col-sm-9">
                     <div class="row">
                       <div class="col-sm-2">
-                        <input type="text" class="form-control" id="" name="size_1" placeholder="S or 15" value="{{ $product->size_1 }}">
+                        <input type="text" class="form-control" id="" name="size_1" placeholder="S or 15" value="{{ old('size_1') }}">
                       </div>
                       <div class="col-sm-2">
-                        <input type="text" class="form-control" id="" name="size_2" placeholder="M or 15.5" value="{{ $product->size_2 }}">
+                        <input type="text" class="form-control" id="" name="size_2" placeholder="M or 15.5" value="{{ old('size_2') }}">
                       </div>
                       <div class="col-sm-2">
-                        <input type="text" class="form-control" id="" name="size_3" placeholder="L or 16" value="{{ $product->size_3 }}">
+                        <input type="text" class="form-control" id="" name="size_3" placeholder="L or 16" value="{{ old('size_3') }}">
                       </div>
                       <div class="col-sm-2">
-                        <input type="text" class="form-control" id="" name="size_4" placeholder="XL or 16.5" value="{{ $product->size_4 }}">
+                        <input type="text" class="form-control" id="" name="size_4" placeholder="XL or 16.5" value="{{ old('size_4') }}">
                       </div>
                       <div class="col-sm-2">
-                        <input type="text" class="form-control" id="" name="size_5" placeholder="XXL or 17" value="{{ $product->size_5 }}">
+                        <input type="text" class="form-control" id="" name="size_5" placeholder="XXL or 17" value="{{ old('size_5') }}">
                       </div>
                       <div class="col-sm-2">
-                        <input type="text" class="form-control" id="" name="size_6" placeholder="other" value="{{ $product->size_6 }}">
+                        <input type="text" class="form-control" id="" name="size_6" placeholder="other" value="{{ old('size_6') }}">
                       </div>
 
                     </div>
@@ -180,7 +176,7 @@
 
                   <div class="col-sm-9">
                     <select class="form-control select2" name="availability" style="width: 100%;">
-                      <option value="{{ $product->availability }}" selected>{{ $product->availability }}</option>
+                      <option value="" disabled selected>Select Product Availability</option>
                       <option value="InStock">In Stock</option>
                       <option value="OutofStock">Out of Stock</option>
                     </select>
@@ -198,18 +194,11 @@
                 </div>
                 <!-- /.form-group -->
 
-                <input type="hidden" name="prev_img0" value="{{ $product->image0 }}">
-                <input type="hidden" name="prev_img1" value="{{ $product->image1 }}">
-                <input type="hidden" name="prev_img2" value="{{ $product->image2 }}">
-                <input type="hidden" name="prev_img3" value="{{ $product->image3 }}">
-                <input type="hidden" name="prev_img4" value="{{ $product->image4 }}">
-                <input type="hidden" name="prev_img5" value="{{ $product->image5 }}">
-
                 <div class="form-group">
                   <label for="detailes" class="col-sm-3 control-label">Product Detailes <span class="text-red">* </span> :</label>
 
                   <div class="col-sm-9">
-                    <textarea id="detailes" name="detailes" rows="10" cols="60" required>{{ $product->detailes }}</textarea>
+                    <textarea id="detailes" name="detailes" rows="10" cols="60" required>{{ old('detailes') }}</textarea>
                   </div>
                 </div>
                 <!-- /.form-group -->
@@ -217,18 +206,16 @@
                   <label for="specification" class="col-sm-3 control-label">Product Specifications <span class="text-red">* </span> :</label>
 
                   <div class="col-sm-9">
-                    <textarea id="specification" name="specification" rows="10" cols="60" required>{{ $product->specification }}</textarea>
+                    <textarea id="specification" name="specification" rows="30" cols="60" required>{{ old('specification') }}</textarea>
                   </div>
                 </div>
                 <!-- /.form-group -->
-
-
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
                 <button type="reset" class="btn btn-default">Reset</button>
                 <span class="text-red">* Please fill up the required fields</span>
-                <button type="submit" class="btn btn-info pull-right">Update</button>
+                <button type="submit" class="btn btn-info pull-right">Submit</button>
               </div>
               <!-- /.box-footer -->
             </form>
@@ -244,46 +231,6 @@
 
     @section('page-script')
       <script src="{{ asset('admin-assets/js/fileinput.js') }}"></script>
-      <script type="text/javascript">
-            var img0;
-            var img1;
-            var img2;
-            var img3;
-            var img4;
-            var img5;
-            @if ($product->image0)
-              img0 = <?php echo json_encode(asset('images/'.$product->image0), JSON_HEX_TAG); ?>;
-            @endif
-            @if ($product->image1)
-              img1 = <?php echo json_encode(asset('images/'.$product->image1), JSON_HEX_TAG); ?>;
-            @endif
-            @if ($product->image2)
-              img2 = <?php echo json_encode(asset('images/'.$product->image2), JSON_HEX_TAG); ?>;
-            @endif
-            @if ($product->image3)
-              img3 = <?php echo json_encode(asset('images/'.$product->image3), JSON_HEX_TAG); ?>;
-            @endif
-            @if ($product->image4)
-              img4 = <?php echo json_encode(asset('images/'.$product->image4), JSON_HEX_TAG); ?>;
-            @endif
-            @if ($product->image5)
-              img5 = <?php echo json_encode(asset('images/'.$product->image5), JSON_HEX_TAG); ?>;
-            @endif
-
-
-            $("#product_img").fileinput({
-              initialPreview: [
-              img0,
-              img1,
-              img2,
-              img3,
-              img4,
-              img5,
-          ],
-          initialPreviewAsData: true
-          });
-
-      </script>
     @endsection
 
     @section('ckeditor')
@@ -313,7 +260,7 @@
               var id =($(this).val());
               $.ajax({
                    type:"POST",
-                   url:"/admin/ajaxsubcategory/",
+                   url:"/seller/ajaxsubcategory/",
                    data: {id:id},
                    success : function(result) {
                      console.log(result);
@@ -346,7 +293,7 @@
               console.log(id);
               $.ajax({
                    type:"POST",
-                   url:"/admin/ajaxundersubcategory/",
+                   url:"/seller/ajaxundersubcategory/",
                    data: {id:id},
                    success : function(result) {
                      if (result.length>0) {
@@ -366,7 +313,7 @@
                        $("select#brand").html(options);
                        $.ajax({
                          type:"POST",
-                         url:"/admin/ajaxbrandbysubcat/",
+                         url:"/seller/ajaxbrandbysubcat/",
                          data: {id:id},
                          success : function(result) {
                            if (result.length>0) {
@@ -400,7 +347,7 @@
               var id =($(this).val());
               $.ajax({
                    type:"POST",
-                   url:"/admin/ajaxbrand/",
+                   url:"/seller/ajaxbrand/",
                    data: {id:id},
                    success : function(result) {
                      if (result.length>0) {

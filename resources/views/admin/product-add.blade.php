@@ -131,9 +131,7 @@
                         <div class="input-group-addon">৳</div>
                       </div>
                     </div>
-
                   </div>
-
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="discount" class="col-sm-6 control-label">Product Discount :</label>
@@ -143,9 +141,7 @@
                         <div class="input-group-addon">%</div>
                       </div>
                     </div>
-
                   </div>
-
                 </div>
 
                 <div class="form-group">
@@ -210,20 +206,10 @@
                   <label for="specification" class="col-sm-3 control-label">Product Specifications <span class="text-red">* </span> :</label>
 
                   <div class="col-sm-9">
-                    <textarea id="specification" name="specification" rows="10" cols="60" required>{{ old('specification') }}</textarea>
+                    <textarea id="specification" name="specification" rows="30" cols="60" required>{{ old('specification') }}</textarea>
                   </div>
                 </div>
                 <!-- /.form-group -->
-                <div class="form-group">
-                  <label for="return_replacement" class="col-sm-3 control-label">Return & Replacement Policy<span class="text-red">* </span> :</label>
-
-                  <div class="col-sm-9">
-                    <textarea id="return_replacement" name="return_replacement" rows="10" cols="60" required>{{ old('return_replacement') }}</textarea>
-                  </div>
-                </div>
-                <!-- /.form-group -->
-
-
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
@@ -253,7 +239,6 @@
         $(function () {
           CKEDITOR.replace('detailes')
           CKEDITOR.replace('specification')
-          CKEDITOR.replace('return_replacement')
         })
       </script>
     @endsection

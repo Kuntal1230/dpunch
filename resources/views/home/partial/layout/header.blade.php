@@ -2,41 +2,41 @@
 <html id="top" class="js" lang="{{ app()->getLocale() }}">
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Online Shopping </title>
         <meta name="keywords" content=""><meta name="robots" content="INDEX,FOLLOW">
-        <meta property="og:site_name" content="">
+
         <link rel="icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon">
         <link rel="shortcut icon" href="" type="image/x-icon">
         <meta http-equiv="" content="IE=edge">
 
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/calendar-win2k-1.css') }}">
+        {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/calendar-win2k-1.css') }}"> --}}
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/menu.css') }}" media="all">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/menu_002.css') }}" media="all">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/widgets.css') }}" media="all">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/styles.css') }}" media="all">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/swiper.css') }} " media="all">
-        {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.css') }} " media="all"> --}}
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/owl.css') }} " media="all">
+        {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/swiper.css') }} " media="all"> --}}
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.css') }} " media="all">
+        {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/owl.css') }} " media="all"> --}}
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css') }} " media="all">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.css') }} " media="all">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/em_responsive.css') }} " media="all">
 
         {{-- <link rel="stylesheet" type="text/css" href=" {{ asset('assets/css/trackorder.css') }} " media="all"> --}}
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/em_ajaxcart.css') }} " media="all">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/styles17.css') }} " media="all">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/styles_003.css') }} " media="all">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/em_multidealpro.css') }} " media="all">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/em_productlabels.css') }} " media="all">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/em_quickshop.css') }} " media="all">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/em_magnify_zoom.css') }} " media="all">
+        {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/em_ajaxcart.css') }} " media="all"> --}}
+        {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/styles17.css') }} " media="all"> --}}
+        {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/styles_003.css') }} " media="all"> --}}
+        {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/em_multidealpro.css') }} " media="all"> --}}
+        {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/em_productlabels.css') }} " media="all"> --}}
+        {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/em_quickshop.css') }} " media="all"> --}}
+        {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/em_magnify_zoom.css') }} " media="all"> --}}
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive-tabs.css') }} " media="all">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/button_002.css') }} " media="all">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/button.css') }} " media="all">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/mirasvit_fpc.css') }} " media="all">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/mirasvit_searchindex.css') }} " media="all">
+        {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/mirasvit_fpc.css') }} " media="all"> --}}
+        {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/mirasvit_searchindex.css') }} " media="all"> --}}
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/custom.css') }} " media="all">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/print.css') }} " media="print">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/in_style.css') }}" media="all">
@@ -47,32 +47,32 @@
         <script type="text/javascript" src="{{ asset('assets/js/prototype.js') }} "></script>
         <script type="text/javascript" src="{{ asset('assets/js/jquery-1.js') }} "></script>
         <script type="text/javascript" src="{{ asset('assets/js/em_fix_check_browser.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/ccard.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/validation.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/custom.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/builder.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/effects.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/dragdrop.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/controls.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/slider.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/js.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/form.js') }} "></script>
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/ccard.js') }} "></script> --}}
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/validation.js') }} "></script> --}}
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/custom.js') }} "></script> --}}
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/builder.js') }} "></script> --}}
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/effects.js') }} "></script> --}}
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/dragdrop.js') }} "></script> --}}
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/controls.js') }} "></script> --}}
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/slider.js') }} "></script> --}}
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/js.js') }} "></script> --}}
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/form.js') }} "></script> --}}
         <script type="text/javascript" src="{{ asset('assets/js/menu_002.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/translate.js') }} "></script>
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/translate.js') }} "></script> --}}
         <script type="text/javascript" src="{{ asset('assets/js/cookies.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/ios-orientationchange-fix.js') }} "></script>
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/ios-orientationchange-fix.js') }} "></script> --}}
         <script type="text/javascript" src="{{ asset('assets/js/jquery_004.js') }} "></script>
         <script type="text/javascript" src="{{ asset('assets/js/jquery_005.js') }} "></script>
         <script type="text/javascript" src="{{ asset('assets/js/bootstrap.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/html5shiv.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/respond.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/product.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/configurable.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/calendar.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/calendar-setup.js') }} "></script>
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/html5shiv.js') }} "></script> --}}
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/respond.js') }} "></script> --}}
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/product.js') }} "></script> --}}
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/configurable.js') }} "></script> --}}
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/calendar.js') }} "></script> --}}
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/calendar-setup.js') }} "></script> --}}
         <script type="text/javascript" src="{{ asset('assets/js/jquery-noconflict.js') }} "></script>
         <script type="text/javascript" src="{{ asset('assets/js/jquery_007.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/et_currencymanager_round.js') }} "></script>
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/et_currencymanager_round.js') }} "></script> --}}
         <script type="text/javascript" src="{{ asset('assets/js/iwd-jquery-2.js') }} "></script>
         <script type="text/javascript" src="{{ asset('assets/js/modal.js') }} "></script>
         <script type="text/javascript" src="{{ asset('assets/js/jquery_002.js') }} "></script>
@@ -81,19 +81,19 @@
         <script type="text/javascript" src="{{ asset('assets/js/progressbar.js') }} "></script>
         <script type="text/javascript" src="{{ asset('assets/js/menu.js') }} "></script>
         <script type="text/javascript" src="{{ asset('assets/js/selectUl.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/ajaxaddto.js') }} "></script>
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/ajaxaddto.js') }} "></script> --}}
         <script type="text/javascript" src="{{ asset('assets/js/owl.js') }} "></script>
         <script type="text/javascript" src="{{ asset('assets/js/em0131.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/bundle.js') }} "></script>
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/bundle.js') }} "></script> --}}
         <script type="text/javascript" src="{{ asset('assets/js/jquery_003.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/lightbox.js') }} "></script>
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/lightbox.js') }} "></script> --}}
         {{-- <script type="text/javascript" src=" {{ asset('assets/js/em_ajaxcart.js') }} "></script> --}}
-        <script type="text/javascript" src="{{ asset('assets/js/isotope.js') }} "></script>
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/isotope.js') }} "></script> --}}
         <script type="text/javascript" src="{{ asset('assets/js/jquery_006.js') }} "></script>
         <script type="text/javascript" src="{{ asset('assets/js/countdown.js') }} "></script>
         <script type="text/javascript" src="{{ asset('assets/js/em_multidealpro.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/msrp.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('assets/js/em_quickshop.js') }}"></script>
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/msrp.js') }} "></script> --}}
+        {{-- <script type="text/javascript" src="{{ asset('assets/js/em_quickshop.js') }}"></script> --}}
         <script type="text/javascript" src="{{ asset('assets/js/jquery.js') }}"></script>
 
         <script type="text/javascript">
@@ -117,19 +117,6 @@
                 RIGHT_TO_LEFT: '0',
                 COLOR_SWATCHES: '1',
             };
-            var urlSkinsite = '';
-            LightboxOptions = Object.extend({
-                fileLoadingImage: urlSkinsite + 'img/loading.gif',
-                fileBottomNavCloseImage: urlSkinsite + 'img/closelabel.png',
-                overlayOpacity: 0.8, /* controls transparency of shadow overlay    */
-                animate: true, /* toggles resizing animations*/
-                resizeSpeed: 7, /* controls the speed of the image resizing animations (1=slowest and 10=fastest)    */
-                borderSize: 10, /*if you adjust the padding in the CSS, you will need to update this variable    */
-                /* When grouping images this is used to write: Image # of #.*/
-                /* Change it for non-english localization*/
-                labelImage: "Image",
-                labelOf: "of"
-            }, window.LightboxOptions || {});
         </script>
 
         <link href="{{ asset('assets/css/css.css') }}" rel="stylesheet" type="text/css">
@@ -168,7 +155,7 @@
                     <div id="em-mheader" class="visible-xs container">
                         <div id="em-mheader-top" class="row">
                             <div id="em-mheader-logo" class="col-xs-4">
-                                <div class="em-logo"><a href="" title="" class="logo"><strong>example.com</strong><img src="" alt=""></a></div>
+                                <div class="em-logo"><a href="" title="" class="logo"><strong>example.com</strong><img src="{{ asset("assets/img/logo-s.png") }}" alt=""></a></div>
                             </div>
                             <div class="col-xs-11">
                                 <div class="em-top-search">
@@ -185,10 +172,6 @@
                                                                     <button type="submit" title="Search" class="button"><span><span style="text-transform:none;">Search</span></span></button>
                                                                     <div id="search_autocomplete" class="search-autocomplete" style="display: none;"></div>
                                                                 </div>
-                                                                <script type="text/javascript">
-                                                                    var searchForm = new Varien.searchForm('search_mini_form', 'search', 'Search...');
-                                                                    searchForm.initAutocomplete('', 'search_autocomplete');
-                                                                </script>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -654,661 +637,764 @@
                                         <div class="em-line">
                                             <div class="em-logo-sticky f-left">
                                                 <a href="" title="" class="logo">
-                                                    <img src=" {{ asset('assets/img/dpunch_logo.png') }}" alt="">
+                                                    <img src=" {{ asset('assets/img/logo-s.png') }}" alt="">
                                                 </a>
                                             </div>
 
                                             <div class="em-menu-hoz col-sm-24">
                                                 <div id="em-main-megamenu">
+
                                                     <div class="em-menu"><div class="megamenu-wrapper wrapper-6_8644 em-menu-mobile">
                                                             <div class="em_nav" id="toogle_menu_6_8644">
-                                                                <ul class="hnav effect-menu">
-                                                                    <li class="menu-item-link menu-item-depth-0  menu-item-parent"><a href="javascript:void(0)" class="arrow"><span>&gt;</span></a>
-                                                                        <a class="em-menu-link" href="">
-                                                                            <span>
-                                                                                Mobiles &amp; Tablets				</span>
-                                                                        </a>
-                                                                        <ul class="menu-container">
-                                                                          <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col19 grid_22 bkg-menu01 menu-item-parent" style="">
-                                                                                <ul class="menu-container">                                                                                                            <li class="menu-item-vbox menu-item-depth-2 col-sm-7 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">Mobile Phones</span></a></h5>
-                                                                                                <div class="row">
-                                                                                                    <div class="col-sm-12">
-                                                                                                        <ul class="list-text">
-                                                                                                            <li><a href="">iPhone</a></li>
-                                                                                                            <li><a href="">Samsung</a></li>
-                                                                                                            <li><a href="">Nokia</a></li>
-                                                                                                            <li><a href="">Huawei</a></li>
-                                                                                                            <li><a href="">Xiaomi</a></li>
-                                                                                                            <li><a href="">LG</a></li>
-                                                                                                            <li><a href="">HTC</a></li>
-                                                                                                            <li><a href="">Lenovo</a></li>
-                                                                                                            <li><a href="">LAVA</a></li>
-                                                                                                            <li><a href="">Micromax</a></li>
-                                                                                                            <li><a href="">Asus</a></li>
-                                                                                                            <li><a href="">Helio</a></li>
+                                                              <ul class="hnav effect-menu">
+                                                                <li class="menu-item-link menu-item-depth-0  menu-item-parent">
+                                                                  <a class="em-menu-link" href="mobile-tablet.html/index.html"><span>Mobiles & Tablets</span></a>
+                                                                  <ul class="menu-container">
+                                                                    <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col19 grid_22 bkg-menu01 menu-item-parent" style="">
+                                                                      <ul class="menu-container">
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-7 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
 
+                                                                            <li class="menu-item-text menu-item-depth-3 ">
+                                                                              <h5>
+                                                                            <a href="mobile-tablet/mobile-smart-phone.html/index.html">
+                                                                              <span style="color: #000000;">Mobile Phones</span>
+                                                                            </a>
+                                                                          </h5>
+                                                                              <div class="row">
+                                                                                <div class="col-sm-12">
+                                                                                  <ul class="list-text">
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/iphone.html/index.html">iPhone</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/samsung.html/index.html">Samsung</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/nokia.html/index.html">Nokia</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/huawei.html/index.html">Huawei</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/xiaomi.html/index.html">Xiaomi</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/lg.html/index.html">LG</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/htc.html/index.html">HTC</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/lenovo.html/index.html">Lenovo</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/lava.html/index.html">LAVA</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/micromax.html/index.html">Micromax</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/asus.html/index.html">Asus</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/helio.html/index.html">Helio</a></li>
+                                                                                  </ul>
+                                                                                </div>
+                                                                                <div class="col-sm-12">
+                                                                                  <ul class="list-text">
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/blackberry.html/index.html">BlackBerry</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/oneplus.html/index.html">OnePlus</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/symphony.html/index.html">Symphony</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/maximus.html/index.html">Maximus</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/meizu.html/index.html">Meizu</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/we.html/index.html">WE</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/infinix.html/index.html">Infinix</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/linnex.html/index.html">Linnex</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-smart-phone/inova.html/index.html">INOVA</a></li>
+                                                                                  </ul>
+                                                                                </div>
+                                                                              </div>
+                                                                            </li>
+                                                                          </ul>
+                                                                        </li>
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-3 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <h5>
+                                                                            <a href="mobile-tablet/tablet.html/index.html">
+                                                                            <span style="color: #000000;">Tablets</span>
+                                                                            </a>
+                                                                          </h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="mobile-tablet/tablet/apple.html/index.html">Apple</a></li>
+                                                                                <li><a href="mobile-tablet/tablet/samsung.html/index.html">Samsung</a></li>
+                                                                                <li><a href="mobile-tablet/tablet/lenovo.html/index.html">Lenovo</a></li>
+                                                                                <li><a href="mobile-tablet/tablet/huawei.html/index.html">Huawei</a></li>
+                                                                                <li><a href="mobile-tablet/tablet/symphony.html/index.html">Symphony</a></li>
+                                                                                <li><a href="mobile-tablet/tablet/asus.html/index.html">Asus</a></li>
+                                                                                <li><a href="mobile-tablet/tablet/ainol.html/index.html">Ainol</a></li>
+                                                                              </ul>
+                                                                            </li>
+                                                                          </ul>
+                                                                        </li>
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <h5>
+                                                                            <a href="mobile-tablet/feature-phone.html/index.html"><span style="color: #000000;">Feature Phones</span></a>
+                                                                          </h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="mobile-tablet/feature-phone/nokia.html/index.html">Nokia</a></li>
+                                                                                <li><a href="mobile-tablet/feature-phone/samsung.html/index.html">Samsung</a></li>
+                                                                                <li><a href="mobile-tablet/feature-phone/symphony.html/index.html">Symphony </a></li>
+                                                                                <li><a href="mobile-tablet/feature-phone/maximus.html/index.html">Maximus</a></li>
+                                                                                <li><a href="mobile-tablet/feature-phone/micromax.html/index.html">Micromax</a></li>
+                                                                                <li><a href="mobile-tablet/feature-phone/metrocem.html/index.html">Metrocem</a></li>
+                                                                              </ul>
+                                                                            </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-7 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <h5><a href="mobile-tablet/mobile-tablet-accessories.html/index.html"><span style="color: #000000;">Mobile & Tablet Accessories</span></a></h5>
+                                                                              <div class="row">
+                                                                                <div class="col-sm-12">
+                                                                                  <ul class="list-text">
+                                                                                    <li><a href="mobile-tablet/mobile-tablet-accessories/flip-cover.html/index.html">Flip Cover</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-tablet-accessories/back-cover.html/index.html">Back Cover</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-tablet-accessories/screen-protector.html/index.html">Screen Protector</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-tablet-accessories/charger.html/index.html">Charger</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-tablet-accessories/power-bank.html/index.html">Power Bank</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-tablet-accessories/selfie-stick.html/index.html">Selfie Stick</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-tablet-accessories/otg-cables.html/index.html">OTG & Cables </a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-tablet-accessories/headphones.html/index.html">Headphones</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-tablet-accessories/bluetooth-speaker.html/index.html">Bluetooth Speaker</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-tablet-accessories/memory-card.html/index.html">Memory Card</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-tablet-accessories/smart-watch.html/index.html">Smart Watch</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-tablet-accessories/battery.html/index.html">Battery</a></li>
 
-
-                                                                                                        </ul>
-                                                                                                    </div>
-                                                                                                    <div class="col-sm-12">
-                                                                                                        <ul class="list-text">
-                                                                                                            <li><a href="">BlackBerry</a></li>
-                                                                                                            <li><a href="">OnePlus</a></li>
-                                                                                                            <li><a href="">Symphony</a></li>
-                                                                                                            <li><a href="">Maximus</a></li>
-                                                                                                            <li><a href="">Meizu</a></li>
-                                                                                                            <li><a href="">WE</a></li>
-                                                                                                            <li><a href="">Infinix</a></li>
-                                                                                                            <li><a href="">Linnex</a></li>
-                                                                                                            <li><a href="">INOVA</a></li>
-                                                                                                        </ul>
-                                                                                                    </div>
-                                                                                                </div>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-3 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">Tablets</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Apple</a></li>
-                                                                                                    <li><a href="">Samsung</a></li>
-                                                                                                    <li><a href="">Lenovo</a></li>
-                                                                                                    <li><a href="">Huawei</a></li>
-                                                                                                    <li><a href="">Symphony</a></li>
-                                                                                                    <li><a href="">Asus</a></li>
-                                                                                                    <li><a href="">Ainol</a></li>
-                                                                                                </ul>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">Feature Phones</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Nokia</a></li>
-                                                                                                    <li><a href="">Samsung</a></li>
-                                                                                                    <li><a href="">Symphony </a></li>
-                                                                                                    <li><a href="">Maximus</a></li>
-                                                                                                    <li><a href="">Micromax</a></li>
-                                                                                                    <li><a href="">Metrocem</a></li>
-                                                                                                </ul>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-7 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">Mobile &amp; Tablet Accessories</span></a></h5>
-                                                                                                <div class="row">
-                                                                                                    <div class="col-sm-12">
-                                                                                                        <ul class="list-text">
-                                                                                                            <li><a href="">Flip Cover</a></li>
-                                                                                                            <li><a href="">Back Cover</a></li>
-                                                                                                            <li><a href="">Screen Protector</a></li>
-                                                                                                            <li><a href="">Charger</a></li>
-                                                                                                            <li><a href="">Power Bank</a></li>
-                                                                                                            <li><a href="">Selfie Stick</a></li>
-                                                                                                            <li><a href="">OTG &amp; Cables </a></li>
-                                                                                                            <li><a href="">Headphones</a></li>
-                                                                                                            <li><a href="">Bluetooth Speaker</a></li>
-                                                                                                            <li><a href="">Memory Card</a></li>
-                                                                                                            <li><a href="">Smart Watch</a></li>
-                                                                                                            <li><a href="">Battery</a></li>
-
-                                                                                                        </ul>
-                                                                                                    </div>
-                                                                                                    <div class="col-sm-12">
-                                                                                                        <ul class="list-text">
-                                                                                                            <li><a href="">VR Box</a></li>
-                                                                                                            <li><a href="">Wearables</a></li>
-                                                                                                        </ul>
-                                                                                                    </div>
-                                                                                                </div>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                </ul><!-- 2 -->
-                                                                            </li><!-- 1 -->
-                                                                        </ul><!-- 1 -->
-                                                                    </li><!-- 0 -->
-                                                                    <li class="menu-item-link menu-item-depth-0  menu-item-parent"><a href="javascript:void(0)" class="arrow"><span>&gt;</span></a>
-                                                                        <a class="em-menu-link" href="">
-                                                                            <span>
-                                                                                Cars &amp; Bickes</span>
-                                                                        </a>
-                                                                        <ul class="menu-container">
-                                                                          <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col19 grid_22 bkg-menu01 menu-item-parent" style="">
-                                                                                <ul class="menu-container">                                                                                                            <li class="menu-item-vbox menu-item-depth-2 col-sm-7 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">Mobile Phones</span></a></h5>
-                                                                                                <div class="row">
-                                                                                                    <div class="col-sm-12">
-                                                                                                        <ul class="list-text">
-                                                                                                            <li><a href="">iPhone</a></li>
-                                                                                                            <li><a href="">Samsung</a></li>
-                                                                                                            <li><a href="">Nokia</a></li>
-                                                                                                            <li><a href="">Huawei</a></li>
-                                                                                                            <li><a href="">Xiaomi</a></li>
-                                                                                                            <li><a href="">LG</a></li>
-                                                                                                            <li><a href="">HTC</a></li>
-                                                                                                            <li><a href="">Lenovo</a></li>
-                                                                                                            <li><a href="">LAVA</a></li>
-                                                                                                            <li><a href="">Micromax</a></li>
-                                                                                                            <li><a href="">Asus</a></li>
-                                                                                                            <li><a href="">Helio</a></li>
-
-
-
-                                                                                                        </ul>
-                                                                                                    </div>
-                                                                                                    <div class="col-sm-12">
-                                                                                                        <ul class="list-text">
-                                                                                                            <li><a href="">BlackBerry</a></li>
-                                                                                                            <li><a href="">OnePlus</a></li>
-                                                                                                            <li><a href="">Symphony</a></li>
-                                                                                                            <li><a href="">Maximus</a></li>
-                                                                                                            <li><a href="">Meizu</a></li>
-                                                                                                            <li><a href="">WE</a></li>
-                                                                                                            <li><a href="">Infinix</a></li>
-                                                                                                            <li><a href="">Linnex</a></li>
-                                                                                                            <li><a href="">INOVA</a></li>
-                                                                                                        </ul>
-                                                                                                    </div>
-                                                                                                </div>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-3 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">Tablets</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Apple</a></li>
-                                                                                                    <li><a href="">Samsung</a></li>
-                                                                                                    <li><a href="">Lenovo</a></li>
-                                                                                                    <li><a href="">Huawei</a></li>
-                                                                                                    <li><a href="">Symphony</a></li>
-                                                                                                    <li><a href="">Asus</a></li>
-                                                                                                    <li><a href="">Ainol</a></li>
-                                                                                                </ul>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">Feature Phones</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Nokia</a></li>
-                                                                                                    <li><a href="">Samsung</a></li>
-                                                                                                    <li><a href="">Symphony </a></li>
-                                                                                                    <li><a href="">Maximus</a></li>
-                                                                                                    <li><a href="">Micromax</a></li>
-                                                                                                    <li><a href="">Metrocem</a></li>
-                                                                                                </ul>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-7 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">Mobile &amp; Tablet Accessories</span></a></h5>
-                                                                                                <div class="row">
-                                                                                                    <div class="col-sm-12">
-                                                                                                        <ul class="list-text">
-                                                                                                            <li><a href="">Flip Cover</a></li>
-                                                                                                            <li><a href="">Back Cover</a></li>
-                                                                                                            <li><a href="">Screen Protector</a></li>
-                                                                                                            <li><a href="">Charger</a></li>
-                                                                                                            <li><a href="">Power Bank</a></li>
-                                                                                                            <li><a href="">Selfie Stick</a></li>
-                                                                                                            <li><a href="">OTG &amp; Cables </a></li>
-                                                                                                            <li><a href="">Headphones</a></li>
-                                                                                                            <li><a href="">Bluetooth Speaker</a></li>
-                                                                                                            <li><a href="">Memory Card</a></li>
-                                                                                                            <li><a href="">Smart Watch</a></li>
-                                                                                                            <li><a href="">Battery</a></li>
-
-                                                                                                        </ul>
-                                                                                                    </div>
-                                                                                                    <div class="col-sm-12">
-                                                                                                        <ul class="list-text">
-                                                                                                            <li><a href="">VR Box</a></li>
-                                                                                                            <li><a href="">Wearables</a></li>
-                                                                                                        </ul>
-                                                                                                    </div>
-                                                                                                </div>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                </ul><!-- 2 -->
-                                                                            </li><!-- 1 -->
-                                                                        </ul><!-- 1 -->
-
+                                                                                  </ul>
+                                                                                </div>
+                                                                                <div class="col-sm-12">
+                                                                                  <ul class="list-text">
+                                                                                    <li><a href="mobile-tablet/mobile-tablet-accessories/vr-box.html/index.html">VR Box</a></li>
+                                                                                    <li><a href="mobile-tablet/mobile-tablet-accessories/wearable.html/index.html">Wearables</a></li>
+                                                                                  </ul>
+                                                                                </div>
+                                                                              </div>
+                                                                            </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                      </ul>
+                                                                      <!-- 2 -->
                                                                     </li>
-                                                                    <li class="menu-item-link menu-item-depth-0  menu-item-parent"><a href="javascript:void(0)" class="arrow"><span>&gt;</span></a>
-                                                                        <a class="em-menu-link" href="">
-                                                                            <span>Computers</span>
-                                                                        </a>
-                                                                        <ul class="menu-container">                                                                                    <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col19 grid_22 bkg-menu01 menu-item-parent" style="">
-                                                                                <ul class="menu-container">                                                                                                            <li class="menu-item-vbox menu-item-depth-2 col-sm-5 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <ul class="list-text">
-                                                                                                    <li><h5><a href=""><span style="color: #000000;">Desktop Computers</span></a></h5></li>
-                                                                                                    <li><h5><a href=""><span style="color: #000000;">Laptops &amp; Notebooks</span></a></h5></li>
-                                                                                                    <li><h5><a href=""><span style="color: #000000;">Apple Mac</span></a></h5></li>
-                                                                                                    <li><h5><a href=""><span style="color: #000000;">Apple Accessories</span></a></h5></li>
-                                                                                                </ul>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-14 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">Computer Accessories</span></a></h5>
-                                                                                                <div class="row">
-                                                                                                    <div class="col-sm-8">
-                                                                                                        <ul class="list-text">
-                                                                                                            <li><a href="">Printer</a></li>
-                                                                                                            <li><a href="">Printer Accessories</a></li>
-                                                                                                            <li><a href="">Motherboard</a></li>
-                                                                                                            <li><a href="">Monitor</a></li>
-                                                                                                            <li><a href="">Keyboard</a></li>
-                                                                                                            <li><a href="">Mouse</a></li>
-                                                                                                            <li><a href="">Headphones &amp; Headsets</a></li>
-                                                                                                            <li><a href="">Graphics Card</a></li>
-                                                                                                            <li><a href="">Battery</a></li>
-                                                                                                            <li><a href="">Pendrive</a></li>
-                                                                                                            <li><a href="">Speakers</a></li>
-                                                                                                            <li><a href="">HDD</a></li>
-                                                                                                        </ul>
-                                                                                                    </div>
-                                                                                                    <div class="col-sm-8">
-                                                                                                        <ul class="list-text">
-                                                                                                            <li><a href="">Portable Hard Drive</a></li>
-                                                                                                            <li><a href="">Power Supply</a></li>
-                                                                                                            <li><a href="">Ram</a></li>
-                                                                                                            <li><a href="">Webcam</a></li>
-                                                                                                            <li><a href="">USB Port</a></li>
-                                                                                                            <li><a href="">USB Cables</a></li>
-                                                                                                            <li><a href="">Software &amp; Antivirus</a></li>
-                                                                                                            <li><a href="">Computer Cases</a></li>
-                                                                                                            <li><a href="">Scanners</a></li>
-                                                                                                            <li><a href="">USB Hubs</a></li>
-                                                                                                            <li><a href="">Networking Accessories</a></li>
-                                                                                                            <li><a href="">Projectors</a></li>
-                                                                                                        </ul>
-                                                                                                    </div>
-                                                                                                    <div class="col-sm-8">
-                                                                                                        <ul class="list-text">
-                                                                                                            <li><a href="">Laptop Accessories</a></li>
-                                                                                                            <li><a href="">TV Cards</a></li>
-                                                                                                        </ul>
-                                                                                                    </div>
-                                                                                                </div>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                </ul><!-- 2 -->
-                                                                            </li><!-- 1 -->
-                                                                        </ul><!-- 1 -->
-                                                                    </li><!-- 0 -->
-                                                                    <li class="menu-item-link menu-item-depth-0  menu-item-parent"><a href="javascript:void(0)" class="arrow"><span>&gt;</span></a>
-                                                                        <a class="em-menu-link" href="">
-                                                                            <span>Electronics &amp; Appliances</span>
-                                                                        </a>
-                                                                        <ul class="menu-container">                                                                                    <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col21 grid_21 bkg-menu01 menu-item-parent" style="">
-                                                                                <ul class="menu-container">                                                                                                            <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">Televisions</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">LED TV</a></li>
-                                                                                                    <li><a href="">Smart TV</a></li>
-                                                                                                    <li><a href="">3D TV</a></li>
-                                                                                                    <li><a href="">TV Accessories</a></li>
-                                                                                                </ul>
-                                                                                                &nbsp;
-                                                                                                <h5><a href=""><span style="color: #000000;">Security Systems</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Security Cameras</a></li>
-                                                                                                    <li><a href="">Alarm System</a></li>
-                                                                                                    <li><a href="">Door Security</a></li>
-                                                                                                    <li><a href="">Gate Security</a></li>
-                                                                                                    <li><a href="">Retail Solutions</a></li>
-                                                                                                    <li><a href="">Access Control Systems</a></li>
-                                                                                                    <li><a href="">Wireless Sensors</a></li>
-                                                                                                    <li><a href="">GPS Trackers</a></li>
-                                                                                                    <li><a href="">Motion Sensors &amp; Detectors</a></li>
-                                                                                                </ul>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">Home Appliances</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Air Conditioner</a></li>
-                                                                                                    <li><a href="">Air Cooler</a></li>
-                                                                                                    <li><a href="">IPS</a></li>
-                                                                                                    <li><a href="">Washing Machine</a></li>
-                                                                                                    <li><a href="">Refrigerator</a></li>
-                                                                                                    <li><a href="">Dryer</a></li>
-                                                                                                    <li><a href="">Iron</a></li>
-                                                                                                    <li><a href="">Room Heater</a></li>
-                                                                                                    <li><a href="">Water Heater</a></li>
-                                                                                                    <li><a href="">Vacuum Cleaners</a></li>
-                                                                                                    <li><a href="">Water Filter</a></li>
-                                                                                                    <li><a href="">Air Purifier</a></li>
-                                                                                                    <li><a href="">Landline Phones</a></li>
-                                                                                                </ul>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-9 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">Kitchen Appliances</span></a></h5>
-                                                                                                <div class="row">
-                                                                                                    <div class="col-sm-12">
-                                                                                                        <ul class="list-text">
-                                                                                                            <li><a href="">Microwave Ovens</a></li>
-                                                                                                            <li><a href="">Blender</a></li>
-                                                                                                            <li><a href="">Juicer</a></li>
-                                                                                                            <li><a href="">Coffee Maker</a></li>
-                                                                                                            <li><a href="">Toaster</a></li>
-                                                                                                            <li><a href="">Food Processor</a></li>
-                                                                                                            <li><a href="">Induction Cooker</a></li>
-                                                                                                            <li><a href="">Roti Makers</a></li>
-                                                                                                            <li><a href="">Rice Cooker</a></li>
-                                                                                                            <li><a href="">Large Ovens</a></li>
-                                                                                                            <li><a href="">Tandoori Grill Machine</a></li>
-                                                                                                            <li><a href="">Pressure Cooker</a></li>
+                                                                    <!-- 1 -->
+                                                                  </ul>
+                                                                  <!-- 1 -->
+                                                                </li>
+                                                                <!-- 0 -->
+                                                                <li class="menu-item-link menu-item-depth-0  menu-item-parent">
+                                                                  <a class="em-menu-link" href="computer-pc.html/index.html"><span>Computers</span></a>
+                                                                  <ul class="menu-container">
+                                                                    <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col19 grid_22 bkg-menu01 menu-item-parent" style="">
+                                                                      <ul class="menu-container">
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-5 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <ul class="list-text">
 
-                                                                                                        </ul>
-                                                                                                    </div>
-                                                                                                    <div class="col-sm-12">
-                                                                                                        <ul class="list-text">
-                                                                                                            <li><a href="">Gas Cooker</a></li>
-                                                                                                            <li><a href="">Fryer</a></li>
-                                                                                                            <li><a href="">Dish Washer</a></li>
-                                                                                                            <li><a href="">Chimney Kitchen Hood</a></li>
-                                                                                                            <li><a href="">Small Kitchen Appliances</a></li>
-                                                                                                            <li><a href="">Sandwich Maker</a></li>
-                                                                                                            <li><a href="">Gas Stove</a></li>
-                                                                                                            <li><a href="">Electric Ovens</a></li>
-                                                                                                            <li><a href="">Steam Ovens</a></li>
-                                                                                                            <li><a href="">Food warmer set</a></li>
-                                                                                                            <li><a href="">Kettles</a></li>
-                                                                                                            <li><a href="">Beater Machine</a></li>
-                                                                                                        </ul>
-                                                                                                    </div>
-                                                                                                </div>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-6 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">Cleaning Supplies &amp; Tools</span></a></h5>
+                                                                                <li>
+                                                                                  <h5><a href="computer-pc/desktop.html/index.html"><span style="color: #000000;">Desktop Computers</span></a></h5></li>
+                                                                                <li>
+                                                                                  <h5><a href="computer-pc/laptop-notebook.html/index.html"><span style="color: #000000;">Laptops & Notebooks</span></a></h5></li>
+                                                                                <li>
+                                                                                  <h5><a href="computer-pc/apple-mac.html/index.html"><span style="color: #000000;">Apple Mac</span></a></h5></li>
+                                                                                <li>
+                                                                                  <h5><a href="computer-pc/apple-accessories.html/index.html"><span style="color: #000000;">Apple Accessories</span></a></h5></li>
+                                                                              </ul>
+                                                                            </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-14 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <h5><a href="computer-pc/computer-accessories.html/index.html"><span style="color: #000000;">Computer Accessories</span></a></h5>
+                                                                              <div class="row">
+                                                                                <div class="col-sm-8">
+                                                                                  <ul class="list-text">
+                                                                                    <li><a href="computer-pc/computer-accessories/printer.html/index.html">Printer</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/printer-accessories.html/index.html">Printer Accessories</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/motherboard.html/index.html">Motherboard</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/monitor.html/index.html">Monitor</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/keyboard.html/index.html">Keyboard</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/mouse.html/index.html">Mouse</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/headphone-headset.html/index.html">Headphones & Headsets</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/graphics-card.html/index.html">Graphics Card</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/battery.html/index.html">Battery</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/pendrive.html/index.html">Pendrive</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/speaker.html/index.html">Speakers</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/hdd.html/index.html">HDD</a></li>
+                                                                                  </ul>
+                                                                                </div>
+                                                                                <div class="col-sm-8">
+                                                                                  <ul class="list-text">
+                                                                                    <li><a href="computer-pc/computer-accessories/portable-hard-drive.html/index.html">Portable Hard Drive</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/power-supply.html/index.html">Power Supply</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/ram.html/index.html">Ram</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/webcam.html/index.html">Webcam</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/usb-port.html/index.html">USB Port</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/usb-cable.html/index.html">USB Cables</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/software-antivirus.html/index.html">Software & Antivirus</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/computer-case.html/index.html">Computer Cases</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/scanner.html/index.html">Scanners</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/usb-hub.html/index.html">USB Hubs</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/networking-accessories.html/index.html">Networking Accessories</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/projector.html/index.html">Projectors</a></li>
+                                                                                  </ul>
+                                                                                </div>
+                                                                                <div class="col-sm-8">
+                                                                                  <ul class="list-text">
+                                                                                    <li><a href="computer-pc/computer-accessories/laptop-accessories.html/index.html">Laptop Accessories</a></li>
+                                                                                    <li><a href="computer-pc/computer-accessories/tv-card.html/index.html">TV Cards</a></li>
+                                                                                  </ul>
+                                                                                </div>
+                                                                              </div>
+                                                                            </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                      </ul>
+                                                                      <!-- 2 -->
+                                                                    </li>
+                                                                    <!-- 1 -->
+                                                                  </ul>
+                                                                  <!-- 1 -->
+                                                                </li>
+                                                                <!-- 0 -->
+                                                                <li class="menu-item-link menu-item-depth-0  menu-item-parent">
+                                                                  <a class="em-menu-link" href="electronics-appliances.html/index.html"><span>Electronics & Appliances</span></a>
+                                                                  <ul class="menu-container">
+                                                                    <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col21 grid_21 bkg-menu01 menu-item-parent" style="">
+                                                                      <ul class="menu-container">
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <h5><a href="electronics-appliances/television.html/index.html"><span style="color: #000000;">Televisions</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="electronics-appliances/television/led-tv.html/index.html">LED TV</a></li>
+                                                                                <li><a href="electronics-appliances/television/smart-tv.html/index.html">Smart TV</a></li>
+                                                                                <li><a href="electronics-appliances/television/3d-tv.html/index.html">3D TV</a></li>
+                                                                                <li><a href="electronics-appliances/television/tv-accessories.html/index.html">TV Accessories</a></li>
+                                                                              </ul>
+                                                                              &nbsp;
+                                                                              <h5><a href="electronics-appliances/security-system.html/index.html"><span style="color: #000000;">Security Systems</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="electronics-appliances/security-system/security-camera.html/index.html">Security Cameras</a></li>
+                                                                                <li><a href="electronics-appliances/security-system/alarm-system.html/index.html">Alarm System</a></li>
+                                                                                <li><a href="electronics-appliances/security-system/door-security.html/index.html">Door Security</a></li>
+                                                                                <li><a href="electronics-appliances/security-system/gate-security.html/index.html">Gate Security</a></li>
+                                                                                <li><a href="electronics-appliances/security-system/retail-solution.html/index.html">Retail Solutions</a></li>
+                                                                                <li><a href="electronics-appliances/security-system/access-control-system.html/index.html">Access Control Systems</a></li>
+                                                                                <li><a href="electronics-appliances/security-system/wireless-sensors.html/index.html">Wireless Sensors</a></li>
+                                                                                <li><a href="electronics-appliances/security-system/gps-tracker.html/index.html">GPS Trackers</a></li>
+                                                                                <li><a href="electronics-appliances/security-system/motion-sensors-detector.html/index.html">Motion Sensors & Detectors</a></li>
+                                                                              </ul>
+                                                                            </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <h5><a href="electronics-appliances/home-appliance.html/index.html"><span style="color: #000000;">Home Appliances</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="electronics-appliances/home-appliance/air-conditioner.html/index.html">Air Conditioner</a></li>
+                                                                                <li><a href="electronics-appliances/home-appliance/air-cooler.html/index.html">Air Cooler</a></li>
+                                                                                <li><a href="electronics-appliances/home-appliance/ips.html/index.html">IPS</a></li>
+                                                                                <li><a href="electronics-appliances/home-appliance/washing-machine.html/index.html">Washing Machine</a></li>
+                                                                                <li><a href="electronics-appliances/home-appliance/refrigerator.html/index.html">Refrigerator</a></li>
+                                                                                <li><a href="electronics-appliances/home-appliance/dryer.html/index.html">Dryer</a></li>
+                                                                                <li><a href="electronics-appliances/home-appliance/iron.html/index.html">Iron</a></li>
+                                                                                <li><a href="electronics-appliances/home-appliance/room-heater.html/index.html">Room Heater</a></li>
+                                                                                <li><a href="electronics-appliances/home-appliance/hot-water-system.html/index.html">Water Heater</a></li>
+                                                                                <li><a href="electronics-appliances/cleaning-supplies-tool/vacuum-cleaner.html/index.html">Vacuum Cleaners</a></li>
+                                                                                <li><a href="electronics-appliances/home-appliance/water-filter.html/index.html">Water Filter</a></li>
+                                                                                <li><a href="electronics-appliances/home-appliance/air-purifier.html/index.html">Air Purifier</a></li>
+                                                                                <li><a href="electronics-appliances/home-appliance/landline-phone.html/index.html">Landline Phones</a></li>
+                                                                              </ul>
+                                                                            </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-9 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <h5><a href="electronics-appliances/kitchen-appliance.html/index.html"><span style="color: #000000;">Kitchen Appliances</span></a></h5>
+                                                                              <div class="row">
+                                                                                <div class="col-sm-12">
+                                                                                  <ul class="list-text">
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/microwave-oven.html/index.html">Microwave Ovens</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/blender.html/index.html">Blender</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/juicer.html/index.html">Juicer</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/coffee-maker.html/index.html">Coffee Maker</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/toaster.html/index.html">Toaster</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/food-processor.html/index.html">Food Processor</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/induction-cooker.html/index.html">Induction Cooker</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/roti-maker.html/index.html">Roti Makers</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/rice-cooker.html/index.html">Rice Cooker</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/large-oven.html/index.html">Large Ovens</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/tandoori-grill-machine.html/index.html">Tandoori Grill Machine</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/pressure-cooker.html/index.html">Pressure Cooker</a></li>
 
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Pressure Washer</a></li>
-                                                                                                    <li><a href="">Vacuum Cleaner</a></li>
-                                                                                                    <li><a href="">Steam Cleaner</a></li>
-                                                                                                    <li><a href="">Window Cleaning</a></li>
-                                                                                                    <li><a href="">Push Sweeper</a></li>
-                                                                                                    <li><a href="">Floor Care</a></li>
-                                                                                                    <li><a href="">Carpet Cleaners</a></li>
+                                                                                  </ul>
+                                                                                </div>
+                                                                                <div class="col-sm-12">
+                                                                                  <ul class="list-text">
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/gas-cooker.html/index.html">Gas Cooker</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/fryer.html/index.html">Fryer</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/dish-washer.html/index.html">Dish Washer</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/chimney-kitchen-hood.html/index.html">Chimney Kitchen Hood</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/small-kitchen-appliance.html/index.html">Small Kitchen Appliances</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/sandwich-maker.html/index.html">Sandwich Maker</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/gas-stove.html/index.html">Gas Stove</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/electric-oven.html/index.html">Electric Ovens</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/steam-oven.html/index.html">Steam Ovens</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/food-warmer-set.html/index.html">Food warmer set</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/kettle.html/index.html">Kettles</a></li>
+                                                                                    <li><a href="electronics-appliances/kitchen-appliance/beater.html/index.html">Beater Machine</a></li>
+                                                                                  </ul>
+                                                                                </div>
+                                                                              </div>
+                                                                            </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-6 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <h5><a href="electronics-appliances/cleaning-supplies-tool.html/index.html"><span style="color: #000000;">Cleaning Supplies & Tools</span></a></h5>
+
+                                                                              <ul class="list-text">
+                                                                                <li><a href="electronics-appliances/cleaning-supplies-tool/pressure-washer.html/index.html">Pressure Washer</a></li>
+                                                                                <li><a href="electronics-appliances/cleaning-supplies-tool/vacuum-cleaner.html/index.html">Vacuum Cleaner</a></li>
+                                                                                <li><a href="electronics-appliances/cleaning-supplies-tool/steam-cleaner.html/index.html">Steam Cleaner</a></li>
+                                                                                <li><a href="electronics-appliances/cleaning-supplies-tool/window-cleaning.html/index.html">Window Cleaning</a></li>
+                                                                                <li><a href="electronics-appliances/cleaning-supplies-tool/push-sweeper.html/index.html">Push Sweeper</a></li>
+                                                                                <li><a href="electronics-appliances/cleaning-supplies-tool/floor-care.html/index.html">Floor Care</a></li>
+                                                                                <li><a href="electronics-appliances/cleaning-supplies-tool/carpet-cleaner.html/index.html">Carpet Cleaners</a></li>
 
 
-                                                                                                </ul>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                </ul><!-- 2 -->
-                                                                            </li><!-- 1 -->
-                                                                        </ul><!-- 1 -->
-                                                                    </li><!-- 0 -->
-                                                                    <li class="menu-item-link menu-item-depth-0  menu-item-parent"><a href="javascript:void(0)" class="arrow"><span>&gt;</span></a>
-                                                                        <a class="em-menu-link" href="">
-                                                                            <span>Entertainment	</span>
-                                                                        </a>
-                                                                        <ul class="menu-container">                                                                                    <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col18 grid_22 bkg-menu01 menu-item-parent" style="">
-                                                                                <ul class="menu-container">                                                                                                            <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">Cameras</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">DSLR Cameras</a></li>
-                                                                                                    <li><a href="">Digital Cameras</a></li>
-                                                                                                    <li><a href="">Camera Accessories</a></li>
-                                                                                                </ul>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-6 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">Audio Players &amp; Systems</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Home Theater &amp; Sound System</a></li>
-                                                                                                    <li><a href="">Audio Recorders</a></li>
-                                                                                                </ul>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-5 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">Gaming &amp; Console</span></a></h5>
+                                                                              </ul>
+                                                                            </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                      </ul>
+                                                                      <!-- 2 -->
+                                                                    </li>
+                                                                    <!-- 1 -->
+                                                                  </ul>
+                                                                  <!-- 1 -->
+                                                                </li>
+                                                                <!-- 0 -->
+                                                                <li class="menu-item-link menu-item-depth-0  menu-item-parent">
+                                                                  <a class="em-menu-link" href="lifestyle-entertainment.html/index.html"><span>Entertainment</span></a>
+                                                                  <ul class="menu-container">
+                                                                    <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col18 grid_22 bkg-menu01 menu-item-parent" style="">
+                                                                      <ul class="menu-container">
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <h5><a href="lifestyle-entertainment/camera-camcorder.html/index.html"><span style="color: #000000;">Cameras</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="lifestyle-entertainment/camera-camcorder/dslr-camera.html/index.html">DSLR Cameras</a></li>
+                                                                                <li><a href="lifestyle-entertainment/camera-camcorder/digital-camera.html/index.html">Digital Cameras</a></li>
+                                                                                <li><a href="lifestyle-entertainment/camera-camcorder/accessories.html/index.html">Camera Accessories</a></li>
+                                                                              </ul>
+                                                                            </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-6 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <h5><a href="lifestyle-entertainment/audio-player-system.html/index.html"><span style="color: #000000;">Audio Players & Systems</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="lifestyle-entertainment/audio-player-system/home-theater-sound-system.html/index.html">Home Theater & Sound System</a></li>
+                                                                                <li><a href="lifestyle-entertainment/audio-player-system/audio-recorder.html/index.html">Audio Recorders</a></li>
+                                                                              </ul>
+                                                                            </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-5 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <h5><a href="lifestyle-entertainment/gaming-console.html/index.html"><span style="color: #000000;">Gaming & Console</span></a></h5>
 
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Xbox</a></li>
-                                                                                                    <li><a href="">Controller</a></li>
-                                                                                                    <li><a href="">Gaming DVDs</a></li>
-                                                                                                    <li><a href="">Gaming Accessories</a></li>
-                                                                                                    <li><a href="">Gaming Mouse</a></li>
-                                                                                                    <li><a href="">Gaming Keyboard</a></li>
-                                                                                                    <li><a href="">Gaming Console</a></li>
-                                                                                                </ul>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-5 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <ul class="list-text">
-                                                                                                    <li><h5><a href=""><span style="color: #000000;">Toys &amp; Games</span></a></h5></li>
-                                                                                                    <li><h5><a href=""><span style="color: #000000;">Fitness</span></a></h5></li>
-                                                                                                    <li><h5><a href=""><span style="color: #000000;">Grooming Products</span></a></h5></li>
-                                                                                                    <li><h5><a href=""><span style="color: #000000;">Vehicles</span></a></h5></li>
-                                                                                                    <li><h5><a href=""><span style="color: #000000;">Health Care Devices</span></a></h5></li>
-                                                                                                    <li><h5><a href=""><span style="color: #000000;">Fidget Spinner</span></a></h5></li>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="lifestyle-entertainment/gaming-console/xbox.html/index.html">Xbox</a></li>
+                                                                                <li><a href="lifestyle-entertainment/gaming-console/controller.html/index.html">Controller</a></li>
+                                                                                <li><a href="lifestyle-entertainment/gaming-console/gaming-dvd.html/index.html">Gaming DVDs</a></li>
+                                                                                <li><a href="lifestyle-entertainment/gaming-console/gaming-accessories.html/index.html">Gaming Accessories</a></li>
+                                                                                <li><a href="lifestyle-entertainment/gaming-console/gaming-mouse.html/index.html">Gaming Mouse</a></li>
+                                                                                <li><a href="lifestyle-entertainment/gaming-console/gaming-keyboard.html/index.html">Gaming Keyboard</a></li>
+                                                                                <li><a href="lifestyle-entertainment/gaming-console/console.html/index.html">Gaming Console</a></li>
+                                                                              </ul>
+                                                                            </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-5 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <ul class="list-text">
+                                                                                <li>
+                                                                                  <h5><a href="lifestyle-entertainment/toys-games.html/index.html"><span style="color: #000000;">Toys & Games</span></a></h5></li>
+                                                                                <li>
+                                                                                  <h5><a href="lifestyle-entertainment/fitness.html/index.html"><span style="color: #000000;">Fitness</span></a></h5></li>
+                                                                                <li>
+                                                                                  <h5><a href="lifestyle-entertainment/grooming-product.html/index.html"><span style="color: #000000;">Grooming Products</span></a></h5></li>
+                                                                                <li>
+                                                                                  <h5><a href="lifestyle-entertainment/vehicle.html/index.html"><span style="color: #000000;">Vehicles</span></a></h5></li>
+                                                                                <li>
+                                                                                  <h5><a href="lifestyle-entertainment/health-care-device.html/index.html"><span style="color: #000000;">Health Care Devices</span></a></h5></li>
+                                                                                <li>
+                                                                                  <h5><a href="lifestyle-entertainment/fidget-spinner.html/index.html"><span style="color: #000000;">Fidget Spinner</span></a></h5></li>
 
-                                                                                                </ul>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                </ul><!-- 2 -->
-                                                                            </li><!-- 1 -->
-                                                                        </ul><!-- 1 -->
-                                                                    </li><!-- 0 -->
-                                                                    <li class="menu-item-link menu-item-depth-0  menu-item-parent"><a href="javascript:void(0)" class="arrow"><span>&gt;</span></a>
-                                                                        <a class="em-menu-link" href="">
-                                                                            <span>Daily Needs</span>
-                                                                        </a>
-                                                                        <ul class="menu-container">                                                                                    <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col7 grid_10 bkg-menu01 menu-item-parent" style="">
-                                                                                <ul class="menu-container">                                                                                                            <li class="menu-item-vbox menu-item-depth-2 col-sm-17 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <ul class="list-text">
-                                                                                                    <li><h5><a href=""><span style="color: #000000;">Lighting &amp; Bulbs</span></a></h5></li>
-                                                                                                    <li><h5><a href=""><span style="color: #000000;">Fans</span></a></h5></li>
-                                                                                                    <li><h5><a href=""><span style="color: #000000;">Home &amp; Living</span></a></h5></li>
-                                                                                                    <li><h5><a href=""><span style="color: #000000;">Tools &amp; Hardware</span></a></h5></li>
-                                                                                                    <li><h5><a href=""><span style="color: #000000;">Switch, Socket &amp; Multi Plug</span></a></h5></li>
-                                                                                                    <li><h5><a href=""><span style="color: #000000;">Pest Control</span></a></h5></li>
-                                                                                                    <li><h5><a href=""><span style="color: #000000;">Solar Products</span></a></h5></li>
-                                                                                                </ul>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                </ul><!-- 2 -->
-                                                                            </li><!-- 1 -->
-                                                                        </ul><!-- 1 -->
-                                                                    </li><!-- 0 -->
-                                                                    <li class="menu-item-link menu-item-depth-0  menu-item-parent"><a href="javascript:void(0)" class="arrow"><span>&gt;</span></a>
-                                                                        <a class="em-menu-link" href="">
-                                                                            <span>Fashion &amp; Beauty</span>
-                                                                        </a>
-                                                                        <ul class="menu-container">                                                                                    <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col24 grid_24 bkg-menu01 menu-item-parent" style="">
-                                                                                <ul class="menu-container">                                                                                                            <li class="menu-item-vbox menu-item-depth-2 col-sm-8 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #ED4923;">Men</span></a></h5>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-8 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #ED4923;">Women</span></a></h5>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-8 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><span style="color: #ED4923;">Beauty &amp; Grooming</span></h5>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                </ul><!-- 2 -->
-                                                                            </li><!-- 1 -->
-                                                                            <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col24 grid_24 bkg-menu01 menu-item-parent" style="">
-                                                                                <ul class="menu-container">                                                                                                            <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">TOP WEAR</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">T-Shirts</a></li>
-                                                                                                    <li><a href="">Casual Shirts</a></li>
-                                                                                                    <li><a href="">Formal Shirts</a></li>
-                                                                                                    <li><a href="">Hoodies</a></li>
-                                                                                                    <li><a href="">Jackets</a></li>
-                                                                                                    <li><a href="">Sweaters &amp; Cardigans</a></li>
-                                                                                                    <li><a href="">Blazer &amp; Coats</a></li>
-                                                                                                    <li><a href="">Polo Shirts</a></li>
-                                                                                                    <li><a href="">Waist Coats</a></li>
-                                                                                                </ul>
-                                                                                                &nbsp;
-                                                                                                <h5><a href=""><span style="color: #000000;">BOTTOM WEAR</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Formal Pants</a></li>
-                                                                                                    <li><a href="">Jeans</a></li>
-                                                                                                    <li><a href="">Sports &amp; Barmudas</a></li>
-                                                                                                    <li><a href="">Trousers</a></li>
-                                                                                                </ul>
-                                                                                                &nbsp;
-                                                                                                <h5><a href=""><span style="color: #000000;">Traditional Wear</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Panjabi</a></li>
-                                                                                                    <li><a href="">Pajama</a></li>
-                                                                                                </ul>
-                                                                                            </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">Men's Watches</span></a></h5>
-                                                                                                &nbsp;
-                                                                                                <h5><a href=""><span style="color: #000000;">Accessories</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Bags &amp; Backpacks</a></li>
-                                                                                                </ul>
-                                                                                                &nbsp;
-                                                                                                <h5><a href=""><span style="color: #000000;">Foot Wear</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Sandels &amp; flipflops</a></li>
-                                                                                                </ul>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">Top Wear</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Hoodies</a></li>
-                                                                                                    <li><a href="">Coats &amp; Jackets</a></li>
-                                                                                                    <li><a href="">Tunic</a></li>
-                                                                                                    <li><a href="">Shurgs</a></li>
-                                                                                                </ul>
+                                                                              </ul>
+                                                                            </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                      </ul>
+                                                                      <!-- 2 -->
+                                                                    </li>
+                                                                    <!-- 1 -->
+                                                                  </ul>
+                                                                  <!-- 1 -->
+                                                                </li>
+                                                                <!-- 0 -->
+                                                                <li class="menu-item-link menu-item-depth-0  menu-item-parent">
+                                                                  <a class="em-menu-link" href="daily-need.html/index.html"><span>Daily Needs</span></a>
+                                                                  <ul class="menu-container">
+                                                                    <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col7 grid_10 bkg-menu01 menu-item-parent" style="">
+                                                                      <ul class="menu-container">
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-17 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <ul class="list-text">
+                                                                                <li>
+                                                                                  <h5><a href="daily-need/lighting.html/index.html"><span style="color: #000000;">Lighting & Bulbs</span></a></h5></li>
+                                                                                <li>
+                                                                                  <h5><a href="daily-need/fan.html/index.html"><span style="color: #000000;">Fans</span></a></h5></li>
+                                                                                <li>
+                                                                                  <h5><a href="daily-need/home-living.html/index.html"><span style="color: #000000;">Home & Living</span></a></h5></li>
+                                                                                <li>
+                                                                                  <h5><a href="daily-need/tools-hardware.html/index.html"><span style="color: #000000;">Tools & Hardware</span></a></h5></li>
+                                                                                <li>
+                                                                                  <h5><a href="daily-need/switch-socket.html/index.html"><span style="color: #000000;">Switch, Socket & Multi Plug</span></a></h5></li>
+                                                                                <li>
+                                                                                  <h5><a href="daily-need/pest-control.html/index.html"><span style="color: #000000;">Pest Control</span></a></h5></li>
+                                                                                <li>
+                                                                                  <h5><a href="daily-need/solar-power-product.html/index.html"><span style="color: #000000;">Solar Products</span></a></h5></li>
+                                                                              </ul>
+                                                                            </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                      </ul>
+                                                                      <!-- 2 -->
+                                                                    </li>
+                                                                    <!-- 1 -->
+                                                                  </ul>
+                                                                  <!-- 1 -->
+                                                                </li>
+                                                                <!-- 0 -->
+                                                                <li class="menu-item-link menu-item-depth-0  menu-item-parent">
+                                                                  <a class="em-menu-link" href="fashion-beauty.html/index.html"><span>Fashion & Beauty</span></a>
+                                                                  <ul class="menu-container">
+                                                                    <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col24 grid_24 bkg-menu01 menu-item-parent" style="">
+                                                                      <ul class="menu-container">
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-8 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <h5><a href="fashion-beauty/men.html/index.html"><span style="color: #ED4923;">Men</span></a></h5> </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-8 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <h5><a href="fashion-beauty/women.html/index.html"><span style="color: #ED4923;">Women</span></a></h5> </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-8 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <h5><span style="color: #ED4923;">Beauty & Grooming</span></h5> </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                      </ul>
+                                                                      <!-- 2 -->
+                                                                    </li>
+                                                                    <!-- 1 -->
+                                                                    <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col24 grid_24 bkg-menu01 menu-item-parent" style="">
+                                                                      <ul class="menu-container">
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <h5><a href="fashion-beauty/men/top-wear.html/index.html"><span style="color: #000000;">TOP WEAR</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="fashion-beauty/men/top-wear/t-shirt.html">T-Shirts</a></li>
+                                                                                <li><a href="fashion-beauty/men/top-wear/casual-shirts.html">Casual Shirts</a></li>
+                                                                                <li><a href="fashion-beauty/men/top-wear/formal-shirts.html">Formal Shirts</a></li>
+                                                                                <li><a href="fashion-beauty/men/top-wear/hoodie-t-shirt.html">Hoodies</a></li>
+                                                                                <li><a href="fashion-beauty/men/top-wear/jacket.html">Jackets</a></li>
+                                                                                <li><a href="fashion-beauty/men/top-wear/sweater.html">Sweaters & Cardigans</a></li>
+                                                                                <li><a href="fashion-beauty/men/top-wear/blazer.html">Blazer & Coats</a></li>
+                                                                                <li><a href="fashion-beauty/men/top-wear/polo-shirts.html">Polo Shirts</a></li>
+                                                                                <li><a href="fashion-beauty/men/top-wear/waist-coats.html">Waist Coats</a></li>
+                                                                              </ul>
+                                                                              &nbsp;
+                                                                              <h5><a href="fashion-beauty/men/bottom-wear.html/index.html"><span style="color: #000000;">BOTTOM WEAR</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="fashion-beauty/men/bottom-wear/formal-pants.html">Formal Pants</a></li>
+                                                                                <li><a href="fashion-beauty/men/bottom-wear/jeans.html">Jeans</a></li>
+                                                                                <li><a href="fashion-beauty/men/bottom-wear/sports-bermudas.html">Sports & Bermudas</a></li>
+                                                                                <li><a href="fashion-beauty/men/bottom-wear/trousers.html">Trousers</a></li>
+                                                                              </ul>
+                                                                              &nbsp;
+                                                                              <h5><a href="fashion-beauty/men/traditional-wear.html/index.html"><span style="color: #000000;">Traditional Wear</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="fashion-beauty/men/traditional-wear/punjabi.html">Panjabi</a></li>
+                                                                                <li><a href="fashion-beauty/men/traditional-wear/pajama.html">Pajama</a></li>
+                                                                              </ul>
+                                                                            </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <h5><a href="fashion-beauty/men/watch.html/index.html"><span style="color: #000000;">Men's Watches</span></a></h5> &nbsp;
+                                                                              <h5><a href="fashion-beauty/men/accessories.html/index.html"><span style="color: #000000;">Accessories</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="fashion-beauty/men/accessories/bags-backpacks.html">Bags & Backpacks</a></li>
+                                                                              </ul>
+                                                                              &nbsp;
+                                                                              <h5><a href="fashion-beauty/men/footwear.html/index.html"><span style="color: #000000;">Foot Wear</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="fashion-beauty/men/footwear/sandals-flip-flops.html">Sandals & Flip-flops</a></li>
+                                                                              </ul>
+                                                                              &nbsp;
+                                                                              <h5><a href="fashion-beauty/men/fragrance.html"><span style="color: #000000;">Fragrance</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="fashion-beauty/men/fragrance/perfume.html">Perfume</a></li>
+                                                                              </ul>
+                                                                            </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <h5><a href="fashion-beauty/women/top-wear.html/index.html"><span style="color: #000000;">Top Wear</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="fashion-beauty/women/top-wear/hoodie-t-shirt.html">Hoodies</a></li>
+                                                                                <li><a href="fashion-beauty/women/top-wear/coats-jackets.html">Coats & Jackets</a></li>
+                                                                                <li><a href="fashion-beauty/women/top-wear/tunic.html">Tunic</a></li>
+                                                                                <li><a href="fashion-beauty/women/top-wear/shrugs.html">Shrugs</a></li>
+                                                                              </ul>
 
-                                                                                                &nbsp;
-                                                                                                <h5><a href=""><span style="color: #000000;">Bottom Wear</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Leggings</a></li>
-                                                                                                    <li><a href="">Pants</a></li>
-                                                                                                    <li><a href="">Palazzo</a></li>
-                                                                                                </ul>
-                                                                                                &nbsp;
-                                                                                                <h5><a href=""><span style="color: #000000;">Traditional Wear</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Kurti &amp; Fatua</a></li>
-                                                                                                    <li><a href="">Salwar Kameez</a></li>
-                                                                                                    <li><a href="">Boutique Dress</a></li>
-                                                                                                </ul>
-                                                                                                &nbsp;
-                                                                                                <h5><a href=""><span style="color: #000000;">Footwear</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Flats &amp; Sandels</a></li>
+                                                                              &nbsp;
+                                                                              <h5><a href="fashion-beauty/women/bottom-wear.html/index.html"><span style="color: #000000;">Bottom Wear</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="fashion-beauty/women/bottom-wear/leggings.html">Leggings</a></li>
+                                                                                <li><a href="fashion-beauty/women/bottom-wear/pants.html">Pants</a></li>
+                                                                                <li><a href="fashion-beauty/women/bottom-wear/palazzo.html">Palazzo</a></li>
+                                                                              </ul>
+                                                                              &nbsp;
+                                                                              <h5><a href="fashion-beauty/women/traditional-wear.html/index.html"><span style="color: #000000;">Traditional Wear</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="fashion-beauty/women/traditional-wear/kurti-fatua.html">Kurti & Fatua</a></li>
+                                                                                <li><a href="fashion-beauty/women/traditional-wear/salwar-kameez.html">Salwar Kameez</a></li>
+                                                                                <li><a href="fashion-beauty/women/traditional-wear/boutique-dress.html">Boutique Dress</a></li>
+                                                                              </ul>
+                                                                              &nbsp;
+                                                                              <h5><a href="fashion-beauty/women/footwear.html/index.html"><span style="color: #000000;">Footwear</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="fashion-beauty/women/footwear/sandals.html">Flats & Sandals</a></li>
 
-                                                                                                </ul>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">Women's Watches</span></a></h5>
-                                                                                                &nbsp;
-                                                                                                <h5><a href=""><span style="color: #000000;">Handbags, Bags &amp; Wallets</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Handbags &amp; Totes</a></li>
-                                                                                                    <li><a href="">Backpacks</a></li>
+                                                                              </ul>
+                                                                            </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <h5><a href="fashion-beauty/women/watch.html/index.html"><span style="color: #000000;">Women's Watches</span></a></h5> &nbsp;
+                                                                              <h5><a href="fashion-beauty/women/handbags-bags-wallets.html/index.html"><span style="color: #000000;">Handbags, Bags & Wallets</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="fashion-beauty/women/handbags-bags-wallets/handbags-totes.html">Handbags & Totes</a></li>
+                                                                                <li><a href="fashion-beauty/women/handbags-bags-wallets/backpacks.html">Backpacks</a></li>
 
-                                                                                                </ul>                                                                                                                           </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">Face Makeup</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Foundations</a></li>
-                                                                                                    <li><a href="">BB &amp; CC Cream</a></li>
-                                                                                                    <li><a href="">Primers</a></li>
-                                                                                                    <li><a href="">Concealer &amp; Contouring</a></li>
-                                                                                                    <li><a href="">Highlighter &amp; Bronzers</a></li>
-                                                                                                    <li><a href="">Blush</a></li>
-                                                                                                    <li><a href="">Makeup Remover</a></li>
-                                                                                                    <li><a href="">Compact &amp; Powders</a></li>
-                                                                                                    <li><a href="">Make up setting sprays</a></li>
+                                                                              </ul>
+                                                                              &nbsp;
+                                                                              <h5><a href="fashion-beauty/women/fragrance.html"><span style="color: #000000;">Fragrance</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="fashion-beauty/women/fragrance/perfume.html">Perfume</a></li>
+                                                                                <li><a href="fashion-beauty/women/fragrance/body-mist.html">Body Mist</a></li>
 
-                                                                                                </ul>
-                                                                                                &nbsp;
-                                                                                                <h5><a href=""><span style="color: #000000;">EYE MAKEUP</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Eye Brows Pencil &amp; Palettes</a></li>
-                                                                                                    <li><a href="">Eye Liners &amp; kajal</a></li>
-                                                                                                    <li><a href="">Eye Shadows &amp; Palettes</a></li>
-                                                                                                    <li><a href="">Mascara</a></li>
-                                                                                                </ul>
-                                                                                                &nbsp;
-                                                                                                <h5><a href=""><span style="color: #000000;">Hair Care</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Hair Oil</a></li>
-                                                                                                </ul>
-                                                                                            </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                    <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
-                                                                                        <ul class="menu-container">                                                            <li class="menu-item-text menu-item-depth-3  ">
-                                                                                                <h5><a href=""><span style="color: #000000;">LIP MAKEUP</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Lipstick</a></li>
-                                                                                                    <li><a href="">Lip gloss</a></li>
-                                                                                                    <li><a href="">Lip Liner</a></li>
-                                                                                                </ul>
-                                                                                                &nbsp;
-                                                                                                <h5><a href=""><span style="color: #000000;">Makeup Accessories</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Beauty Blender &amp; Sponge</a></li>
-                                                                                                </ul>
-                                                                                                &nbsp;
-                                                                                                <h5><a href=""><span style="color: #000000;">Body &amp; Skin Care</span></a></h5>
-                                                                                                <ul class="list-text">
+                                                                              </ul>
+                                                                            </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <h5><a href="fashion-beauty/women/face-makeup.html/index.html"><span style="color: #000000;">Face Makeup</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="fashion-beauty/women/face-makeup/foundations.html">Foundations</a></li>
+                                                                                <li><a href="fashion-beauty/women/face-makeup/bb-cc-creams.html">BB & CC Cream</a></li>
+                                                                                <li><a href="fashion-beauty/women/face-makeup/makeup-bases-primers.html">Primers</a></li>
+                                                                                <li><a href="fashion-beauty/women/face-makeup/concealers.html">Concealer & Contouring</a></li>
+                                                                                <li><a href="fashion-beauty/women/face-makeup/highlighter-illuminator.html">Highlighter & Bronzers</a></li>
+                                                                                <li><a href="fashion-beauty/women/face-makeup/blushes.html">Blush</a></li>
+                                                                                <li><a href="fashion-beauty/women/face-makeup/makeup-remover.html">Makeup Remover</a></li>
+                                                                                <li><a href="fashion-beauty/women/face-makeup/compacts-powders.html">Compact & Powders</a></li>
+                                                                                <li><a href="fashion-beauty/women/face-makeup/makeup-setting-finishing-spray.html">Make up setting sprays</a></li>
 
-                                                                                                    <li><a href="">Essential Oil</a></li>
-                                                                                                    <li><a href="">Face Mask</a></li>
-                                                                                                    <li><a href="">Face Wash</a></li>
-                                                                                                </ul>
+                                                                              </ul>
+                                                                              &nbsp;
+                                                                              <h5><a href="fashion-beauty/women/eyes.html/index.html"><span style="color: #000000;">EYE MAKEUP</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="fashion-beauty/women/eyes/eyebrow.html">Eye Brows Pencil & Palettes</a></li>
+                                                                                <li><a href="fashion-beauty/women/eyes/eyeliners.html">Eye Liners & kajal</a></li>
+                                                                                <li><a href="fashion-beauty/women/eyes/eyeshadows.html">Eye Shadows & Palettes</a></li>
+                                                                                <li><a href="fashion-beauty/women/eyes/mascaras.html">Mascara</a></li>
+                                                                              </ul>
+                                                                              &nbsp;
+                                                                              <h5><a href="fashion-beauty/women/hair-care.html/index.html"><span style="color: #000000;">Hair Care</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="fashion-beauty/women/hair-care/hair-oil.html">Hair Oil</a></li>
+                                                                              </ul>
+                                                                            </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-4 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <h5><a href="fashion-beauty/women/lips.html/index.html"><span style="color: #000000;">LIP MAKEUP</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="fashion-beauty/women/lips/lipstick.html">Lipstick</a></li>
+                                                                                <li><a href="fashion-beauty/women/lips/lip-gloss.html">Lip gloss</a></li>
+                                                                                <li><a href="fashion-beauty/women/lips/lip-liner.html">Lip Liner</a></li>
+                                                                              </ul>
+                                                                              &nbsp;
+                                                                              <h5><a href="fashion-beauty/women/makeup-accessories.html/index.html"><span style="color: #000000;">Makeup Accessories</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="fashion-beauty/women/makeup-accessories/beauty-blender-sponge.html">Beauty Blender & Sponge</a></li>
+                                                                                <li><a href="fashion-beauty/women/makeup-accessories/brush-sets.html">Brush Set</a></li>
+                                                                                <li><a href="fashion-beauty/women/makeup-accessories/lip-brushes.html">Lip Brushes</a></li>
+                                                                              </ul>
+                                                                              &nbsp;
+                                                                              <h5><a href="fashion-beauty/women/body-skin-care.html/index.html"><span style="color: #000000;">Body & Skin Care</span></a></h5>
+                                                                              <ul class="list-text">
 
-                                                                                                &nbsp;
-                                                                                                <h5><a href=""><span style="color: #000000;">NAILS</span></a></h5>
-                                                                                                <ul class="list-text">
-                                                                                                    <li><a href="">Nail Polish</a></li>
-                                                                                                    <li><a href="">Nail polish removers</a></li>
-                                                                                                </ul>                                                                                                            </li><!-- 3 -->
-                                                                                        </ul><!-- 3 -->
-                                                                                    </li><!-- 2 -->
-                                                                                </ul><!-- 2 -->
-                                                                            </li><!-- 1 -->
-                                                                        </ul><!-- 1 -->
-                                                                    </li><!-- 0 -->
-                                                                </ul>
+                                                                                <li><a href="fashion-beauty/women/body-skin-care/oil.html">Essential Oil</a></li>
+                                                                                <li><a href="fashion-beauty/women/body-skin-care/face-mask.html">Face Mask</a></li>
+                                                                                <li><a href="fashion-beauty/women/body-skin-care/face-wash.html">Face Wash</a></li>
+                                                                              </ul>
+
+                                                                              &nbsp;
+                                                                              <h5><a href="fashion-beauty/women/nails.html/index.html"><span style="color: #000000;">NAILS</span></a></h5>
+                                                                              <ul class="list-text">
+                                                                                <li><a href="fashion-beauty/women/nails/nail-polishes.html">Nail Polish</a></li>
+                                                                                <li><a href="fashion-beauty/women/nails/nail-remover.html">Nail polish removers</a></li>
+                                                                              </ul>
+                                                                            </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                      </ul>
+                                                                      <!-- 2 -->
+                                                                    </li>
+                                                                    <!-- 1 -->
+                                                                  </ul>
+                                                                  <!-- 1 -->
+                                                                </li>
+                                                                <!-- 0 -->
+                                                                <li class="menu-item-link menu-item-depth-0  menu-item-parent">
+                                                                  <a class="em-menu-link" href="daily-need.html/index.html"><span>Cars & Bikes</span></a>
+                                                                  <ul class="menu-container">
+                                                                    <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col7 grid_10 bkg-menu01 menu-item-parent" style="">
+                                                                      <ul class="menu-container">
+                                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-17 menu-item-parent" style="">
+                                                                          <ul class="menu-container">
+                                                                            <li class="menu-item-text menu-item-depth-3  ">
+                                                                              <ul class="list-text">
+                                                                                <li>
+                                                                                  <h5><a href="daily-need/lighting.html/index.html"><span style="color: #000000;">Lighting & Bulbs</span></a></h5></li>
+                                                                                <li>
+                                                                                  <h5><a href="daily-need/fan.html/index.html"><span style="color: #000000;">Fans</span></a></h5></li>
+                                                                                <li>
+                                                                                  <h5><a href="daily-need/home-living.html/index.html"><span style="color: #000000;">Home & Living</span></a></h5></li>
+                                                                                <li>
+                                                                                  <h5><a href="daily-need/tools-hardware.html/index.html"><span style="color: #000000;">Tools & Hardware</span></a></h5></li>
+                                                                                <li>
+                                                                                  <h5><a href="daily-need/switch-socket.html/index.html"><span style="color: #000000;">Switch, Socket & Multi Plug</span></a></h5></li>
+                                                                                <li>
+                                                                                  <h5><a href="daily-need/pest-control.html/index.html"><span style="color: #000000;">Pest Control</span></a></h5></li>
+                                                                                <li>
+                                                                                  <h5><a href="daily-need/solar-power-product.html/index.html"><span style="color: #000000;">Solar Products</span></a></h5></li>
+                                                                              </ul>
+                                                                            </li>
+                                                                            <!-- 3 -->
+                                                                          </ul>
+                                                                          <!-- 3 -->
+                                                                        </li>
+                                                                        <!-- 2 -->
+                                                                      </ul>
+                                                                      <!-- 2 -->
+                                                                    </li>
+                                                                    <!-- 1 -->
+                                                                  </ul>
+                                                                  <!-- 1 -->
+                                                                </li>
+                                                                <!-- 0 -->
+                                                              </ul>
                                                             </div>
                                                         </div>
                                                         <script type="text/javascript">
@@ -1365,7 +1451,7 @@
                                                             <a class="em-amount-js-topcart em-amount-topcart" title="Shopping Cart" href="">
                                                                 <span class="em-top-cart-text"> Cart </span>
                                                                 <span class="em-topcart-text">My Cart:</span>
-                                                                <span class="em-topcart-qty">0</span>
+                                                                <span class="em-topcart-qty">{{ Cart::count() }}</span>
                                                             </a>
                                                         </div>
 
@@ -1373,8 +1459,12 @@
                                                             <div class="topcart-popup-content">
                                                                 <p class="em-block-subtitle">Shopping Cart</p>
                                                                 <div class="topcart-content">
-                                                                    <p class="amount-content ">
-                                                                        You have no items in your shopping cart.											</p>
+                                                                  @if (Cart::count() == 0)
+                                                                    <p class="amount-content ">You have no items in your shopping cart.</p>
+                                                                  @else
+                                                                    <p class="amount-content ">You have {{ Cart::count() }} items in your shopping cart.</p>
+                                                                  @endif
+
                                                                 </div>
 
                                                             </div>
@@ -1494,9 +1584,6 @@
                                 </div>
                             </div>
                         </form>
-                        <script type="text/javascript">
-                            var dataForm = new VarienForm('login-form', true);
-                          </script>
                     </div>
                     <script type="text/javascript">
                         function closePopupLogin()

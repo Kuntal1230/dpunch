@@ -85,4 +85,4 @@ Route::prefix('seller')->group(function () {
 
 });
 
-Route::resource('test','OrderController');
+Route::resource('cart','CartController');

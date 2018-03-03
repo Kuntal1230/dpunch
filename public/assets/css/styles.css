@@ -6028,12 +6028,12 @@ table colgroup, .data-table colgroup {
   /*ORDER TOTAL*/
 }
 .cart-collaterals h2 {
-  padding: 10px 0;
+  padding: 10px 20px;
   margin-bottom: 10px;
 }
 .cart-collaterals .em-box {
   padding: 17px 20px 9px;
-  min-height: 326px;
+  min-height: 180px;
   margin-bottom: 50px;
 }
 .cart-collaterals .em-box p {
@@ -6968,6 +6968,8 @@ a.product-image img {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
+  height: 75px !important;
+width: 75px !important;
 }
 
 .products-grid a.product-image img {

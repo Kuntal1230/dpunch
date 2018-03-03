@@ -26,7 +26,7 @@
 
         {{-- <link rel="stylesheet" type="text/css" href=" {{ asset('assets/css/trackorder.css') }} " media="all"> --}}
         {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/em_ajaxcart.css') }} " media="all"> --}}
-        {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/styles17.css') }} " media="all"> --}}
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/styles17.css') }} " media="all">
         {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/styles_003.css') }} " media="all"> --}}
         {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/em_multidealpro.css') }} " media="all"> --}}
         {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/em_productlabels.css') }} " media="all"> --}}
@@ -520,18 +520,60 @@
                                                         <a class="em-amount-js-topcart em-amount-topcart" title="Shopping Cart" href="">
                                                             <span class="em-top-cart-text"> Cart </span>
                                                             <span class="em-topcart-text">My Cart:</span>
-                                                            <span class="em-topcart-qty">0</span>
+                                                            <span class="em-topcart-qty">{{ Cart::count() }}</span>
                                                         </a>
                                                     </div>
 
                                                     <div class="em-container-js-topcart topcart-popup" style="display:none">
                                                         <div class="topcart-popup-content">
                                                             <p class="em-block-subtitle">Shopping Cart</p>
-                                                            <div class="topcart-content">
-                                                                <p class="amount-content ">
-                                                                    You have no items in your shopping cart.
-                                                                </p>
-                                                            </div>
+                                                            @if (Cart::count() == 0)
+                                                              <div class="topcart-content">
+                                                              <p class="amount-content ">You have no items in your shopping cart.</p>
+                                                              </div>
+                                                            @else
+                                                              <div class="topcart-content">
+                                                                <p class="amount-content ">There is <a href="">{{ Cart::count() }} item</a> in your shopping cart.</p>
+                                                                    <ol class="em-topcart-list">
+                                                                      @foreach (Cart::content() as $row)
+                                                                        {{-- {{ $row->name }} --}}
+                                                                        <li class="item">
+                                                                          <a href="" title="{{ $row->name }}" class="product-image">
+                                                                            <img src="{{ asset('images/'.$row->model->image0) }}" width="135" alt="{{ $row->name }}">
+                                                                          </a>
+                                                                          <div class="product-details">
+                                                                            <a href="" title="Remove This Item" onclick="return confirm('Are you sure you would like to remove this item from the shopping cart?');" class="btn-remove">Remove This Item</a>
+                                                                            <a href="" title="Edit item" class="btn-edit">Edit item</a>
+                                                                            <p class="product-name">
+                                                                              <a href="">{{ $row->name }}</a></p>
+                                                                            <p class="sku">{{ $row->model->sku }}</p>
+                                                                            <strong>{{ Cart::count() }}</strong> x<span class="price">৳{{ $row->price }}</span>
+                                                                              <div class="dd-truncated">
+                                                                                <div class="truncated">
+                                                                                  <div class="truncated_full_value">
+                                                                                    <dl class="item-options">
+                                                                                      <dt>Color</dt>
+                                                                                        <dd>{{ $row->model->color }}</dd>
+                                                                                    </dl>
+                                                                                  </div>
+                                                                                  <a href="#" onclick="return false;" class="details">Details</a>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                        </li>
+
+                                                                      @endforeach
+
+                                                                    </ol>
+                                                              </div>
+                                                              <div class="actions">
+                                                                <p class="subtotal"><span class="label">Cart Subtotal</span> <span class="price">৳{{ Cart::subtotal() }}</span></p>
+                                                                  <div class="wrapper_bottom_button">
+                                                                    <button type="button" title="Checkout" class="button button-checkout" onclick=""><span><span>Checkout</span></span></button>
+                                                                    <a href="{{ route('cart.index') }}" class="goto-cart"><span><span>My Cart</span></span></a>
+                                                                  </div>
+                                                              </div>
+                                                            @endif
 
                                                         </div>
                                                     </div>
@@ -1458,17 +1500,60 @@
                                                         <div class="em-container-js-topcart topcart-popup" style="display:none">
                                                             <div class="topcart-popup-content">
                                                                 <p class="em-block-subtitle">Shopping Cart</p>
-                                                                <div class="topcart-content">
+
                                                                   @if (Cart::count() == 0)
+                                                                    <div class="topcart-content">
                                                                     <p class="amount-content ">You have no items in your shopping cart.</p>
+                                                                    </div>
                                                                   @else
-                                                                    <p class="amount-content ">You have {{ Cart::count() }} items in your shopping cart.</p>
+                                                                    <div class="topcart-content">
+                                                            					<p class="amount-content ">There is <a href="">{{ Cart::count() }} item</a> in your shopping cart.</p>
+                                                            							<ol class="em-topcart-list">
+                                                                            @foreach (Cart::content() as $row)
+                                                                              {{-- {{ $row->name }} --}}
+                                                                              <li class="item">
+                                                                                <a href="" title="{{ $row->name }}" class="product-image">
+                                                                                  <img src="{{ asset('images/'.$row->model->image0) }}" width="135" alt="{{ $row->name }}">
+                                                                                </a>
+                                                                                <div class="product-details">
+                                                                                  <a href="" title="Remove This Item" onclick="return confirm('Are you sure you would like to remove this item from the shopping cart?');" class="btn-remove">Remove This Item</a>
+                                                                                  <a href="" title="Edit item" class="btn-edit">Edit item</a>
+                                                                                  <p class="product-name">
+                                                                                    <a href="">{{ $row->name }}</a></p>
+                                                                                  <p class="sku">{{ $row->model->sku }}</p>
+                                                                                  <strong>{{ Cart::count() }}</strong> x<span class="price">৳{{ $row->price }}</span>
+                                                                                    <div class="dd-truncated">
+                                                                                      <div class="truncated">
+                                                                                        <div class="truncated_full_value">
+                                                                                          <dl class="item-options">
+                                                                                            <dt>Color</dt>
+                                                                                              <dd>{{ $row->model->color }}</dd>
+                                                                                          </dl>
+                                                                                        </div>
+                                                                                        <a href="#" onclick="return false;" class="details">Details</a>
+                                                                                      </div>
+                                                                                    </div>
+                                                                                  </div>
+                                                                              </li>
+
+                                                                            @endforeach
+
+                                                            							</ol>
+                                                            				</div>
+                                                                    <div class="actions">
+                                                            					<p class="subtotal"><span class="label">Cart Subtotal</span> <span class="price">৳{{ Cart::subtotal() }}</span></p>
+                                                              					<div class="wrapper_bottom_button">
+                                                              						<button type="button" title="Checkout" class="button button-checkout" onclick=""><span><span>Checkout</span></span></button>
+                                                              						<a href="" class="goto-cart"><span><span>My Cart</span></span></a>
+                                                              					</div>
+                                                            				</div>
                                                                   @endif
 
-                                                                </div>
+
 
                                                             </div>
                                                         </div>
+
                                                     </div>
                                                 </div>
 

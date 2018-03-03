@@ -179,9 +179,15 @@
                                       </div>
                                   </div>
                                   <div class="syn-buy-now-wrapper">
-                                      <button type="button" title="Add to Cart" class="syn-buy-now-button" onclick="setLocation('')">
+                                    <a href="{{ route('cart.edit',1) }}" title="Add to Cart" class="syn-buy-now-button">Buy Now</a>
+                                    {{-- <form class="" action="{{ route('addtocart.store') }}" method="post">
+                                      {{ csrf_field() }}
+                                      <input type="hidden" name="id" value="1">
+                                      <button type="button" title="Add to Cart" class="syn-buy-now-button">
                                           <span><span> Buy Now </span></span>
                                       </button>
+                                    </form> --}}
+
                                   </div>
                               </div>
                           </div>

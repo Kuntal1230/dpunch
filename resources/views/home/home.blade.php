@@ -179,7 +179,7 @@
                                       </div>
                                   </div>
                                   <div class="syn-buy-now-wrapper">
-                                    <a href="{{ route('cart.edit',1) }}" title="Add to Cart" class="syn-buy-now-button">Buy Now</a>
+                                    <button type="button" v-on:click="addItem(1)" title="Add to Cart" class="syn-buy-now-button" name="button">Buy Now</button>
                                     {{-- <form class="" action="{{ route('addtocart.store') }}" method="post">
                                       {{ csrf_field() }}
                                       <input type="hidden" name="id" value="1">

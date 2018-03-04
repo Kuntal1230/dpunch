@@ -8,7 +8,7 @@
           <div class="breadcrumbs">
             <ul>
               <li class="home" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                <a href="https://www.pickaboo.com/" title="Home" itemprop="url"><span itemprop="title">Home</span></a> <span class="separator">/ </span>
+                <a href="{{ url('/') }}" title="Home" itemprop="url"><span itemprop="title">Home</span></a> <span class="separator">/ </span>
               </li>
               <li class="shopping_cart">
                 <strong>Shopping Cart</strong>
@@ -34,8 +34,8 @@
                     </li>
                   </ul>
                 </div>
-                <form action="https://www.pickaboo.com/checkout/cart/updatePost/" method="post">
-                  <input name="form_key" type="hidden" value="LU5sC9rGki7iQTTQ">
+                <form action="" method="post">
+                  <input name="form_key" type="hidden" value="">
                   <fieldset>
                     <table id="shopping-cart-table" class="data-table cart-table">
                       <colgroup>
@@ -68,20 +68,19 @@
                         </tr>
                       </tfoot>
                       <tbody>
-                        @foreach (Cart::content() as $row)
-                          <tr class="first last odd">
+                          <tr class="first last odd" v-for="item in items">
                             <td>
-                              <a href="" title="{{ $row->name }}" class="product-image">
-                                <img src="{{asset('images/'.$row->model->image0) }}" width="75" height="75" alt="{{ $row->name }}">
+                              <a href="" title="" class="product-image">
+                                <img src="" width="75" height="75" alt="">
                               </a>
                             </td>
                             <td>
                               <h2 class="product-name">
-                                <a href="">{{ $row->name }}</a>
+                                <a href=""></a>
                               </h2>
                               <dl class="item-options">
                                 <dt>Color</dt>
-                                <dd>{{ $row->model->color }}</dd>
+                                <dd></dd>
                               </dl>
                               <div class="cart-item-remove-wrapper">
                                 <a class="cart-item-remove" href="" title="Remove">Remove</a>
@@ -93,12 +92,12 @@
                             <td class="a-center">
                               <a href="" class="link-wishlist use-ajax">Move</a>
                             </td>
-                            <td class="a-right"> <span class="cart-price"> <span class="price">৳{{ $row->price }}</span> </span></td>
-                            <td class="a-center"> <input name="qty" value="{{ $row->qty }}" size="4" title="Qty" class="input-text qty" maxlength="12"></td>
-                            <td class="a-right"> <span class="cart-price"> <span class="price">৳{{ Cart::subtotal() }}</span> </span></td>
+                            <td class="a-right"> <span class="cart-price"> <span class="price">৳</span> </span></td>
+                            <td class="a-center"> <input name="qty" value="@{{ item.quantity }}" size="4" title="Qty" class="input-text qty" maxlength="12"></td>
+                            <td class="a-right"> <span class="cart-price"> <span class="price">৳@{{ item.price }}</span> </span></td>
                             <td class="a-center last"><a href="" title="Remove item" class="btn-remove btn-remove2">Remove item</a></td>
                           </tr>
-                        @endforeach
+
 
                       </tbody>
                     </table>
@@ -164,18 +163,18 @@
                                 <strong>Grand Total</strong>
                               </td>
                               <td style="" class="a-right">
-                                <strong><span class="price">৳{{ Cart::total() }}</span></strong>
+                                <strong><span class="price">৳</span></strong>
                               </td>
                             </tr>
                           </tfoot>
                           <tbody>
                             <tr>
                               <td style="" class="a-right" colspan="1"> Subtotal</td>
-                              <td style="" class="a-right"> <span class="price">৳ {{ Cart::subtotal() }}</span></td>
+                              <td style="" class="a-right"> <span class="price">৳ </span></td>
                             </tr>
                             <tr>
                               <td style="" class="a-right" colspan="1"> Vat</td>
-                              <td style="" class="a-right"> <span class="price">৳ {{ Cart::tax() }}</span></td>
+                              <td style="" class="a-right"> <span class="price">৳ </span></td>
                             </tr>
                           </tbody>
                         </table>

@@ -85,4 +85,7 @@ Route::prefix('seller')->group(function () {
 
 });
 
-Route::resource('cart','CartController');
+Route::get('/cart','CartController@index')->name('cart.index');
+Route::post('/cart','CartController@add')->name('cart.add');
+Route::get('/cart/details','CartController@details')->name('cart.details');
+Route::delete('/cart/{id}','CartController@delete')->name('cart.delete');

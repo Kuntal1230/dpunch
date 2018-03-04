@@ -4,87 +4,69 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
-use Gloudemans\Shoppingcart\Facades\Cart;
-
 class CartController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+  public function index()
     {
-        return view('home.cart');
+        $userId = 1; // get this from session or wherever it came from
+        if(request()->ajax())
+        {
+            $items = [];
+            \Cart::session($userId)->getContent()->each(function($item) use (&$items)
+            {
+                $items[] = $item;
+            });
+            return response(array(
+                'success' => true,
+                'data' => $items,
+                'message' => 'cart get items success'
+            ),200,[]);
+        }
+        else
+        {
+            return view('home.cart');
+        }
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function add()
     {
-
+        $userId = 1; // get this from session or wherever it came from
+        $id = request('id');
+        // $name = request('name');
+        // $price = request('price');
+        // $qty = request('qty');
+        // $customAttributes = [
+        //     'color_attr' => [
+        //         'label' => 'red',
+        //         'price' => 10.00,
+        //     ],
+        //     'size_attr' => [
+        //         'label' => 'xxl',
+        //         'price' => 15.00,
+        //     ]
+        // ];
+        \Cart::session($userId)->add($id);
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function delete($id)
     {
-        //
+        $userId = 1; // get this from session or wherever it came from
+        \Cart::session($userId)->remove($id);
+        return response(array(
+            'success' => true,
+            'data' => $id,
+            'message' => "cart item {$id} removed."
+        ),200,[]);
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function details()
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $product = Product::findOrFail($id);
-        // Cart::add('', '', 1, '');
-        $cartItem = Cart::add(['id' => $product->id, 'name' => $product->title, 'qty' => 1, 'price' => $product->price, 'options' => ['size' => 'large']]);
-        Cart::associate($cartItem->rowId, \App\Product::class);
-        return back();
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $userId = 1; // get this from session or wherever it came from
+        return response(array(
+            'success' => true,
+            'data' => array(
+                'total_quantity' => \Cart::session($userId)->getTotalQuantity(),
+                'sub_total' => \Cart::session($userId)->getSubTotal(),
+                'total' => \Cart::session($userId)->getTotal(),
+            ),
+            'message' => "Get cart details success."
+        ),200,[]);
     }
 }

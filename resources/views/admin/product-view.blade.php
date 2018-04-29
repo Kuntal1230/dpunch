@@ -58,10 +58,6 @@
                           <td>{{ $product->title }}</td>
                         </tr>
                         <tr>
-                          <td>Brand</td>
-                          <td>{{ $product->brand->name }}</td>
-                        </tr>
-                        <tr>
                           <td>Color</td>
                           <td>{{ $product->color }}</td>
                         </tr>
@@ -81,10 +77,10 @@
                           <td>Subcategory</td>
                           <td>{{ $product->subcategory->name }}</td>
                         </tr>
-                        <tr>
+                        {{-- <tr>
                           <td>Product category</td>
                           <td>{{ $product->undersubcategory->name }}</td>
-                        </tr>
+                        </tr> --}}
                         <tr>
                           <td>Price</td>
                           <td>{{ $product->price }} .TK</td>
@@ -122,22 +118,22 @@
                           <td>Image</td>
                           <td>
                             <div class="p_image">
-                              <img src="{{ asset('images/'.$product->image0) }}" alt="">
+                              <img src="{{ asset('images/thumbnail/'.$product->image0) }}" alt="">
                             </div>
                             <div class="p_image">
-                            <img src="{{ asset('images/'.$product->image1) }}" alt="">
+                            <img src="{{ asset('images/thumbnail/'.$product->image1) }}" alt="">
                           </div>
                           <div class="p_image">
-                            <img src="{{ asset('images/'.$product->image2) }}" alt="">
+                            <img src="{{ asset('images/thumbnail/'.$product->image2) }}" alt="">
                           </div>
                           <div class="p_image">
-                            <img src="{{ asset('images/'.$product->image3) }}" alt="">
+                            <img src="{{ asset('images/thumbnail/'.$product->image3) }}" alt="">
                           </div>
                           <div class="p_image">
-                            <img src="{{ asset('images/'.$product->image4) }}" alt="">
+                            <img src="{{ asset('images/thumbnail/'.$product->image4) }}" alt="">
                           </div>
                           <div class="p_image">
-                            <img src="{{ asset('images/'.$product->image5) }}" alt="">
+                            <img src="{{ asset('images/thumbnail/'.$product->image5) }}" alt="">
                           </div>
                           </td>
                         </tr>
@@ -168,22 +164,22 @@
             var img4;
             var img5;
             @if ($product->image0)
-              img0 = <?php echo json_encode(asset('images/'.$product->image0), JSON_HEX_TAG); ?>;
+              img0 = <?php echo json_encode(asset('images/thumbnail/'.$product->image0), JSON_HEX_TAG); ?>;
             @endif
             @if ($product->image1)
-              img1 = <?php echo json_encode(asset('images/'.$product->image1), JSON_HEX_TAG); ?>;
+              img1 = <?php echo json_encode(asset('images/thumbnail/'.$product->image1), JSON_HEX_TAG); ?>;
             @endif
             @if ($product->image2)
-              img2 = <?php echo json_encode(asset('images/'.$product->image2), JSON_HEX_TAG); ?>;
+              img2 = <?php echo json_encode(asset('images/thumbnail/'.$product->image2), JSON_HEX_TAG); ?>;
             @endif
             @if ($product->image3)
-              img3 = <?php echo json_encode(asset('images/'.$product->image3), JSON_HEX_TAG); ?>;
+              img3 = <?php echo json_encode(asset('images/thumbnail/'.$product->image3), JSON_HEX_TAG); ?>;
             @endif
             @if ($product->image4)
-              img4 = <?php echo json_encode(asset('images/'.$product->image4), JSON_HEX_TAG); ?>;
+              img4 = <?php echo json_encode(asset('images/thumbnail/'.$product->image4), JSON_HEX_TAG); ?>;
             @endif
             @if ($product->image5)
-              img5 = <?php echo json_encode(asset('images/'.$product->image5), JSON_HEX_TAG); ?>;
+              img5 = <?php echo json_encode(asset('images/thumbnail/'.$product->image5), JSON_HEX_TAG); ?>;
             @endif
 
 
@@ -224,7 +220,7 @@
               var id =($(this).val());
               $.ajax({
                    type:"POST",
-                   url:"/admin/ajaxsubcategory/",
+                   url:"/admin/ajaxsubcategory",
                    data: {id:id},
                    success : function(result) {
                      console.log(result);
@@ -257,7 +253,7 @@
               console.log(id);
               $.ajax({
                    type:"POST",
-                   url:"/admin/ajaxundersubcategory/",
+                   url:"/admin/ajaxundersubcategory",
                    data: {id:id},
                    success : function(result) {
                      if (result.length>0) {
@@ -277,7 +273,7 @@
                        $("select#brand").html(options);
                        $.ajax({
                          type:"POST",
-                         url:"/admin/ajaxbrandbysubcat/",
+                         url:"/admin/ajaxbrandbysubcat",
                          data: {id:id},
                          success : function(result) {
                            if (result.length>0) {
@@ -311,7 +307,7 @@
               var id =($(this).val());
               $.ajax({
                    type:"POST",
-                   url:"/admin/ajaxbrand/",
+                   url:"/admin/ajaxbrand",
                    data: {id:id},
                    success : function(result) {
                      if (result.length>0) {

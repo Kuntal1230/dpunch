@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use App\Userpoint;
+use App\Userinfo;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -27,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -40,6 +43,16 @@ class RegisterController extends Controller
     }
 
     /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm()
+    {
+        return view('home.register');
+    }
+
+    /**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
@@ -48,8 +61,10 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
+            'firstname' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
+            'mobilenum' => 'required|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
@@ -62,10 +77,27 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        $source = "New Customer Registration";
+        $point = 200;
+
+        $user = User::create([
+            'firstname' => $data['firstname'],
+            'lastname' => $data['lastname'],
+            'membership_id' => 1,
             'email' => $data['email'],
+            'mobilenum' => $data['mobilenum'],
             'password' => bcrypt($data['password']),
         ]);
+        $user->userinfo = Userinfo::create([
+          'user_id' => $user->id,
+        ]);
+        $user->userpoint = Userpoint::create([
+              'user_id' => $user->id,
+              'point_source' => $source,
+              'point' => $point,
+              'status'=>1,
+          ]);
+
+        return $user;
     }
 }

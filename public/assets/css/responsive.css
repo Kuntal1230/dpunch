@@ -662,10 +662,10 @@
   }
 
   /*.price{
-  	font-size:16px !important; 
+  	font-size:16px !important;
   }*/
   .ratings .amount {
-    display: none;
+    display: block;
   }
 }
 /*=============== Detail ================*/

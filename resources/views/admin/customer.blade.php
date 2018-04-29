@@ -30,38 +30,35 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Join Date</th>
+                  <th>Club Point</th>
+                  <th>Total Order</th>
+                  <th>Total Review</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
-                  <td>X</td>
-                </tr>
-                <tr>
-                  <td>Other browsers</td>
-                  <td>All others</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>U</td>
-                </tr>
+                @foreach ($allcustomer as $key=>$element)
+                  <tr>
+                    <td>{{ $key+1 }}</td>
+                    <td>{{ $element->firstname.' '.$element->lastname }}</td>
+                    <td>{{ $element->created_at }}</td>
+                    <td>{{ $element->t_point }}</td>
+                    <td>{{ $element->order->count() }}</td>
+                    <td>{{ $element->review->count() }}</td>
+                  </tr>
+                @endforeach
+
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Join Date</th>
+                  <th>Club Point</th>
+                  <th>Total Order</th>
+                  <th>Total Review</th>
                 </tr>
                 </tfoot>
               </table>

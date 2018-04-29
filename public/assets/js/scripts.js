@@ -86,8 +86,8 @@ $(document).ready(function () {
 
         autoPlay: 5000,
         stopOnHover: true,
-        navigation: true,
-        pagination: true,
+        navigation: false,
+        pagination: false,
         singleItem: true,
         addClassActive: true,
         transitionStyle: "fade",
@@ -232,7 +232,7 @@ $(".brand-slider").owlCarousel({
     pagination: false,
     paginationSpeed : 400,
     navigationText: ["", ""]
-});    
+});
 $("#advertisement").owlCarousel({
     items : 1,
     itemsDesktopSmall :[979,2],
@@ -242,7 +242,7 @@ $("#advertisement").owlCarousel({
     pagination: true,
     paginationSpeed : 400,
     navigationText: ["", ""]
-});    
+});
 
 var $owl_controls_custom = $('.owl-controls-custom');
 $('.owl-next' , $owl_controls_custom).click(function(event){
@@ -280,35 +280,9 @@ $(document).ready(function(){
         unload: false
     });
 });
-
-/*===================================================================================*/
-/*  RATING
-/*===================================================================================*/
-
-$(document).ready(function(){
-    $('.rating').rateit({max: 5, step: 1, value : 4, resetable : false , readonly : true});
-});
-
 /*===================================================================================*/
 /* PRICE SLIDER
 /*===================================================================================*/
-$(document).ready(function () {
-
-// Price Slider
-if ($('.price-slider').length > 0) {
-    $('.price-slider').slider({
-        min: 100,
-        max: 700,
-        step: 10,
-        value: [200, 500],
-        handle: "square"
-
-    });
-
-}
-
-});
-
 
 /*===================================================================================*/
 /* SINGLE PRODUCT GALLERY
@@ -316,6 +290,7 @@ if ($('.price-slider').length > 0) {
 $(document).ready(function(){
     $('#owl-single-product').owlCarousel({
         items:1,
+        pagination: false,
         itemsTablet:[768,2],
         itemsDesktop : [1199,1]
 
@@ -323,15 +298,15 @@ $(document).ready(function(){
 
     $('#owl-single-product-thumbnails').owlCarousel({
         items: 4,
-        pagination: true,
-        rewindNav: true,
+        pagination: false,
+        rewindNav: false,
         itemsTablet : [768, 4],
         itemsDesktop : [1199,3]
     });
 
     $('#owl-single-product2-thumbnails').owlCarousel({
         items: 6,
-        pagination: true,
+        pagination: false,
         rewindNav: true,
         itemsTablet : [768, 4],
         itemsDesktop : [1199,3]
@@ -341,7 +316,7 @@ $(document).ready(function(){
         stopOnHover: true,
         rewindNav: true,
         singleItem: true,
-        pagination: true
+        pagination: false
     });
 
     $(".slider-next").click(function () {
@@ -384,7 +359,7 @@ $('.quant-input .minus').click(function() {
 
 
 /*===================================================================================*/
-/*  WOW 
+/*  WOW
 /*===================================================================================*/
 
 $(document).ready(function () {
@@ -393,9 +368,9 @@ $(document).ready(function () {
 
 
 /*===================================================================================*/
-/*  TOOLTIP 
+/*  TOOLTIP
 /*===================================================================================*/
-$("[data-toggle='tooltip']").tooltip(); 
+$("[data-toggle='tooltip']").tooltip();
 
 $('#transitionType li a').click(function () {
 
@@ -410,6 +385,4 @@ $('#transitionType li a').click(function () {
     return false;
 
 });
-
-
 })(jQuery);

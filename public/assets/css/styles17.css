@@ -303,9 +303,10 @@ a.cart-item-remove {
 }
 .discount.em-box-cart h2 {
     background: #86308b !important;
+    color: #fff;
 }
 #amgiftcard-form h2 {
-    background: #f8cd46;
+    background: #6ab953;
     color: #221f20;
 }
 .discount-form.em-box button.button {
@@ -487,12 +488,12 @@ a.cart-item-remove {
     width: 33.33%;
 }
 .checkout-cart-index .discount.em-box-cart.rewarddiscount {
-    width: 50%;
+    width: 100%;
     float: left;
     padding: 0px 10px;
 }
 .checkout-cart-index form#discount-coupon-form {
-    width: 50%;
+    width: 100%;
     float: left;
     padding: 0px 10px;
 }
@@ -512,10 +513,11 @@ a.cart-item-remove {
 .checkout-cart-index .discount.em-box-cart.coupondiscount .discount-form.em-box label {
     display: none;
 }
-.checkout-cart-index #discount-coupon-form .discount.em-box-cart h2 {
+#discount-coupon-form .discount.em-box-cart h2 {
     background: #f8cd46 !important;
     color: #221f20;
 }
+
 .account-login .scaffold-form .registered-users .buttons-set {
     float: left;
     width: 100%;

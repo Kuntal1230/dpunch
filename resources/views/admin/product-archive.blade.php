@@ -42,7 +42,6 @@
                   <th>#</th>
                   <th>Seller</th>
                   <th>Category</th>
-                  <th>Brand</th>
                   <th>Title</th>
                   <th>Delete date</th>
                 </tr>
@@ -54,7 +53,6 @@
                       <td>{{ $product->sku }}</td>
                       <td>{{ $product->seller }}</td>
                       <td>{{ $product->category->name }}</td>
-                      <td>{{ $product->brand->name }}</td>
                       <td>{{ $product->title }}</td>
                       <td>{{ $product->deleted_at }}</td>
                     </tr>
@@ -67,7 +65,6 @@
                   <th>#</th>
                   <th>Seller</th>
                   <th>Category</th>
-                  <th>Brand</th>
                   <th>Title</th>
                   <th>Delete date</th>
                 </tr>

@@ -24,9 +24,11 @@ class CreateProductsTable extends Migration
             $table->string('product_condition')->nullable();
             $table->string('product_origin')->nullable();
             $table->string('title');
+            $table->string('slug');
             $table->string('color');
-            $table->integer('price');
-            $table->integer('discount')->nullable();
+            $table->float('main_price');
+            $table->float('discount')->nullable();
+            $table->float('price');
             $table->string('size_1')->nullable();
             $table->string('size_2')->nullable();
             $table->string('size_3')->nullable();
@@ -42,7 +44,7 @@ class CreateProductsTable extends Migration
             $table->string('image5')->nullable();
             $table->text('detailes');
             $table->text('specification');
-            $table->integer('status')->default('0');
+            $table->integer('status')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

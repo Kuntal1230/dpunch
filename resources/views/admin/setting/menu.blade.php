@@ -22,7 +22,7 @@
   <section class="content">
     <!-- Small boxes (Stat box) -->
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-4">
           <div class="box">
             <div class="box-header text-center">
               <h3 class="box-title">Main Menu</h3>
@@ -35,16 +35,65 @@
                   <th>Menu Name</th>
                   <th>Action</th>
                 </tr>
+                @foreach ($mainmenu as $element)
                 <tr>
-                  <td>1</td>
-                  <td>John Doe</td>
-                  <td><span class="label label-success">Approved</span></td>
+                    <td>{{ $element->id }}</td>
+                    <td>{{ $element->name }}</td>
+                    <td>View Sub-menu</td>
                 </tr>
+                @endforeach
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+      <div class="col-md-4">
+          <div class="box">
+            <div class="box-header text-center">
+              <h3 class="box-title">Main Menu</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
                 <tr>
-                  <td>2</td>
-                  <td>Alexander Pierce</td>
-                  <td><span class="label label-warning">Pending</span></td>
+                  <th>#</th>
+                  <th>Menu Name</th>
+                  <th>Action</th>
                 </tr>
+                @foreach ($mainmenu as $element)
+                <tr>
+                    <td>{{ $element->id }}</td>
+                    <td>{{ $element->name }}</td>
+                    <td>View Sub-menu</td>
+                </tr>
+                @endforeach
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+      <div class="col-md-4">
+          <div class="box">
+            <div class="box-header text-center">
+              <h3 class="box-title">Main Menu</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
+                <tr>
+                  <th>#</th>
+                  <th>Menu Name</th>
+                  <th>Action</th>
+                </tr>
+                @foreach ($mainmenu as $element)
+                <tr>
+                    <td>{{ $element->id }}</td>
+                    <td>{{ $element->name }}</td>
+                    <td>View Sub-menu</td>
+                </tr>
+                @endforeach
               </table>
             </div>
             <!-- /.box-body -->

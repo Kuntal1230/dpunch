@@ -44,7 +44,6 @@
                   <th>#</th>
                   <th>Seller</th>
                   <th>Category</th>
-                  <th>Brand</th>
                   <th>Title</th>
                   <th>Status</th>
                   <th class="text-center" style="width:220px">Action</th>
@@ -57,17 +56,16 @@
                       <td>{{ $product->sku }}</td>
                       <td>{{ $product->seller }}</td>
                       <td>{{ $product->category->name }}</td>
-                      <td>{{ $product->brand->name }}</td>
                       <td>{{ $product->title }}</td>
                       <td>
-                        <input @if($product->status == 1)checked @endif  data-toggle="toggle" data-on="Active" data-off="Not Active" data-onstyle="success" data-offstyle="danger" type="checkbox" data-id="{{ $product->id }}">
+                        <input @if($product->status == 1)checked @endif  data-toggle="toggle" data-on="Active" data-off="Not Active" data-onstyle="success" data-offstyle="danger" type="checkbox" data-id="{{ $product->id }}" >
                       </td>
                       <td class="text-right">
                         <a class="btn btn-success" href="{{ route('admin.viewproduct', $product->id) }}">View <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> |
                         <a class="btn btn-primary" href="{{ route('admin.editproduct', $product->id) }}">Edit <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> |
                         <form class="pull-right" action="{{ route('admin.deleteproduct', $product->id) }}" method="post">
                             <input type="hidden" name="_method" value="delete" />
-                            <button class="btn btn-danger"> Delete <i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                            <button class="btn btn-danger" data-toggle="confirmation-delet" data-placement="left" type="button" data-original-title="" title=""> Delete <i class="fa fa-trash-o" aria-hidden="true"></i></button>
                             {!! csrf_field() !!}
                         </form>
                       </td>
@@ -81,7 +79,6 @@
                   <th>#</th>
                   <th>Seller</th>
                   <th>Category</th>
-                  <th>Brand</th>
                   <th>Title</th>
                   <th>Status</th>
                   <th class="text-center">Action</th>
@@ -127,12 +124,19 @@
 
               $.ajax({
                    type:"POST",
-                   url:"/admin/publish-product/",
+                   url:"/admin/publish-product",
                    data: {id:id,status:status},
                    success : function(result) {
                       console.log(result);
                    }
               });
         });
+
+            $('[data-toggle=confirmation-delet]').confirmation({
+            rootSelector: '[data-toggle=confirmation-delet]',
+              onConfirm: function (event, element) {
+                  element.closest('form').submit();
+              }
+            });
       </script>
     @endsection

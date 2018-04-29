@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Seller;
 
 use App\Seller;
 use App\Http\Controllers\Controller;
+use App\Store;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -35,9 +36,11 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Seller $seller, Store $store)
     {
         $this->middleware('guest:seller');
+        $this->seller = $seller;
+        $this->store = $store;
     }
     /**
      * Get the guard to be used during registration.
@@ -83,10 +86,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return Seller::create([
+        $this->seller = Seller::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+        $this->store = Store::create([
+          'seller_id' => $this->seller->id
+        ]);
+        return $this->seller;
     }
 }

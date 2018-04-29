@@ -4,69 +4,97 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Coupon;
+use LukePOLO\LaraCart\Facades\LaraCart;
+use LukePOLO\LaraCart\Coupons\Fixed;
+use LukePOLO\LaraCart\Coupons\Percentage;
+use Illuminate\Support\Facades\Session;
 class CartController extends Controller
 {
   public function index()
     {
-        $userId = 1; // get this from session or wherever it came from
-        if(request()->ajax())
-        {
-            $items = [];
-            \Cart::session($userId)->getContent()->each(function($item) use (&$items)
-            {
-                $items[] = $item;
-            });
-            return response(array(
-                'success' => true,
-                'data' => $items,
-                'message' => 'cart get items success'
-            ),200,[]);
-        }
-        else
-        {
-            return view('home.cart');
-        }
+      return view('home.cart');
     }
-    public function add()
+    public function add(Request $request)
     {
-        $userId = 1; // get this from session or wherever it came from
-        $id = request('id');
-        // $name = request('name');
-        // $price = request('price');
-        // $qty = request('qty');
-        // $customAttributes = [
-        //     'color_attr' => [
-        //         'label' => 'red',
-        //         'price' => 10.00,
-        //     ],
-        //     'size_attr' => [
-        //         'label' => 'xxl',
-        //         'price' => 15.00,
-        //     ]
-        // ];
-        \Cart::session($userId)->add($id);
+      if ($request->isMethod('post'))
+      {
+            $id = $request->productID;
+            $size = $request->size;
+            $qty = $request->qty;
+            $items =  LaraCart::add(
+                            $itemID=$id,
+                            $name = null,
+                            $qty = $qty,
+                            $price = '0.00',
+                            $options = ['size' => $size],
+                            $taxable = false,
+                            $lineItem = false
+                          );
+      }
     }
-    public function delete($id)
+
+    public function AddClubPoint(Request $request)
     {
-        $userId = 1; // get this from session or wherever it came from
-        \Cart::session($userId)->remove($id);
-        return response(array(
-            'success' => true,
-            'data' => $id,
-            'message' => "cart item {$id} removed."
-        ),200,[]);
+      $point = new Fixed($request->CouponCode, $request->CouponValue, [
+        'description' => $request->Description]);
+      LaraCart::addCoupon($point);
+      Session::flash('c_point', 'added');
+      return back();
     }
-    public function details()
+    public function addCoupon(Request $request)
     {
-        $userId = 1; // get this from session or wherever it came from
-        return response(array(
-            'success' => true,
-            'data' => array(
-                'total_quantity' => \Cart::session($userId)->getTotalQuantity(),
-                'sub_total' => \Cart::session($userId)->getSubTotal(),
-                'total' => \Cart::session($userId)->getTotal(),
-            ),
-            'message' => "Get cart details success."
-        ),200,[]);
+      // $coupon = Coupon::where('code',$request->coupon_code)->first();
+      // LaraCart::addCoupon($coupon);
+      // return back();
+
     }
+    public function RemoveClubPoint(Request $request)
+    {
+      # code...
+    }
+    public function CartUpdate(Request $request)
+    {
+      if ($request->isMethod('post')){
+        $qty = $request->qty;
+        $itemHash = $request->itemHash;
+
+        LaraCart::updateItem($itemHash, 'qty', $qty);
+      }
+    }
+    public function delete($itemHash)
+    {
+      LaraCart::removeItem($itemHash);
+      return back();
+    }
+
+    public function ClearCart()
+    {
+      LaraCart::emptyCart();
+      return back();
+    }
+
+    public function Checkout()
+    {
+      return view('home.checkout.checkout');
+    }
+
+    public function CheckoutLogin(Request $request)
+    {
+      return view('home.checkout.checkout-login');
+    }
+    public function CheckoutShipping(Request $request)
+    {
+
+      return view('home.checkout.checkout-shipping');
+    }
+    public function CheckoutPayment(Request $request)
+    {
+      return view('home.checkout.checkout-payment');
+    }
+    public function CheckoutReview(Request $request)
+    {
+      return view('home.checkout.checkout-review');
+    }
+
 }

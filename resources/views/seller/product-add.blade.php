@@ -74,7 +74,7 @@
                 </div>
                 <!-- /.form-group -->
                 <div class="form-group">
-                   <label for="" class="col-sm-3 control-label">Product Brand <span class="text-red">* </span> :</label>
+                   <label for="" class="col-sm-3 control-label">Product Brand :</label>
                    <div class="col-sm-9">
                      <select class="form-control select2" id="brand" name="brand_id" style="width: 100%;">
                        <option value="" disabled selected>Select Product Brand</option>
@@ -114,10 +114,10 @@
                 </div>
                 <!-- /.form-group -->
                 <div class="form-group">
-                  <label for="color" class="col-sm-3 control-label">Product Color <span class="text-red">* </span> :</label>
+                  <label for="color" class="col-sm-3 control-label">Product Color :</label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="color" name="color" placeholder="Product Color" required value="{{ old('color') }}">
+                    <input type="text" class="form-control" id="color" name="color" placeholder="Product Color" value="{{ old('color') }}">
                   </div>
                 </div>
                 <!-- /.form-group -->
@@ -195,18 +195,18 @@
                 <!-- /.form-group -->
 
                 <div class="form-group">
-                  <label for="detailes" class="col-sm-3 control-label">Product Detailes <span class="text-red">* </span> :</label>
+                  <label for="detailes" class="col-sm-3 control-label">Product Detailes :</label>
 
                   <div class="col-sm-9">
-                    <textarea id="detailes" name="detailes" rows="10" cols="60" required>{{ old('detailes') }}</textarea>
+                    <textarea id="detailes" name="detailes" rows="10" cols="60">{{ old('detailes') }}</textarea>
                   </div>
                 </div>
                 <!-- /.form-group -->
                 <div class="form-group">
-                  <label for="specification" class="col-sm-3 control-label">Product Specifications <span class="text-red">* </span> :</label>
+                  <label for="specification" class="col-sm-3 control-label">Product Specifications :</label>
 
                   <div class="col-sm-9">
-                    <textarea id="specification" name="specification" rows="30" cols="60" required>{{ old('specification') }}</textarea>
+                    <textarea id="specification" name="specification" rows="30" cols="60" >{{ old('specification') }}</textarea>
                   </div>
                 </div>
                 <!-- /.form-group -->
@@ -260,7 +260,7 @@
               var id =($(this).val());
               $.ajax({
                    type:"POST",
-                   url:"/seller/ajaxsubcategory/",
+                   url:"/seller/ajaxsubcategory",
                    data: {id:id},
                    success : function(result) {
                      console.log(result);
@@ -293,7 +293,7 @@
               console.log(id);
               $.ajax({
                    type:"POST",
-                   url:"/seller/ajaxundersubcategory/",
+                   url:"/seller/ajaxundersubcategory",
                    data: {id:id},
                    success : function(result) {
                      if (result.length>0) {
@@ -311,9 +311,11 @@
                        var options = '';
                        options += '<option value="">No data available</option>';
                        $("select#brand").html(options);
+                       $("select#brand").attr('disabled',true);
+                       $("select#brand").attr('required',false);
                        $.ajax({
                          type:"POST",
-                         url:"/seller/ajaxbrandbysubcat/",
+                         url:"/seller/ajaxbrandbysubcat",
                          data: {id:id},
                          success : function(result) {
                            if (result.length>0) {
@@ -324,6 +326,8 @@
                                 }
                                 $("select#brand").html(options);
                                 $("select#brand").attr('required',true);
+                                $("select#brand").attr('disabled',false);
+
 
                            }
 
@@ -347,7 +351,7 @@
               var id =($(this).val());
               $.ajax({
                    type:"POST",
-                   url:"/seller/ajaxbrand/",
+                   url:"/seller/ajaxbrand",
                    data: {id:id},
                    success : function(result) {
                      if (result.length>0) {

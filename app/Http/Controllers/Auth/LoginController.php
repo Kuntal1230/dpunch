@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Socialite;
+use App\User;
+// use Laravel\Socialite\Facades\Socialite;
 
 class LoginController extends Controller
 {
@@ -25,7 +30,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -36,4 +41,40 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    protected function credentials(Request $request)
+    {
+        $field = filter_var($request->get($this->username()), FILTER_VALIDATE_EMAIL)
+            ? $this->username()
+            : 'mobilenum';
+
+        return [
+            $field => $request->get($this->username()),
+            'password' => $request->password,
+        ];
+    }
+
+    public function redirectToProvider($provider)
+        {
+            return Socialite::driver($provider)->redirect();
+        }
+
+        /**
+         * Obtain the user information from GitHub.
+         *
+         * @return Response
+         */
+        public function handleProviderCallback($provider)
+        {
+
+              $user = Socialite::driver($provider)->stateless()->user();
+              $findUser = User::where('email',$user->getEmail())->first();
+              if ($findUser) {
+                Auth::login($findUser);
+              }else {
+                return $user->email;
+              }
+
+        }
+
 }

@@ -4,10 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Admin;
 use App\Brand;
+use App\Banner;
+use App\User;
+use App\Order;
 use App\Seller;
+use App\Slider;
 use App\Product;
+use App\Promote;
 use App\Category;
+use App\Customer;
+use App\Coupon;
 use App\Subcategory;
+use App\Singlepage;
+use App\Categorybanner;
 use App\Undersubcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -38,6 +47,81 @@ class AdminController extends Controller
         return view('admin.home');
     }
 
+    public function Slidermanage()
+    {
+      return view('admin.setting.addslider');
+    }
+    public function BannerManage()
+    {
+      return view('admin.setting.addbanner');
+    }
+    public function CategoryBannermanage()
+    {
+      return view('admin.setting.addcategorybanner');
+    }
+
+    public function AddSlider(Request $request, $id)
+    {
+      $image = $request->slider;
+      $imageName = time().'-'.$image->getClientOriginalName();
+      $path = base_path();
+      $public_path = str_replace("dpunch", "dpunch.com", $path);
+      $destinationPath =$public_path.'/assets/img/slider';
+      $img = Image::make($image->getRealPath());
+      $img->resize(1170, 400)->save($destinationPath.'/'.$imageName);
+
+      $flight = Slider::updateOrCreate(
+      ['slider_id' => $id],
+      [
+        'slidertext' => $request->slidertext,
+        'sliderimg' => $imageName,
+        'slidelink' => $request->sliderlink,
+      ]
+      );
+      Session::flash('message', 'Slider Add Successfully!');
+      return back();
+    }
+
+    public function AddBanner(Request $request, $id)
+    {
+      $image = $request->banner;
+      $imageName = time().'-'.$image->getClientOriginalName();
+      $path = base_path();
+      $public_path = str_replace("dpunch", "dpunch.com", $path);
+      $destinationPath = $public_path .'/assets/img/banner';
+      $img = Image::make($image->getRealPath());
+      $img->resize(1160, 180)->save($destinationPath.'/'.$imageName);
+
+      $flight = Banner::updateOrCreate(
+      ['id' => $id],
+      ['banner' => $imageName,
+        'bannerlink' =>$request->bannerlink]
+      );
+      Session::flash('message', 'Banner Add Successfully!');
+      return back();
+    }
+
+    public function AddCAtegoryBanner(Request $request, $category)
+    {
+      $image = $request->bannerimg;
+      $imageName = time().'-'.$image->getClientOriginalName();
+      $path = base_path();
+      $public_path = str_replace("dpunch", "dpunch.com", $path);
+      $destinationPath = $public_path .'/assets/img/categorybanner';
+      $img = Image::make($image->getRealPath());
+      $img->resize(338, 478)->save($destinationPath.'/'.$imageName);
+
+      $flight = Categorybanner::updateOrCreate(
+      ['category' => $category],
+      [
+        'bannerimg' => $imageName,
+        'bannerlink' => $request->bannerlink,
+      ]
+      );
+      Session::flash('message', 'Slider Add Successfully!');
+      return back();
+    }
+
     public function generalSetting()
     {
       return view('admin.setting.site-setting');
@@ -45,7 +129,8 @@ class AdminController extends Controller
 
     public function menuManage()
     {
-      return view('admin.setting.menu');
+      $mainmenu = Category::all();
+      return view('admin.setting.menu',compact('mainmenu'));
     }
 
     public function addMenu()
@@ -59,6 +144,7 @@ class AdminController extends Controller
     public function addCategory(Request $request)
     {
       $category = new Category;
+      $category->slug = str_slug($request->category, "-");
       $category->name = $request->category;
       $category->save();
       Session::flash('menustatus', 'Category Add Successfully!');
@@ -68,6 +154,7 @@ class AdminController extends Controller
     {
       $subcategory = new Subcategory;
       $subcategory->category_id = $request->category_id;
+      $subcategory->slug = str_slug($request->subcategory, "-");
       $subcategory->name = $request->subcategory;
       $subcategory->save();
       Session::flash('submenustatus', 'Subcategory Add Successfully!');
@@ -79,6 +166,7 @@ class AdminController extends Controller
       $childcategory = new Undersubcategory;
       $childcategory->category_id = $request->category_id;
       $childcategory->subcategory_id = $request->subcategory_id;
+      $childcategory->slug = str_slug($request->undersubcategory, "-");
       $childcategory->name = $request->undersubcategory;
       $childcategory->save();
       Session::flash('childmenustatus', 'Child category Add Successfully!');
@@ -92,6 +180,7 @@ class AdminController extends Controller
       $brand->category_id = $request->category_id;
       $brand->subcategory_id = $request->subcategory_id;
       $brand->undersubcategory_id = $request->undersubcategory_id;
+      $brand->slug = str_slug($request->brand, "-");
       $brand->name = $request->brand;
       $brand->save();
       Session::flash('brandstatus', 'Brand Add Successfully!');
@@ -205,11 +294,17 @@ class AdminController extends Controller
                   $imageName = time().'-'.$image->getClientOriginalName();
                   $productimage[] = $imageName;
                   $path = base_path();
-                  // $public_path = str_replace("laravel5.5", "public_html", $path);
-                  $destinationPath = $path.'\public\images';
+                  $public_path = str_replace("dpunch", "dpunch.com", $path);
+                  $destinationPathsmall = $public_path .'/images/small';
+                  $destinationPaththumbnail = $public_path .'/images/thumbnail';
+                  $destinationPathzoom = $public_path .'/images/zoom';
                   $img = Image::make($image->getRealPath());
-                  $img->resize(250, 250, function ($constraint) {
-                    $constraint->aspectRatio();})->save($destinationPath.'/'.$imageName);
+                  $img->resize(800, 800, function ($constraint) {
+                    $constraint->aspectRatio();})->save($destinationPathzoom.'/'.$imageName);
+                  $img->resize(450, 450, function ($constraint) {
+                    $constraint->aspectRatio();})->save($destinationPaththumbnail.'/'.$imageName);
+                  $img->resize(100, 100, function ($constraint) {
+                    $constraint->aspectRatio();})->save($destinationPathsmall.'/'.$imageName);
               }
           }
           $image0="";
@@ -242,9 +337,9 @@ class AdminController extends Controller
             $seller_id = Auth::guard('admin')->user()->id;
           }
 
-          $brands = Brand::findOrFail($request->brand_id);
-          $brand = $brands->name;
-          $sku = "DPN".$seller_id.strtoupper(substr($brand,0,3)).date("s", time());
+          $subcategoris = Subcategory::findOrFail($request->subcategory_id);
+          $subcategory = $subcategoris->name;
+          $sku = "DPN".$seller_id.strtoupper(substr($subcategory,0,3)).date("s", time());
 
           $product = new Product;
           $product->seller = $seller_name;
@@ -256,9 +351,11 @@ class AdminController extends Controller
           $product->product_condition = $request->product_condition;
           $product->product_origin = $request->product_origin;
           $product->title = $request->title;
+          $product->slug = str_slug($request->title, "-");
           $product->color = $request->color;
-          $product->price = $request->price;
+          $product->main_price = $request->price;
           $product->discount = $request->discount;
+          $product->price = $request->price-($request->price*($request->discount/100));
           $product->size_1 = $request->size_1;
           $product->size_2 = $request->size_2;
           $product->size_3 = $request->size_3;
@@ -274,6 +371,7 @@ class AdminController extends Controller
           $product->image5 = $image5;
           $product->detailes = $request->detailes;
           $product->specification = $request->specification;
+          $product->status = 1;
           $product->save();
           Session::flash('productstatus', 'Product Add Successfully!');
           return back();
@@ -296,34 +394,52 @@ class AdminController extends Controller
           $prev_img5 = $request->prev_img5;
           $productimage = array();
           if ($request->image != '') {
-            if($prev_img0){
-                unlink(base_path('public/images/'.$prev_img0));
-                }
-            if($prev_img1){
-                unlink(base_path('public/images/'.$prev_img1));
-                }
-            if($prev_img2){
-                unlink(base_path('public/images/'.$prev_img2));
-                }
-            if($prev_img3){
-                unlink(base_path('public/images/'.$prev_img3));
-                }
-            if($prev_img4){
-                unlink(base_path('public/images/'.$prev_img4));
-                }
-            if($prev_img5){
-                unlink(base_path('public/images/'.$prev_img5));
-                }
+            // if($prev_img0){
+            //     unlink(base_path('dpunch.com/images/small'.$prev_img0));
+            //     unlink(base_path('dpunch.com/images/thumbnail'.$prev_img0));
+            //     unlink(base_path('dpunch.com/images/zoom'.$prev_img0));
+            //     }
+            // if($prev_img1){
+            //     unlink(base_path('dpunch.com/images/small'.$prev_img1));
+            //     unlink(base_path('dpunch.com/images/thumbnail'.$prev_img1));
+            //     unlink(base_path('dpunch.com/images/zoom'.$prev_img1));
+            //     }
+            // if($prev_img2){
+            //     unlink(base_path('dpunch.com/images/small'.$prev_img2));
+            //     unlink(base_path('dpunch.com/images/thumbnail'.$prev_img2));
+            //     unlink(base_path('dpunch.com/images/zoom'.$prev_img2));
+            //     }
+            // if($prev_img3){
+            //     unlink(base_path('dpunch.com/images/small'.$prev_img3));
+            //     unlink(base_path('dpunch.com/images/thumbnail'.$prev_img3));
+            //     unlink(base_path('dpunch.com/images/zoom'.$prev_img3));
+            //     }
+            // if($prev_img4){
+            //     unlink(base_path('dpunch.com/images/small'.$prev_img4));
+            //     unlink(base_path('dpunch.com/images/thumbnail'.$prev_img4));
+            //     unlink(base_path('dpunch.com/images/zoom'.$prev_img4));
+            //     }
+            // if($prev_img5){
+            //     unlink(base_path('dpunch.com/images/small'.$prev_img5));
+            //     unlink(base_path('dpunch.com/images/thumbnail'.$prev_img5));
+            //     unlink(base_path('dpunch.com/images/zoom'.$prev_img5));
+            //     }
               foreach ($request->image as $image){
                   $imageName = time().'-'.$image->getClientOriginalName();
                   $productimage[] = $imageName;
 
                   $path = base_path();
-                  // $public_path = str_replace("laravel5.5", "public_html", $path);
-                  $destinationPath = $path.'\public\images';
+                  $public_path = str_replace("dpunch", "dpunch.com", $path);
+                  $destinationPathsmall = $public_path .'/images/small';
+                  $destinationPaththumbnail = $public_path .'/images/thumbnail';
+                  $destinationPathzoom = $public_path .'/images/zoom';
                   $img = Image::make($image->getRealPath());
-                  $img->resize(250, 250, function ($constraint) {
-                    $constraint->aspectRatio();})->save($destinationPath.'/'.$imageName);
+                  $img->resize(800, 800, function ($constraint) {
+                    $constraint->aspectRatio();})->save($destinationPathzoom.'/'.$imageName);
+                  $img->resize(450, 450, function ($constraint) {
+                    $constraint->aspectRatio();})->save($destinationPaththumbnail.'/'.$imageName);
+                  $img->resize(100, 100, function ($constraint) {
+                    $constraint->aspectRatio();})->save($destinationPathsmall.'/'.$imageName);
               }
           }
           $image0=$prev_img0;
@@ -360,8 +476,9 @@ class AdminController extends Controller
           $product->product_origin = $request->product_origin;
           $product->title = $request->title;
           $product->color = $request->color;
-          $product->price = $request->price;
+          $product->main_price = $request->price;
           $product->discount = $request->discount;
+          $product->price = $request->price-($request->price*($request->discount/100));
           $product->size_1 = $request->size_1;
           $product->size_2 = $request->size_2;
           $product->size_3 = $request->size_3;
@@ -394,14 +511,169 @@ class AdminController extends Controller
         return Redirect::to('admin/manageproduct');
 
     }
+    public function promoteProductList()
+    {
+      $promotelist = Promote::all();
+      return view('admin.product-promote-list',compact('promotelist'));
+    }
+
+    public function promoteProductView($id)
+    {
+      $promote = Promote::where('product_id', $id)->firstOrFail();
+      return view('admin.product-promote',compact('promote'));
+    }
+
+    public function promoteProduct(Request $request,$id)
+    {
+      $promote = Promote::where('product_id', $id)->firstOrFail();
+      $promote->promote_status = 1;
+      $promote->save();
+      return back();
+    }
 
     public function allCustomer()
     {
-      return view('admin.customer');
+      $allcustomer = User::all();
+      return view('admin.customer',compact('allcustomer'));
     }
 
     public function allOrder()
     {
-      return view('admin.order');
+      $allorder = Order::where('status','0')->get();
+      return view('admin.order',compact('allorder'));
     }
+
+    public function Orderdetailes($id)
+    {
+      $orderdetailes = Order::find($id);
+      // return $orderdetailes;
+    return view('admin.order-detailes',compact('orderdetailes'));
+    }
+
+    public function ConfirmOrder($id)
+    {
+      $confirm = Order::findOrFail($id);
+      $confirm->status = 1;
+      $confirm->save();
+
+      Session::flash('message', 'Order Confirmed Successfully!');
+
+      return redirect('admin/manageconfirmedorder');
+    }
+
+    public function CancleOrder($id)
+    {
+      $confirm = Order::findOrFail($id);
+      $confirm->status = 2;
+      $confirm->save();
+
+      Session::flash('message', 'Order Cancled Successfully!');
+
+      return redirect('admin/managecancledorder');
+    }
+
+
+
+    public function OrderdetailesPrint($id)
+    {
+      $orderdetailes = Order::find($id);
+      // return $orderdetailes;
+    return view('admin.print-order-detailes',compact('orderdetailes'));
+    }
+
+    public function allCancleOrder()
+    {
+      $allorder = Order::where('status','2')->get();
+      return view('admin.cancledorder',compact('allorder'));
+    }
+    public function allConfirmedOrder()
+    {
+      $allorder = Order::status()->get();
+      // return $allorder;
+      return view('admin.confirmedorder',compact('allorder'));
+    }
+
+    public function ViewAllPage()
+    {
+      $singlepages = Singlepage::all();
+      return view('admin.setting.single-page',compact('singlepages'));
+    }
+    public function AddsinglePage()
+    {
+      return view('admin.setting.add-single-page');
+    }
+    public function AddPage(Request $request)
+    {
+      $singlepage = new Singlepage;
+      $singlepage->title = $request->page_title;
+      $singlepage->slug = str_slug($request->page_title, "-");
+      $singlepage->description = $request->description;
+      $singlepage->save();
+      Session::flash('message', 'Page add Successfully!');
+      return back();
+    }
+    public function EditPage($id)
+    {
+      $singlepage = Singlepage::findOrFail($id);
+        return view('admin.setting.edit-single-page',compact('singlepage'));
+    }
+    public function UpdatePage(Request $request, $id)
+    {
+      $singlepage = Singlepage::findOrFail($id);
+      $singlepage->title = $request->page_title;
+      $singlepage->description = $request->description;
+      $singlepage->save();
+      Session::flash('message', 'Page Edit Successfully!');
+      return back();
+    }
+
+    public function allCuppon()
+    {
+      $coupons = Coupon::all();
+      return view('admin.cuppon',compact('coupons'));
+    }
+
+    public function addCupponform()
+    {
+      return view('admin.cuppon-add');
+    }
+    public function addCuppon(Request $request)
+    {
+      $coupon = new Coupon;
+      $coupon->code = $request->code;
+      $coupon->type = $request->cupon_type;
+      $coupon->value = $request->value;
+      $coupon->discription = $request->discription;
+      $coupon->validity = 1;
+      $coupon->save();
+      Session::flash('cupponstatus', 'Cupon Add Successfully!');
+      return back();
+    }
+
+    public function editCupponform($id)
+    {
+      $coupon = Coupon::findOrFail($id);
+      return view('admin.cuppon-edit',compact('coupon'));
+    }
+    public function editCuppon(Request $request, $id)
+    {
+      $coupon = Coupon::findOrFail($id);
+      $coupon->code = $request->code;
+      $coupon->type = $request->cupon_type;
+      $coupon->value = $request->value;
+      $coupon->discription = $request->discription;
+      $coupon->save();
+      Session::flash('cupponstatus', 'Cupon Update Successfully!');
+      return back();
+    }
+    public function manageCuppon(Request $request,$id)
+    {
+      $coupon = Coupon::findOrFail($id);
+      $coupon->validity = $request->validity;
+      $coupon->save();
+      Session::flash('message', 'Cupon Update Successfully!');
+      return back();
+    }
+
+
 }

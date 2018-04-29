@@ -46,6 +46,7 @@ text-decoration: none;
 .no-rating,
 .ratings {
 color: #ef4923;
+    width: 40px;
 }
 /* Headings */
 h1,
@@ -965,7 +966,7 @@ color: #ffffff;
 background-color: transparent;
 }
 .em-wrapper-header .em-header-style31 .em-line {
-background-color: #F38418;
+background-color: #5bb85b;
 }
 /*header fixed-top*/
 .em-wrapper-header .navbar-fixed-top {
@@ -1245,7 +1246,7 @@ color: #0198d1;
 .em_nav .menu-item-depth-0 > a.em-menu-link span {
 color: #ffffff;
 border-color: #0198D1;
-background-color: #F38418;
+background-color: #5bb85b;
 font: 700 14px/1.35 Lato,Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 .em_nav .menu-item-depth-0 > .em-catalog-navigation > li.level0 > a.em-menu-link span:hover,
@@ -1915,8 +1916,9 @@ color: #434343;
 color: #0198D1;
 }
 .em-wrapper-footer a {
-color: #434343;
+	color: #fff;
 }
+
 .em-wrapper-footer a:hover,
 .em-wrapper-footer a:focus,
 .em-wrapper-footer a:active {
@@ -1941,11 +1943,13 @@ font-weight: 700;
 font-size: 20px;
 color: #ffffff;
 }
+
 .em-wrapper-footer .em-block-title .h4 {
-color: #434343;
-font-weight: 700;
-margin-bottom: 2rem;
+	color: #fff;
+	font-weight: 700;
+	margin-bottom: 2rem;
 }
+
 .em-wrapper-footer .em-footer-style11 .block-subscribe {
 color: #434343;
 border-color: #ffffff;
@@ -2117,10 +2121,11 @@ color: #ffffff;
 border-color: #dbdbdb;
 }
 .em-wrapper-footer .em-footer-style09 {
-color: #434343;
-border-color: #dbdbdb;
-background-color: #ffffff;
+	color: #fff;
+	border-color: #dbdbdb;
+	background-color: #00A550;
 }
+
 .em-wrapper-footer .em-footer-style09 .em-footer-bottom {
 color: #0198D1;
 background-color: #222222;
@@ -2134,13 +2139,13 @@ background-color: #e2e2e2;
 }
 .em-wrapper-footer .em-footer-style09 .em-wrapper-newsletter .block-subscribe .actions button.button {
 color: #ffffff;
-border-color: #F38418;
-background-color: #F38418;
+border-color: #5bb85b;
+background-color: #5bb85b;
 }
 .em-wrapper-footer .em-footer-style09 .em-wrapper-newsletter .block-subscribe .actions button.button:hover {
 color: #ffffff;
 border-color: transparent;
-background-color: #F38418;
+background-color: #5bb85b;
 }
 .em-wrapper-footer .em-footer-style09 .em-wrapper-social .em-social .em-social-icon {
 color: #434343;
@@ -3418,7 +3423,7 @@ border-color: #0198D1;
 #back-top a {
 color: #ffffff;
 border-color: transparent;
-background-color: #F38418;
+background-color:#5bb85b;
 font: 600 11px/1.35 Lato,Helvetica, Arial, sans-serif;
 font-weight: 600;
 }

@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="{{ asset('admin-assets/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="{{ asset('admin-assets/bootstrap-daterangepicker/daterangepicker.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
   <link rel="stylesheet" href="{{ asset('admin-assets/css/custom.css') }}">
 
   <!-- Google Font -->
@@ -76,7 +77,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="{{ asset('admin-assets/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                        <img src="{{ asset('assets/img/logo-s.png') }}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Support Team
@@ -89,7 +90,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="{{ asset('admin-assets/img/user3-128x128.jpg') }}" class="img-circle" alt="User Image">
+                        <img src="{{ asset('assets/img/logo-s.png') }}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         AdminLTE Design Team
@@ -101,7 +102,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="{{ asset('admin-assets/img/user4-128x128.jpg') }}" class="img-circle" alt="User Image">
+                        <img src="{{ asset('assets/img/logo-s.png') }}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Developers
@@ -113,7 +114,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="{{ asset('admin-assets/img/user3-128x128.jpg') }}" class="img-circle" alt="User Image">
+                        <img src="{{ asset('assets/img/logo-s.png') }}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Sales Department
@@ -131,7 +132,7 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{ asset('admin-assets/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
+              <img src="{{ asset('assets/img/logo-s.png') }}" class="user-image" alt="User Image">
               <span class="hidden-xs">{{ Auth::user()->name }}</span>
             </a>
             <ul class="dropdown-menu">
@@ -162,7 +163,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="{{ asset('admin-assets/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+          <img src="{{ asset('assets/img/logo-s.png') }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>{{ Auth::user()->name }}</p>
@@ -200,8 +201,21 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="@yield('all-product-class')"><a href="{{ route('admin.allproduct') }}"><i class="fa fa-circle-o"></i> All product</a></li>
+            <li class="@yield('all-product-class')">
+              <a href="{{ route('admin.allproduct') }}"><i class="fa fa-circle-o"></i> All product
+                <span class="pull-right-container">
+                  <span class="label label-primary pull-right">{{ $totalProduct }}</span>
+                </span>
+              </a>
+            </li>
             <li class="@yield('add-product-class')"><a href="{{ route('admin.addproduct') }}"><i class="fa fa-circle-o"></i> Add Product</a></li>
+            <li class="@yield('promote-product-class')">
+              <a href="{{ route('admin.promoteproductlist') }}"><i class="fa fa-circle-o"></i> Promote Request
+                <span class="pull-right-container">
+                  <span class="label pull-right bg-red">{{ $promoteRequest }}</span>
+                </span>
+              </a>
+            </li>
           </ul>
         </li>
 
@@ -228,8 +242,26 @@
           </a>
           <ul class="treeview-menu">
             <li class="@yield('all-order-class')"><a href="{{ route('admin.allorder') }}"><i class="fa fa-circle-o"></i> All Order</a></li>
+            <li class="@yield('all-cancle-order-class')"><a href="{{ route('admin.allcancleorder') }}"><i class="fa fa-circle-o"></i> All Cancled Order</a></li>
+            <li class="@yield('all-confirmed-order-class')"><a href="{{ route('admin.allconfirmedorder') }}"><i class="fa fa-circle-o"></i> All Confirmed Order</a></li>
           </ul>
         </li>
+
+        <li class="@yield('cuppon-class') treeview">
+          <a href="#">
+            <i class="fa fa-cart-arrow-down"></i>
+            <span>Cuppon</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="@yield('all-cuppon-class')"><a href="{{ route('admin.cuppon') }}"><i class="fa fa-circle-o"></i> All Cuppon</a></li>
+            <li class="@yield('add-cuppon-class')"><a href="{{ route('admin.addcupponform') }}"><i class="fa fa-circle-o"></i> Add Cuppon</a></li>
+          </ul>
+        </li>
+
+
 
         <li class="@yield('site-class') treeview">
           <a href="#">
@@ -240,7 +272,18 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="@yield('site-setting-class')"><a href="{{ route('admin.generalsetting') }}"><i class="fa fa-circle-o"></i> General Setting</a></li>
+            <li class="@yield('manage-class') treeview">
+              <a href="#"><i class="fa fa-circle-o"></i> General Setting
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li class="@yield('slider-add-class')"><a href="{{ route('admin.manageslider') }}"><i class="fa fa-circle-o"></i>Add slider</a></li>
+                <li class="@yield('banner-add-class')"><a href="{{ route('admin.managebanner') }}"><i class="fa fa-circle-o"></i>Add Banner</a></li>
+                <li class="@yield('add-categorybanner-class')"><a href="{{ route('admin.managecategorybanner') }}"><i class="fa fa-circle-o"></i>Add Category Banner</a></li>
+              </ul>
+            </li>
             <li class="@yield('menu-class') treeview">
               <a href="#"><i class="fa fa-circle-o"></i> Menu manage
                 <span class="pull-right-container">
@@ -252,6 +295,19 @@
                 <li class="@yield('menu-add-class')"><a href="{{ route('admin.addmenu') }}"><i class="fa fa-circle-o"></i>Add Menu</a></li>
               </ul>
             </li>
+
+            <li class="@yield('page-class') treeview">
+              <a href="#"><i class="fa fa-circle-o"></i> Single Page manage
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li class="@yield('page-view-class')"><a href="{{ route('admin.viewallpage') }}"><i class="fa fa-circle-o"></i>View All Page</a></li>
+                <li class="@yield('page-add-class')"><a href="{{ route('admin.addpage') }}"><i class="fa fa-circle-o"></i>Add Single Page</a></li>
+              </ul>
+            </li>
+
           </ul>
         </li>
 
@@ -286,6 +342,9 @@
 </script>
 <!-- Bootstrap 3.3.7 -->
 <script src="{{ asset('admin-assets/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+
+<script src="{{ asset('admin-assets/js/bootstrap-confirmation.min.js') }}"></script>
+
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 @yield('page-script')

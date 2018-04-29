@@ -34,38 +34,47 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
+                  <th>#</th>
+                  <th>Customer Name</th>
+                  <th>Customer Mobile</th>
+                  <th>Total Ammount</th>
+                  <th>Order Date</th>
+                  <th>Status</th>
+                  <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
-                  <td>X</td>
-                </tr>
-                <tr>
-                  <td>Other browsers</td>
-                  <td>All others</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>U</td>
-                </tr>
+                  @foreach ($allorder as $element)
+                    <tr>
+                      <td>{{ $element->order_id }}</td>
+                      <td>{{ $element->user->firstname.' '.$element->user->lastname }}</td>
+                      <td>{{ $element->user->mobilenum }}</td>
+                      <td>{{ $element->grand_total }}</td>
+                      <td>{{ $element->created_at }}</td>
+                      <td>
+                        @if ( $element->status ==0)
+                          Not Shipped
+                        @else
+                          Shipped
+                        @endif
+                      </td>
+                      <td>
+                        <a class="btn btn-primary" href="{{ route('admin.orderdetailes',$element->id) }}">View</a>
+                      </td>
+                    </tr>
+                  @endforeach
+
+
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
+                  <th>#</th>
+                  <th>Customer Name</th>
+                  <th>Customer Mobile</th>
+                  <th>Total Ammount</th>
+                  <th>Order Date</th>
+                  <th>Status</th>
+                  <th>Action</th>
                 </tr>
                 </tfoot>
               </table>

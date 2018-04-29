@@ -1,7 +1,136 @@
     @extends('home.partial.master')
 
-    @section('slider')
+    @section('body_class',"cms-index-index cms-home  loaded")
 
+    @section('slider')
+      <script type="text/javascript">
+          jQuery(document).ready(function ($) {
+
+              var jssor_1_SlideshowTransitions = [
+                {$Duration:800,x:0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,x:-0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,x:-0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,x:0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,y:0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,y:-0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,y:-0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,y:0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,x:0.3,$Cols:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,x:0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,y:0.3,$Rows:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,y:0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,y:0.3,$Cols:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,y:-0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,x:0.3,$Rows:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,x:-0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$SlideOut:true,$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,$Delay:20,$Clip:3,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,$Delay:20,$Clip:3,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,$Delay:20,$Clip:12,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                {$Duration:800,$Delay:20,$Clip:12,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2}
+              ];
+
+              var jssor_1_options = {
+                $AutoPlay: 1,
+                $SlideshowOptions: {
+                  $Class: $JssorSlideshowRunner$,
+                  $Transitions: jssor_1_SlideshowTransitions,
+                  $TransitionsOrder: 1
+                },
+                $ArrowNavigatorOptions: {
+                  $Class: $JssorArrowNavigator$
+                },
+                $ThumbnailNavigatorOptions: {
+                  $Class: $JssorThumbnailNavigator$
+                }
+              };
+
+              var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+              /*#region responsive code begin*/
+
+              var MAX_WIDTH = 1180;
+
+              function ScaleSlider() {
+                  var containerElement = jssor_1_slider.$Elmt.parentNode;
+                  var containerWidth = containerElement.clientWidth;
+
+                  if (containerWidth) {
+
+                      var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                      jssor_1_slider.$ScaleWidth(expectedWidth);
+                  }
+                  else {
+                      window.setTimeout(ScaleSlider, 30);
+                  }
+              }
+
+              ScaleSlider();
+
+              $(window).bind("load", ScaleSlider);
+              $(window).bind("resize", ScaleSlider);
+              $(window).bind("orientationchange", ScaleSlider);
+              /*#endregion responsive code end*/
+          });
+      </script>
+      <style>
+          /*jssor slider loading skin spin css*/
+          .jssorl-009-spin img {
+              animation-name: jssorl-009-spin;
+              animation-duration: 1.6s;
+              animation-iteration-count: infinite;
+              animation-timing-function: linear;
+          }
+
+          @keyframes jssorl-009-spin {
+              from { transform: rotate(0deg); }
+              to { transform: rotate(360deg); }
+          }
+
+          /*jssor slider arrow skin 051 css*/
+          .jssora051 {display:block;position:absolute;cursor:pointer;}
+          .jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
+          .jssora051:hover {opacity:.8;}
+          .jssora051.jssora051dn {opacity:.5;}
+          .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+
+          /*jssor slider thumbnail skin 111 css*/
+          .jssort111 .p {position:absolute;top:0;left:0;width:200px;height:50px;background-color:#fff;}
+          .jssort111 .t {position:absolute;top:0;left:0;width:100%;height:100%;border:none;opacity:.45;}
+          .jssort111 .p:hover .t{opacity:.8;}
+          .jssort111 .pav .t, .jssort111 .pdn .t, .jssort111 .p:hover.pdn .t{opacity:1;}
+          .jssort111 .ti {position:absolute;bottom:0px;left:0px;width:100%;height:50px;line-height:50px;text-align:center;font-size:12px;color:#000;background-color:rgba(0,0,0,.3)}
+          .jssort111 .pav .ti, .jssort111 .pdn .ti, .jssort111 .p:hover.pdn .ti{color:#000;background-color:rgba(255,255,255,.6);}
+      </style>
+      <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1180px;height:432px;overflow:hidden;visibility:hidden;">
+          <!-- Loading Screen -->
+          <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+              <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="{{asset('assets/img/spin.svg')}}" />
+          </div>
+          <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1180px;height:380px;overflow:hidden;">
+              @foreach ($slider as $element)
+                <div data-p="170.00">
+                  <a href="{{ $element->slidelink }}">
+                    <img data-u="image" src="{{asset('assets/img/slider/'.$element->sliderimg)}}" />
+                  </a>
+                    <div data-u="thumb">
+                        <div class="ti">{{ $element->slidertext }}</div>
+                    </div>
+                </div>
+              @endforeach
+          </div>
+          <!-- Thumbnail Navigator -->
+          <div data-u="thumbnavigator" class="jssort111" style="position:absolute;left:0px;bottom:0px;width:1180px;height:50px;cursor:default;" data-autocenter="1" data-scale-bottom="0.75">
+              <div data-u="slides">
+                  <div data-u="prototype" class="p">
+                      <div data-u="thumbnailtemplate" class="t"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- #endregion Jssor Slider End -->
     @endsection
 
     @section('banner_hotdeals')
@@ -9,18 +138,15 @@
           <div class="em-wrapper-area04">
               <div class="row hidden-xs">
                   <div class="em-wrapper-banners">
-                      <div class="col-sm-12  text-center">
+                      <div class="col-sm-24  text-center">
                           <div class="img-banner">
-                              <a class="banner-img" title="Nova 2i" href="">
-                                  <img class="img-responsive" title="Nova 2i" alt="Nova 2i" src="{{ asset('assets/img/Nova2i-Small-banner_2_1_.png') }}">
+                            @foreach ($banner as $element)
+                              <a class="banner-img" href="{{ $element->bannerlink }}">
+                                  <img class="img-responsive" title="Nova 2i" alt="Nova 2i" src="{{ asset('assets/img/banner/'.$element->banner) }}">
                               </a>
+                            @endforeach
+
                           </div>
-                      </div>
-                      <div class="col-sm-12  text-center">
-                          <div class="img-banner">
-                              <a class="banner-img" title="Nokia 3310 (2017)" href="">
-                                  <img class="img-responsive" title="Nokia 3310 (2017)" alt="Nokia 3310 (2017)" src="{{ asset('assets/img/3310-small-banner.png') }}">
-                              </a></div>
                       </div>
                   </div>
               </div>
@@ -32,648 +158,66 @@
 										<h3>* SHOP BY CATEGORY *</h3></div>
 									<div class="syn-mmenu-list">
 										<p class="col-xs-12 ">
-                      <a href="mobile-tablet.html/index.html">
+                      <a href="http://dpunch.com/product/mobiles-tablets">
                         <img title="Mobile &amp; Smartphone" alt="" src="{{ asset('assets/img/Mobile-_-Tablet.png')}} " />Mobile &amp; Tablet</a>
                     </p>
 										<p class="col-xs-12 ">
-                      <a href="electronics-appliances.html/index.html">
+                      <a href="http://dpunch.com/product/electronics-appliances">
                         <img title="Electronics &amp; Appliances" alt="" src="{{ asset('assets/img/Electronics-_-Appliances.png')}}" />Electronics &amp; Appliances</a>
                     </p>
 											<p class="col-xs-12 ">
-                        <a href="lifestyle-entertainment.html/index.html">
+                        <a href="http://dpunch.com/product/entertainment">
                           <img title="Entertainment" alt="" src="{{ asset('assets/img/Lifestyle-_-Entertainment.png')}}" />Entertainment</a>
                       </p>
 												<p class="col-xs-12 ">
-                          <a href="computer-pc.html/index.html">
+                          <a href="http://dpunch.com/product/computers">
                             <img title="Computers" alt="" src="{{ asset('assets/img/Computers.png')}}" />Computers</a>
                         </p>
 												<p class="col-xs-12 ">
-                          <a href="daily-need.html/index.html">
+                          <a href="http://dpunch.com/product/daily-needs">
                             <img title="Daily Needs" alt="" src="{{ asset('assets/img/Daily-Needs.png')}}" />Daily Needs</a>
                         </p>
 												<p class="col-xs-12 ">
-                          <a href="fashion-beauty.html/index.html">
+                          <a href="http://dpunch.com/product/fashion-beauty">
                             <img title="Fashion &amp; Beauty" alt="" src="{{ asset('assets/img/Deals-_-Offers.png')}}" />Fashion &amp; Beauty</a>
                         </p>
 									</div>
 								</div>
-							</div>
+						</div>
             <div class="syn-hot-deals">
                   <div class="row syn-row">
                       <div class="syn-cat-name"> * HOT DEALS *</div>
                       <div class="syn-view">
+                        @foreach ($promotes as $element)
                           <div class="col-md-15 col-sm-15 col-xs-12 product-item syn-5column">
                               <div class="syn-product-image">
-                                  <a href="">
-                                      <img id="product-collection-image-7338" class="img-responsive" src="{{ asset('assets/img/1475002144387720682_2.jpg') }}" alt="" align="middle" width="211" height="190">
+                                  <a href="{{ route('singleproduct',['sku'=>$element->product->sku,'slug' => $element->product->slug]) }}">
+                                      <img id="product-collection-image-7338" class="img-responsive" src="{{ asset('images/thumbnail'.$element->product->image0) }}" alt="" align="middle" width="211" height="190">
                                   </a>
                               </div>
                               <div class="syn-product-shop">
                                   <div class="syn-extra-info">
                                       <div class="syn-product-rating">
-                                          <div class="mobile-review-rating">
-                                              <div class="mobile-rating">
-                                                  <p class="amount-mobile">4.75 / 5</p>
-                                              </div>
-                                              <div class="mobile-two-ratings">
-                                                  <div class="rating-box-txt">
-                                                      <div class="rating-mobile" style="width:95%"></div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                          <div class="ratings">
-                                              <div class="rating-box">
-                                                  <div class="rating" style="width:95%"></div>
-
-                                              </div>
-                                              <span class="amount">
-                                                  <a href="#" onclick="var t = opener ? opener.window : window;
-                                                          t.location.href = '';
-                                                          return false;">(98)
-                                                  </a>
-                                              </span>
-                                          </div>
-                                          <div class="single-star-rating">
-                                              <ul class="skills">
-                                                  <div class="mob-skill-full">
-                                                      <div class="full-content-str">
-                                                          <div class="mob-st-str">5</div>
-                                                          <div class="sonny_progressbar" data-width="306">
-                                                              <p class="title"></p>
-                                                              <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                                  <span class="backgroundBar"></span>
-                                                                  <span class="targetBar" style="width:306%;background-color:#CCC;"></span>
-                                                                  <span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 306%;"></span>
-                                                              </div>
-                                                          </div>
-                                                          <div class="mob-count">306</div>
-
-                                                      </div>
-                                                      <div class="full-content-str"><div class="mob-st-str">4</div>
-                                                          <div class="sonny_progressbar" data-width="59">
-                                                              <p class="title"></p>
-                                                              <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                                  <span class="backgroundBar"></span>
-                                                                  <span class="targetBar" style="width:59%;background-color:#CCC;"></span>
-                                                                  <span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 59%;"></span>
-                                                              </div>
-                                                          </div>
-                                                          <div class="mob-count">59</div></div>
-                                                      <div class="full-content-str">
-                                                          <div class="mob-st-str">3</div>
-                                                          <div class="sonny_progressbar" data-width="11">
-                                                              <p class="title"></p>
-                                                              <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                                  <span class="backgroundBar"></span>
-                                                                  <span class="targetBar" style="width:11%;background-color:#CCC;"></span>
-                                                                  <span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 11%;"></span>
-                                                              </div>
-                                                          </div>
-                                                          <div class="mob-count">11</div>
-
-                                                      </div>
-                                                      <div class="full-content-str">
-                                                          <div class="mob-st-str">2</div>
-                                                          <div class="sonny_progressbar" data-width="2">
-                                                              <p class="title"></p>
-                                                              <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                                  <span class="backgroundBar"></span>
-                                                                  <span class="targetBar loader" style="width:2%;background-color:#CCC;"></span>
-                                                                  <span class="bar" style="background-color: rgb(254, 242, 0); opacity: 1; display: inline-block; width: 2%;"></span>
-                                                              </div>
-                                                          </div>
-                                                          <div class="mob-count">2</div>
-
-                                                      </div>
-                                                      <div class="full-content-str">
-                                                          <div class="mob-st-str">1</div>
-                                                          <div class="sonny_progressbar" data-width="9">
-                                                              <p class="title"></p>
-                                                              <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                                  <span class="backgroundBar"></span>
-                                                                  <span class="targetBar" style="width:9%;background-color:#CCC;"></span>
-                                                                  <span class="bar" style="background-color: rgb(249, 115, 82); opacity: 1; display: inline-block; width: 9%;"></span>
-                                                              </div>
-                                                          </div>
-                                                          <div class="mob-count">9</div>
-
-                                                      </div>
-
-                                                  </div>
-                                              </ul>
-                                          </div>
-                                          <!--
-                                                                                                      <div class="mobile-review-btn">
-                                                                                                          <span> <input class="link-login" value="Rating &amp; review" title="" onclick="review('')" type="button"> </span>
-                                                                                                          <input id="logged" value="" type="hidden">
-                                                                                                      </div>
-                                          -->
                                       </div>
                                       <div class="syn-product-name">
-                                          <a href=""> <span>Xiaomi Mi Band 2 ...</span> </a>
+                                          <a href="{{ route('singleproduct',['sku'=>$element->product->sku,'slug' => $element->product->slug]) }}"> <span>{{ str_limit($element->product->title, 20, '...') }}</span> </a>
                                       </div>
                                       <div class="syn-product-price">
                                           <div class="percent-price">
-                                              <strong style="font-size:18px;">-30%</strong>
-                                          </div> <span class="syn-price-product-grid">৳2,800</span> ৳1,949
+                                              <strong style="font-size:18px;">-{{ $element->product->discount }}%</strong>
+                                          </div>
+                                          ৳{{ number_format((float)$element->product->price, 2, '.', '') }}
+                                            <span class="syn-price-product-grid">@if ($element->product->discount !=0)
+                                              ৳{{ $element->product->main_price }}
+                                            @endif </span>
                                       </div>
                                   </div>
-                                  <div class="syn-buy-now-wrapper">
-                                    <button type="button" v-on:click="addItem(1)" title="Add to Cart" class="syn-buy-now-button" name="button">Buy Now</button>
-                                    {{-- <form class="" action="{{ route('addtocart.store') }}" method="post">
-                                      {{ csrf_field() }}
-                                      <input type="hidden" name="id" value="1">
-                                      <button type="button" title="Add to Cart" class="syn-buy-now-button">
-                                          <span><span> Buy Now </span></span>
-                                      </button>
-                                    </form> --}}
-
-                                  </div>
+                                  <!-- <div class="syn-buy-now-wrapper">
+                                    <button type="button" title="Add to Cart" id="addItem" class="syn-buy-now-button" name="button" data-id="1" >Buy Now</button>
+                                  </div> -->
                               </div>
                           </div>
-                          <div class="col-md-15 col-sm-15 col-xs-12 product-item syn-5column">
-                              <div class="syn-product-image">
-                                  <a href="">
-                                      <img id="product-collection-image-12370" class="img-responsive" src="{{ asset('assets/img/d30-1.jpg') }}" alt="" align="middle" width="211" height="190">
-                                  </a>
-                              </div>
-                              <div class="syn-product-shop">
-                                  <div class="syn-extra-info">
-                                      <div class="syn-product-rating">
-                                          <div class="mobile-review-rating">
-                                              <div class="mobile-rating">
-                                                  <p class="amount-mobile">4.45 / 5</p>
-                                              </div>
-                                              <div class="mobile-two-ratings">
-                                                  <div class="rating-box-txt">
-                                                      <div class="rating-mobile" style="width:89%"></div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                          <div class="ratings">
-                                              <div class="rating-box">
-                                                  <div class="rating" style="width:89%"></div>
-
-                                              </div> <span class="amount">
-                                                  <a href="#" onclick="var t = opener ? opener.window : window;
-                                                          t.location.href = '';
-                                                          return false;">(4)
-                                                  </a></span>
-                                          </div>
-                                          <div class="single-star-rating">
-                                              <ul class="skills">
-                                                  <div class="mob-skill-full">
-                                                      <div class="full-content-str">
-                                                          <div class="mob-st-str">5</div>
-                                                          <div class="sonny_progressbar" data-width="8">
-                                                              <p class="title"></p>
-                                                              <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                                  <span class="backgroundBar"></span>
-                                                                  <span class="targetBar" style="width:8%;background-color:#CCC;"></span>
-                                                                  <span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 8%;"></span>
-                                                              </div>
-                                                          </div>
-                                                          <div class="mob-count">8</div>
-
-                                                      </div>
-                                                      <div class="full-content-str">
-                                                          <div class="mob-st-str">4</div>
-                                                          <div class="sonny_progressbar" data-width="2">
-                                                              <p class="title"></p>
-                                                              <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                                  <span class="backgroundBar"></span><span class="targetBar" style="width:2%;background-color:#CCC;"></span>
-                                                                  <span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 2%;"></span>
-                                                              </div>
-                                                          </div>
-                                                          <div class="mob-count">2</div>
-
-                                                      </div><div class="full-content-str">
-                                                          <div class="mob-st-str">3</div>
-                                                          <div class="sonny_progressbar" data-width="2">
-                                                              <p class="title"></p><
-                                                              div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                              <span class="backgroundBar"></span>
-                                                              <span class="targetBar" style="width:2%;background-color:#CCC;"></span>
-                                                              <span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 2%;"></span>
-                                                          </div>
-                                                      </div>
-                                                      <div class="mob-count">2</div>
-
-                                                  </div>
-                                                  <div class="full-content-str">
-                                                      <div class="mob-st-str">2</div>
-                                                      <div class="sonny_progressbar" data-width="0">
-                                                          <p class="title"></p>
-                                                          <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                              <span class="backgroundBar"></span>
-                                                              <span class="bar" style="background-color: rgb(254, 242, 0); opacity: 1; display: inline-block; width: 0%;"></span>
-                                                          </div>
-                                                      </div>
-                                                      <div class="mob-count">0</div>
-
-                                                  </div>
-                                                  <div class="full-content-str">
-                                                      <div class="mob-st-str">1</div>
-                                                      <div class="sonny_progressbar" data-width="3">
-                                                          <p class="title"></p>
-                                                          <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                              <span class="backgroundBar"></span><span class="targetBar" style="width:3%;background-color:#CCC;"></span>
-                                                              <span class="bar" style="background-color: rgb(249, 115, 82); opacity: 1; display: inline-block; width: 3%;"></span>
-                                                          </div>
-                                                      </div>
-                                                      <div class="mob-count">3</div>
-
-                                                  </div>
-                                              </ul>
-                                          </div>
-
-                                      </div>
-                                      <!--
-                                                                                              <div class="mobile-review-btn">
-                                                                                                  <span> <input class="link-login" value="Rating &amp; review" title="" onclick="review('')" type="button"> </span>
-                                                                                                  <input id="logged" value="" type="hidden">
-                                                                                              </div>
-                                      -->
-                                  </div>
-                                  <div class="syn-product-name">
-                                      <a href=""> <span>Midea 30L Water Heat...</span> </a>
-                                  </div>
-                                  <div class="syn-product-price">
-                                      <div class="percent-price">
-                                          <strong style="font-size:18px;">-17%</strong>
-                                      </div>
-                                      <span class="syn-price-product-grid">৳9,500</span> ৳7,890
-                                  </div>
-                              </div>
-                              <div class="syn-buy-now-wrapper">
-                                  <button type="button" title="Add to Cart" class="syn-buy-now-button" onclick="setLocation('')">
-                                      <span><span> Buy Now </span></span>
-                                  </button>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-md-15 col-sm-15 col-xs-12 product-item syn-5column">
-                          <div class="category-express-delivery">
-                              <img class="img-responsive syncategory-express-delivery" src="{{ asset('assets/img/fastpick.png') }}">
-                          </div>
-                          <div class="syn-product-image">
-                              <a href="">
-                                  <img id="product-collection-image-16182" class="img-responsive" src="{{ asset('assets/img/huawei-nova2i-2000-tk-gift-card.jpg') }}" alt="" align="middle" width="211" height="190">
-                              </a>
-                          </div>
-                          <div class="syn-product-shop">
-                              <div class="syn-extra-info">
-                                  <div class="syn-product-rating">
-                                      <div class="mobile-review-rating">
-                                          <div class="mobile-rating">
-                                              <p class="amount-mobile">4.65 / 5</p>
-                                          </div>
-                                          <div class="mobile-two-ratings">
-                                              <div class="rating-box-txt">
-                                                  <div class="rating-mobile" style="width:93%"></div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="ratings">
-                                          <div class="rating-box">
-                                              <div class="rating" style="width:93%"></div>
-                                          </div>
-                                          <span class="amount">
-                                              <a href="#" onclick="var t = opener ? opener.window : window;
-                                                      t.location.href = '';
-                                                      return false;">(12)
-                                              </a>
-                                          </span>
-                                      </div>
-                                      <div class="single-star-rating">
-                                          <ul class="skills">
-                                              <div class="mob-skill-full">
-                                                  <div class="full-content-str">
-                                                      <div class="mob-st-str">5</div>
-                                                      <div class="sonny_progressbar" data-width="34">
-                                                          <p class="title"></p>
-                                                          <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                              <span class="backgroundBar"></span>
-                                                              <span class="targetBar" style="width:34%;background-color:#CCC;"></span>
-                                                              <span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 34%;"></span>
-                                                          </div>
-                                                      </div>
-                                                      <div class="mob-count">34</div>
-
-                                                  </div>
-                                                  <div class="full-content-str">
-                                                      <div class="mob-st-str">4</div>
-                                                      <div class="sonny_progressbar" data-width="16">
-                                                          <p class="title"></p>
-                                                          <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                              <span class="backgroundBar"></span>
-                                                              <span class="targetBar" style="width:16%;background-color:#CCC;"></span>
-                                                              <span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 16%;"></span>
-                                                          </div>
-                                                      </div>
-                                                      <div class="mob-count">16</div>
-
-                                                  </div>
-                                                  <div class="full-content-str">
-                                                      <div class="mob-st-str">3</div>
-                                                      <div class="sonny_progressbar" data-width="22">
-                                                          <p class="title"></p>
-                                                          <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                              <span class="backgroundBar"></span>
-                                                              <span class="targetBar" style="width:22%;background-color:#CCC;"></span>
-                                                              <span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 22%;"></span>
-                                                          </div>
-                                                      </div>
-                                                      <div class="mob-count">22</div>
-
-                                                  </div>
-                                                  <div class="full-content-str">
-                                                      <div class="mob-st-str">2</div>
-                                                      <div class="sonny_progressbar" data-width="0">
-                                                          <p class="title"></p>
-                                                          <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                              <span class="backgroundBar"></span>
-                                                              <span class="bar" style="background-color: rgb(254, 242, 0); opacity: 1; display: inline-block; width: 0%;">
-
-                                                              </span>
-                                                          </div>
-                                                      </div>
-                                                      <div class="mob-count">0</div>
-
-                                                  </div>
-                                                  <div class="full-content-str">
-                                                      <div class="mob-st-str">1</div>
-                                                      <div class="sonny_progressbar" data-width="0">
-                                                          <p class="title"></p>
-                                                          <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                              <span class="backgroundBar"></span>
-                                                              <span class="bar" style="background-color: rgb(249, 115, 82); opacity: 1; display: inline-block; width: 0%;"></span>
-                                                          </div>
-                                                      </div>
-                                                      <div class="mob-count">0</div>
-
-                                                  </div>
-                                              </div>
-                                          </ul>
-                                      </div>
-                                      <!--
-                                                                                              <div class="mobile-review-btn">
-                                                                                                  <span> <input class="link-login" value="Rating &amp; review" title="" onclick="review('')" type="button"> </span>
-                                                                                                  <input id="logged" value="" type="hidden">
-                                                                                              </div>
-                                      -->
-                                  </div>
-                                  <div class="syn-product-name">
-                                      <a href=""> <span>HUAWEI Nova 2i With ...</span> </a>
-                                  </div>
-                                  <div class="syn-product-price"> ৳26,990</div>
-
-                              </div>
-                              <div class="syn-buy-now-wrapper">
-                                  <button type="button" title="Add to Cart" class="syn-buy-now-button" onclick="setLocation('')"> <span><span> Buy Now </span></span> </button>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-md-15 col-sm-15 col-xs-12 product-item syn-5column">
-                          <div class="syn-product-image">
-                              <a href="">
-                                  <img id="product-collection-image-21395" class="img-responsive" src="{{ asset('assets/img/kaspersky-safe-kids.jpg') }}" alt="" align="middle" width="211" height="190">
-                              </a>
-                          </div>
-                          <div class="syn-product-shop">
-                              <div class="syn-extra-info">
-                                  <div class="syn-product-rating">
-                                      <div class="mobile-review-rating">
-                                          <div class="mobile-rating">
-                                              <p class="amount-mobile">0 / 5</p>
-                                          </div>
-                                          <div class="mobile-two-ratings">
-                                              <div class="rating-box-txt">
-                                                  <div class="rating-mobile" style="width:%"></div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="ratings">
-                                          <div class="rating-box">
-                                              <div class="rating" style="width:%"></div>
-
-                                          </div>
-                                          <span class="amount">
-                                              <a href="#" onclick="var t = opener ? opener.window : window;
-                                                      t.location.href = '';
-                                                      return false;">(0)
-                                              </a>
-                                          </span>
-                                      </div>
-                                      <div class="single-star-rating">
-                                          <ul class="skills">
-                                              <div class="mob-skill-full">
-                                                  <div class="full-content-str">
-                                                      <div class="mob-st-str">5</div>
-                                                      <div class="sonny_progressbar" data-width="0">
-                                                          <p class="title"></p>
-                                                          <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                              <span class="backgroundBar"></span>
-                                                              <span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 0%;"></span>
-                                                          </div>
-                                                      </div>
-                                                      <div class="mob-count">0</div>
-
-                                                  </div>
-                                                  <div class="full-content-str">
-                                                      <div class="mob-st-str">4</div>
-                                                      <div class="sonny_progressbar" data-width="0">
-                                                          <p class="title"></p>
-                                                          <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                              <span class="backgroundBar"></span>
-                                                              <span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 0%;"></span>
-                                                          </div>
-                                                      </div>
-                                                      <div class="mob-count">0</div>
-
-                                                  </div>
-                                                  <div class="full-content-str">
-                                                      <div class="mob-st-str">3</div>
-                                                      <div class="sonny_progressbar" data-width="0">
-                                                          <p class="title"></p>
-                                                          <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                              <span class="backgroundBar"></span>
-                                                              <span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 0%;"></span>
-                                                          </div>
-                                                      </div>
-                                                      <div class="mob-count">0</div>
-
-                                                  </div>
-                                                  <div class="full-content-str">
-                                                      <div class="mob-st-str">2</div>
-                                                      <div class="sonny_progressbar" data-width="0">
-                                                          <p class="title"></p>
-                                                          <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                              <span class="backgroundBar"></span>
-                                                              <span class="bar" style="background-color: rgb(254, 242, 0); opacity: 1; display: inline-block; width: 0%;"></span>
-                                                          </div>
-                                                      </div>
-                                                      <div class="mob-count">0</div>
-                                                  </div>
-                                                  <div class="full-content-str">
-                                                      <div class="mob-st-str">1</div>
-                                                      <div class="sonny_progressbar" data-width="0">
-                                                          <p class="title"></p>
-                                                          <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                              <span class="backgroundBar"></span>
-                                                              <span class="bar" style="background-color: rgb(249, 115, 82); opacity: 1; display: inline-block; width: 0%;"></span>
-                                                          </div>
-                                                      </div>
-                                                      <div class="mob-count">0</div>
-
-                                                  </div>
-
-                                              </div>
-                                          </ul>
-
-                                      </div>
-                                      <!--
-                                                                                              <div class="mobile-review-btn">
-                                                                                                  <span> <input class="link-login" value="Rating &amp; review" title="" onclick="review('')" type="button"> </span>
-                                                                                                  <input id="logged" value="" type="hidden">
-                                                                                              </div>
-                                      -->
-                                  </div>
-                                  <div class="syn-product-name">
-                                      <a href="h"> <span>Kaspersky Safe Kids...</span> </a>
-                                  </div>
-                                  <div class="syn-product-price">
-                                      <div class="percent-price">
-                                          <strong style="font-size:18px;">-12%</strong>
-                                      </div> <span class="syn-price-product-grid">৳799</span> ৳700
-                                  </div>
-                              </div>
-                              <div class="syn-buy-now-wrapper">
-                                  <button type="button" title="Add to Cart" class="syn-buy-now-button" onclick="setLocation('')"> <span><span> Buy Now </span></span> </button>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-md-15 col-sm-15 col-xs-12 product-item syn-5column">
-                          <div class="syn-product-image">
-                              <a href=""><img id="product-collection-image-22233" class="img-responsive" src="{{ asset('assets/img/samsung-a8_-front_1.jpg') }}" alt="" align="middle" width="211" height="190">
-                              </a>
-                          </div>
-                          <div class="syn-product-shop">
-                              <div class="syn-extra-info">
-                                  <div class="syn-product-rating">
-                                      <div class="mobile-review-rating">
-                                          <div class="mobile-rating">
-                                              <p class="amount-mobile">0 / 5</p>
-                                          </div>
-                                          <div class="mobile-two-ratings">
-                                              <div class="rating-box-txt">
-                                                  <div class="rating-mobile" style="width:%"></div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="ratings">
-                                          <div class="rating-box">
-                                              <div class="rating" style="width:%"></div>
-
-                                          </div>
-                                          <span class="amount">
-                                              <a href="#" onclick="var t = opener ? opener.window : window;
-                                                      t.location.href = '';
-                                                      return false;">(0)
-                                              </a>
-                                          </span>
-                                      </div>
-                                      <div class="single-star-rating">
-                                          <ul class="skills">
-                                              <div class="mob-skill-full">
-                                                  <div class="full-content-str">
-                                                      <div class="mob-st-str">5</div>
-                                                      <div class="sonny_progressbar" data-width="0">
-                                                          <p class="title"></p>
-                                                          <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                              <span class="backgroundBar"></span>
-                                                              <span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 0%;"></span>
-                                                          </div>
-                                                      </div>
-                                                      <div class="mob-count">0</div>
-
-                                                  </div>
-                                                  <div class="full-content-str">
-                                                      <div class="mob-st-str">4</div>
-                                                      <div class="sonny_progressbar" data-width="0">
-                                                          <p class="title"></p>
-                                                          <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                              <span class="backgroundBar"></span>
-                                                              <span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 0%;"></span>
-                                                          </div>
-                                                      </div>
-                                                      <div class="mob-count">0</div>
-                                                  </div>
-                                                  <div class="full-content-str">
-                                                      <div class="mob-st-str">3</div>
-                                                      <div class="sonny_progressbar" data-width="0">
-                                                          <p class="title"></p>
-                                                          <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                              <span class="backgroundBar"></span>
-                                                              <span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 0%;"></span>
-                                                          </div>
-                                                      </div>
-                                                      <div class="mob-count">0</div>
-
-                                                  </div>
-                                                  <div class="full-content-str">
-                                                      <div class="mob-st-str">2</div>
-                                                      <div class="sonny_progressbar" data-width="0">
-                                                          <p class="title"></p>
-                                                          <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                              <span class="backgroundBar"></span><span class="bar" style="background-color: rgb(254, 242, 0); opacity: 1; display: inline-block; width: 0%;"></span>
-                                                          </div>
-                                                      </div>
-                                                      <div class="mob-count">0</div>
-
-                                                  </div>
-                                                  <div class="full-content-str">
-                                                      <div class="mob-st-str">1</div>
-                                                      <div class="sonny_progressbar" data-width="0">
-                                                          <p class="title"></p>
-                                                          <div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;">
-                                                              <span class="backgroundBar"></span>
-                                                              <span class="bar" style="background-color: rgb(249, 115, 82); opacity: 1; display: inline-block; width: 0%;"></span>
-                                                          </div>
-                                                      </div>
-                                                      <div class="mob-count">0</div>
-
-                                                  </div>
-
-                                              </div>
-                                          </ul>
-                                      </div>
-                                      <!--
-                                                                                              <div class="mobile-review-btn">
-                                                                                                  <span>
-                                                                                                      <input class="link-login" value="Rating &amp; review" title="" onclick="review('')" type="button">
-                                                                                                  </span>
-                                                                                                  <input id="logged" value="" type="hidden">
-                                                                                              </div>
-                                      -->
-                                  </div>
-                                  <div class="syn-product-name">
-                                      <a href=""> <span>Samsung A8+ 6GB/64GB...</span>
-                                      </a>
-                                  </div>
-                                  <div class="syn-product-price">
-                                      <div class="percent-price">
-                                          <strong style="font-size:18px;">-5%</strong>
-                                      </div>
-                                      <span class="syn-price-product-grid">৳65,900</span>
-                                      ৳62,900
-                                  </div>
-                              </div>
-                              <div class="syn-buy-now-wrapper">
-                                  <button type="button" title="Add to Cart" class="syn-buy-now-button" onclick="setLocation('')"> <span><span> Buy Now </span></span>
-                                  </button>
-                              </div>
-                          </div>
+                        @endforeach
                       </div>
                   </div>
               </div>
@@ -689,357 +233,585 @@
                                         <h2>&nbsp;</h2>
                                     </div>
                                 </div>
+                                <div class="em-wrapper-area04">
+                                    <div class="row hidden-xs">
+                                        <div class="em-wrapper-category-banners">
+                                            <div class="col-sm-24  text-center">
+                                                <div class="img-category-banner">
+                                                  @foreach ($banner as $element)
+                                                    <a class="banner-img" href="{{ $element->bannerlink }}">
+                                                        <img class="img-responsive" title="Nova 2i" alt="Nova 2i" src="{{ asset('assets/img/banner/'.$element->banner) }}">
+                                                    </a>
+                                                  @endforeach
+                      
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- Mobiles & Tablets start --}}
+                                <div class="syn-category row red mone">
+                                    <div class="syn-category-products">
+                                        <div id="" class="emfilter-ajaxblock-loaded">
+                                            <div class="syn-homepage-category">
+
+                                                <div class="syn-category-tab">
+                                                    <div class="syn-category-header">
+                                                        <img class="img-responsive syn-homepage-catimage" src="{{asset('assets/img/mob-tablet.png')}}" alt="">
+                                                        <h3>Mobiles & Tablets</h3>
+                                                        <span class="syn-button-viewall">
+                                                            <a href="http://dpunch.com/product/mobiles-tablets">View all</a>
+                                                        </span>
+                                                    </div>
+                                                    <div class="syn-subcategory">
+                                                        <ul>
+                                                          @foreach ($mobile_tablates as $element)
+                                                            <a href="{{ route('subcategoryproduct',['category'=>$element->category->slug,'subcategory'=>$element->slug]) }}"><li class="syn-subcategory-list">{{ $element->name }}</li></a>
+                                                          @endforeach
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="syn-category-product-grid">
+                                                  @foreach ($mobile_tablets as $element)
+                                                    <div class="syn-product col-lg-8 col-sm-8">
+                                                        <a href="{{ route('singleproduct',['sku'=>$element->sku,'slug' => $element->slug]) }}" title="" class="product-image ">
+                                                            <img class="img-responsive em-alt-org" src="{{ asset('images/thumbnail/'.$element->image0) }}" alt="" align="middle" width="150" height="150">
+                                                        </a>
+                                                        <div class="syn-extra-info">
+                                                          @if($element->reviews->count() <= 0)
+                                                            <div class="syn-product-rating">
+                                                              <div class="averag-no-rating-home" style="width:%">
+                                                                @for ($i = 0; $i
+                                                                < 5; $i++) <i class="fa fa-star" aria-hidden="true"></i>
+                                                                  @endfor
+                                                              </div>
+                                                                <div class="ratings">
+                                                                    <span class="amount">
+                                                                        <a href="#">({{ $element->reviews->count() }})</a>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                          @else
+                                                            <div class="syn-product-rating">
+                                                              <div class="averag-rating-home" style="width:%">
+                                                                @for ($i = 0; $i
+                                                                < $element->reviews->avg('rating'); $i++) <i class="fa fa-star" aria-hidden="true"></i>
+                                                                  @endfor
+                                                              </div>
+                                                                <div class="ratings">
+                                                                    <span class="amount">
+                                                                        <a href="#">({{ $element->reviews->count() }})</a>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                          @endif
+
+                                                            <div class="syn-product-name">
+                                                                <span>
+                                                                    <a href="" title="">{{ str_limit($element->title, 20, '...')}}</a>
+                                                                </span>
+                                                            </div>
+                                                            <div class="syn-product-price">৳{{ number_format((float)$element->price, 2, '.', '') }}
+                                                              <span class="syn-price-product-grid">@if ($element->discount !=0)
+                                                                ৳{{ $element->main_price }}
+                                                              @endif </span>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  @endforeach
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- Mobiles & Tablets end --}}
+
+                                <div class="em-wrapper-area04">
+                                    <div class="row hidden-xs">
+                                        <div class="em-wrapper-category-banners">
+                                            <div class="col-sm-24  text-center">
+                                                <div class="img-category-banner">
+                                                  @foreach ($banner as $element)
+                                                    <a class="banner-img" href="{{ $element->bannerlink }}">
+                                                        <img class="img-responsive" title="Nova 2i" alt="Nova 2i" src="{{ asset('assets/img/banner/'.$element->banner) }}">
+                                                    </a>
+                                                  @endforeach
+                      
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- Fashion & Beauty product start --}}
+                                <div class="syn-category row red mone">
+                                    <div class="syn-category-products">
+                                        <div id="" class="emfilter-ajaxblock-loaded">
+                                            <div class="syn-homepage-category">
+
+                                                <div class="syn-category-tab">
+                                                    <div class="syn-category-header">
+                                                        <img class="img-responsive syn-homepage-catimage" src="{{asset('assets/img/mob-tablet.png')}}" alt="">
+                                                        <h3>Fashion & Beauty</h3>
+                                                        <span class="syn-button-viewall">
+                                                            <a href="http://dpunch.com/product/fashion-beauty">View all</a>
+                                                        </span>
+                                                    </div>
+                                                    <div class="syn-subcategory">
+                                                        <ul>
+                                                          @foreach ($fashion_beautys as $element)
+                                                            <a href="{{ route('subcategoryproduct',['category'=>$element->category->slug,'subcategory'=>$element->slug]) }}"><li class="syn-subcategory-list">{{ $element->name }}</li></a>
+                                                          @endforeach
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="syn-category-product-grid">
+                                                    @foreach ($fashionbeautys as $element)
+                                                      <div class="syn-product col-lg-8 col-sm-8">
+                                                          <a href="{{ route('singleproduct',['sku'=>$element->sku,'slug'=>$element->slug]) }}" title="" class="product-image ">
+                                                              <img class="img-responsive em-alt-org" src="{{ asset('images/thumbnail/'.$element->image0) }}" alt="" align="middle" width="150" height="150">
+                                                          </a>
+                                                          <div class="syn-extra-info">
+                                                            @if($element->reviews->count() <= 0)
+                                                              <div class="syn-product-rating">
+                                                                <div class="averag-no-rating-home" style="width:%">
+                                                                  @for ($i = 0; $i
+                                                                  < 5; $i++) <i class="fa fa-star" aria-hidden="true"></i>
+                                                                    @endfor
+                                                                </div>
+                                                                  <div class="ratings">
+                                                                      <span class="amount">
+                                                                          <a href="#">({{ $element->reviews->count() }})</a>
+                                                                      </span>
+                                                                  </div>
+                                                              </div>
+                                                            @else
+                                                              <div class="syn-product-rating">
+                                                                <div class="averag-rating-home" style="width:%">
+                                                                  @for ($i = 0; $i
+                                                                  < $element->reviews->avg('rating'); $i++) <i class="fa fa-star" aria-hidden="true"></i>
+                                                                    @endfor
+                                                                </div>
+                                                                  <div class="ratings">
+                                                                      <span class="amount">
+                                                                          <a href="#">({{ $element->reviews->count() }})</a>
+                                                                      </span>
+                                                                  </div>
+                                                              </div>
+                                                            @endif
+                                                              <div class="syn-product-name">
+                                                                  <span>
+                                                                      <a href="" title="">{{ str_limit($element->title, 20, '...')}}</a>
+                                                                  </span>
+                                                              </div>
+                                                              <div class="syn-product-price">৳{{ number_format((float)$element->price, 2, '.', '') }}
+                                                                <span class="syn-price-product-grid">@if ($element->discount !=0)
+                                                                  ৳{{ $element->main_price }}
+                                                                @endif </span>
+
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- Fashion & Beauty product end --}}
+
+                                <div class="em-wrapper-area04">
+                                    <div class="row hidden-xs">
+                                        <div class="em-wrapper-category-banners">
+                                            <div class="col-sm-24  text-center">
+                                                <div class="img-category-banner">
+                                                  @foreach ($banner as $element)
+                                                    <a class="banner-img" href="{{ $element->bannerlink }}">
+                                                        <img class="img-responsive" title="Nova 2i" alt="Nova 2i" src="{{ asset('assets/img/banner/'.$element->banner) }}">
+                                                    </a>
+                                                  @endforeach
+                      
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- Computers product start --}}
                                 <div class="syn-category row red mone">
                                     <div class="syn-category-products">
                                         <div id="" class="emfilter-ajaxblock-loaded">
                                             <div class="syn-homepage-category">
                                                 <div class="syn-category-tab">
                                                     <div class="syn-category-header">
-                                                        <img class="img-responsive syn-homepage-catimage" src="{{asset('assets/img/mob-tablet.png')}}" alt="">
-                                                        <h3>Mobiles &amp; Tablets</h3>
+                                                        <img class="img-responsive syn-homepage-catimage" src="{{asset('assets/img/tv-electronics-img.png')}}" alt="">
+                                                        <h3>Computers</h3>
                                                         <span class="syn-button-viewall">
-                                                            <a href="">View all</a>
+                                                            <a href="http://dpunch.com/product/computers">View all</a>
                                                         </span>
                                                     </div>
                                                     <div class="syn-subcategory">
                                                         <ul>
-                                                            <a href=""><li class="syn-subcategory-list">Mobile Phones</li></a>
-
-                                                            <a href=""><li class="syn-subcategory-list">Tablets </li></a>
-
-                                                            <a href=""><li class="syn-subcategory-list">Feature Phones</li></a>
-
-                                                            <a href=""><li class="syn-subcategory-list">Mobile &amp; Tablet Accessories</li></a>
+                                                          @foreach ($computer_menus as $element)
+                                                            <a href="{{ route('subcategoryproduct',['category'=>$element->category->slug,'subcategory'=>$element->slug]) }}"><li class="syn-subcategory-list">{{ $element->name }}</li></a>
+                                                          @endforeach
 
                                                         </ul>
                                                     </div>
                                                 </div>
 
                                                 <div class="syn-category-product-grid">
-
+                                                  @foreach ($computers as $element)
                                                     <div class="syn-product col-lg-8 col-sm-8">
-
-                                                        <div class="category-express-delivery">
-                                                            <img class="img-responsive syncategory-express-delivery" src="{{ asset('assets/img/fastpick.png') }}">
-                                                        </div>
-                                                        <a href="" title="" class="product-image ">
-                                                            <img class="img-responsive em-alt-org" src="{{ asset('assets/img/samsung-s7-edge-with-gear-vr.jpg') }}" alt=" Samsung Galaxy S7 Edge-Dual 4GB/32GB With Free Samsung Gear VR" align="middle" width="150" height="150">
+                                                        <a href="{{ route('singleproduct',['sku'=>$element->sku,'slug'=>$element->slug]) }}" title="" class="product-image ">
+                                                            <img class="img-responsive em-alt-org" src="{{ asset('images/thumbnail/'.$element->image0) }}" alt="" align="middle" width="150" height="150">
                                                         </a>
                                                         <div class="syn-extra-info">
+                                                          @if($element->reviews->count() <= 0)
                                                             <div class="syn-product-rating">
-                                                                <div class="mobile-review-rating">
-                                                                    <div class="mobile-rating">
-                                                                        <p class="amount-mobile">0 / 5</p>
-
-                                                                    </div>
-                                                                    <div class="mobile-two-ratings">
-                                                                        <div class="rating-box-txt">
-                                                                            <div class="rating-mobile" style="width:%"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                              <div class="averag-no-rating-home" style="width:%">
+                                                                @for ($i = 0; $i
+                                                                < 5; $i++) <i class="fa fa-star" aria-hidden="true"></i>
+                                                                  @endfor
+                                                              </div>
                                                                 <div class="ratings">
-                                                                    <div class="rating-box">
-                                                                        <div class="rating" style="width:%"></div>
-                                                                    </div>
                                                                     <span class="amount">
-                                                                        <a href="#" onclick="var t = opener ? opener.window : window;
-                                                                                t.location.href = '';
-                                                                                return false;">(0)
-                                                                        </a>
+                                                                        <a href="#">({{ $element->reviews->count() }})</a>
                                                                     </span>
                                                                 </div>
-
-                                                                <div class="single-star-rating">
-                                                                    <ul class="skills">
-                                                                        <div class="mob-skill-full">
-                                                                            <div class="full-content-str">  <div class="mob-st-str">5</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                            <div class="full-content-str"> <div class="mob-st-str">4</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                            <div class="full-content-str"><div class="mob-st-str">3</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                            <div class="full-content-str"><div class="mob-st-str">2</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(254, 242, 0); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                            <div class="full-content-str"><div class="mob-st-str">1</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(249, 115, 82); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                        </div>
-                                                                    </ul>
-                                                                </div>
                                                             </div>
-                                                            <div class="syn-product-name">
-                                                                <span>
-                                                                    <a href="" title="">Samsung Galaxy S7 Edge-Dual 4GB/32GB ...</a>
-                                                                </span>
-                                                            </div>
-                                                            <div class="syn-product-price">
-                                                                ৳54,990<span class="syn-price-product-grid">৳64,900</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="syn-product col-lg-8 col-sm-8">
-                                                        <a href="" title="" class="product-image ">
-                                                            <img class="img-responsive em-alt-org" src="{{ asset('assets/img/apple-iphone-x.jpg') }}" alt="Apple iPhone X 64GB" align="middle" width="150" height="150">
-                                                        </a>
-                                                        <div class="syn-extra-info">
+                                                          @else
                                                             <div class="syn-product-rating">
-                                                                <div class="mobile-review-rating">
-                                                                    <div class="mobile-rating">
-                                                                        <p class="amount-mobile">4.35 / 5</p>
-                                                                    </div>
-                                                                    <div class="mobile-two-ratings">
-                                                                        <div class="rating-box-txt">
-                                                                            <div class="rating-mobile" style="width:87%"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                              <div class="averag-rating-home" style="width:%">
+                                                                @for ($i = 0; $i
+                                                                < $element->reviews->avg('rating'); $i++) <i class="fa fa-star" aria-hidden="true"></i>
+                                                                  @endfor
+                                                              </div>
                                                                 <div class="ratings">
-                                                                    <div class="rating-box">
-                                                                        <div class="rating" style="width:87%"></div>
-                                                                    </div>
-                                                                    <span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href = '';
-                                                                            return false;">(2)</a></span>
-                                                                </div>
-
-                                                                <div class="single-star-rating">
-                                                                    <ul class="skills">
-                                                                        <div class="mob-skill-full">
-                                                                            <div class="full-content-str">  <div class="mob-st-str">5</div><div class="sonny_progressbar" data-width="8"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="targetBar" style="width:8%;background-color:#CCC;"></span><span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 8%;"></span></div></div><div class="mob-count">8</div></div>
-                                                                            <div class="full-content-str"> <div class="mob-st-str">4</div><div class="sonny_progressbar" data-width="6"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="targetBar" style="width:6%;background-color:#CCC;"></span><span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 6%;"></span></div></div><div class="mob-count">6</div></div>
-                                                                            <div class="full-content-str"><div class="mob-st-str">3</div><div class="sonny_progressbar" data-width="1"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="targetBar" style="width:1%;background-color:#CCC;"></span><span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 1%;"></span></div></div><div class="mob-count">1</div></div>
-                                                                            <div class="full-content-str"><div class="mob-st-str">2</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(254, 242, 0); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                            <div class="full-content-str"><div class="mob-st-str">1</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(249, 115, 82); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                        </div>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div class="syn-product-name">
-                                                                <span>
-                                                                    <a href="" title="">Apple iPhone X 64GB</a>
-                                                                </span>
-                                                            </div>
-                                                            <div class="syn-product-price"> ৳130,990</div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="syn-product col-lg-8 col-sm-8">
-                                                        <a href="" title="" class="product-image ">
-                                                            <img class="img-responsive em-alt-org" src="{{ asset('assets/img/fitbit-alta.jpg') }}" alt="" align="middle" width="150" height="150">
-                                                        </a>
-                                                        <div class="syn-extra-info">
-                                                            <div class="syn-product-rating">
-                                                                <div class="mobile-review-rating">
-                                                                    <div class="mobile-rating">
-                                                                        <p class="amount-mobile">0 / 5</p>
-
-                                                                    </div>
-                                                                    <div class="mobile-two-ratings">
-                                                                        <div class="rating-box-txt">
-                                                                            <div class="rating-mobile" style="width:%"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="ratings">
-                                                                    <div class="rating-box">
-                                                                        <div class="rating" style="width:%"></div>
-                                                                    </div>
                                                                     <span class="amount">
-                                                                        <a href="#" onclick="var t = opener ? opener.window : window;
-                                                                                t.location.href = '';
-                                                                                return false;">(0)
-                                                                        </a>
+                                                                        <a href="#">({{ $element->reviews->count() }})</a>
                                                                     </span>
                                                                 </div>
-                                                                <div class="single-star-rating">
-                                                                    <ul class="skills">
-                                                                        <div class="mob-skill-full">
-                                                                            <div class="full-content-str">  <div class="mob-st-str">5</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                            <div class="full-content-str"> <div class="mob-st-str">4</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                            <div class="full-content-str"><div class="mob-st-str">3</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                            <div class="full-content-str"><div class="mob-st-str">2</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(254, 242, 0); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                            <div class="full-content-str"><div class="mob-st-str">1</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(249, 115, 82); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                        </div>
-                                                                    </ul>
-                                                                </div>
                                                             </div>
+                                                          @endif
                                                             <div class="syn-product-name">
                                                                 <span>
-                                                                    <a href="" title="">Fitbit Alta Fitness Tracker</a>
+                                                                    <a href="" title="">{{ str_limit($element->title, 20, '...')}}</a>
                                                                 </span>
                                                             </div>
-                                                            <div class="syn-product-price">৳12,499<span class="syn-price-product-grid">৳16,799</span>
+                                                            <div class="syn-product-price">৳{{ number_format((float)$element->price, 2, '.', '') }}
+                                                              <span class="syn-price-product-grid">@if ($element->discount !=0)
+                                                                ৳{{ $element->main_price }}
+                                                              @endif </span>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="syn-product col-lg-8 col-sm-8">
-                                                        <div class="category-express-delivery">
-                                                            <img class="img-responsive syncategory-express-delivery" src="{{ asset('assets/img/fastpick.png') }}">
-                                                        </div>
-                                                        <a href="" title="" class="product-image ">
-                                                            <img class="img-responsive em-alt-org" src="{{ asset('assets/img/huawei-color-band-a2.jpg') }}" alt="Huawei Color Band A2" align="middle" width="150" height="150">
-                                                        </a>
-                                                        <div class="syn-extra-info">
-                                                            <div class="syn-product-rating">
-                                                                <div class="mobile-review-rating">
-                                                                    <div class="mobile-rating">
-                                                                        <p class="amount-mobile">4.8 / 5</p>
-                                                                    </div>
-                                                                    <div class="mobile-two-ratings">
-                                                                        <div class="rating-box-txt">
-                                                                            <div class="rating-mobile" style="width:96%"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="ratings">
-                                                                    <div class="rating-box">
-                                                                        <div class="rating" style="width:96%"></div>
-                                                                    </div>
-                                                                    <span class="amount">
-                                                                        <a href="#" onclick="var t = opener ? opener.window : window;
-                                                                                t.location.href = '';
-                                                                                return false;">(5)
-                                                                        </a>
-                                                                    </span>
-                                                                </div>
-
-                                                                <div class="single-star-rating">
-                                                                    <ul class="skills">
-                                                                        <div class="mob-skill-full">
-                                                                            <div class="full-content-str">  <div class="mob-st-str">5</div><div class="sonny_progressbar" data-width="29"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="targetBar" style="width:29%;background-color:#CCC;"></span><span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 29%;"></span></div></div><div class="mob-count">29</div></div>
-                                                                            <div class="full-content-str"> <div class="mob-st-str">4</div><div class="sonny_progressbar" data-width="8"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="targetBar" style="width:8%;background-color:#CCC;"></span><span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 8%;"></span></div></div><div class="mob-count">8</div></div>
-                                                                            <div class="full-content-str"><div class="mob-st-str">3</div><div class="sonny_progressbar" data-width="8"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="targetBar" style="width:8%;background-color:#CCC;"></span><span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 8%;"></span></div></div><div class="mob-count">8</div></div>
-                                                                            <div class="full-content-str"><div class="mob-st-str">2</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(254, 242, 0); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                            <div class="full-content-str"><div class="mob-st-str">1</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(249, 115, 82); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                        </div>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div class="syn-product-name">
-                                                                <span>
-                                                                    <a href="" title=""> Huawei Color Band A2</a>
-                                                                </span>
-                                                            </div>
-                                                            <div class="syn-product-price">৳2,590</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="syn-product col-lg-8 col-sm-8">
-                                                        <div class="category-express-delivery">
-                                                            <img class="img-responsive syncategory-express-delivery" src="{{ asset('assets/img/fastpick.png') }}">
-                                                        </div>
-                                                        <a href="" title="" class="product-image ">
-                                                            <img class="img-responsive em-alt-org" src="{{ asset('assets/img/nokia-3310.jpg') }}" alt="Nokia 3310 (2017)" align="middle" width="150" height="150">
-                                                        </a>
-                                                        <div class="syn-extra-info">
-                                                            <div class="syn-product-rating">
-                                                                <div class="mobile-review-rating">
-                                                                    <div class="mobile-rating">
-                                                                        <p class="amount-mobile">0 / 5</p>
-
-                                                                    </div>
-                                                                    <div class="mobile-two-ratings">
-                                                                        <div class="rating-box-txt">
-                                                                            <div class="rating-mobile" style="width:0%"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="ratings">
-                                                                    <div class="rating-box">
-                                                                        <div class="rating" style="width:0%"></div>
-                                                                    </div>
-                                                                    <span class="amount">
-                                                                        <a href="#" onclick="var t = opener ? opener.window : window;
-                                                                                t.location.href = '';
-                                                                                return false;">(0)
-                                                                        </a>
-                                                                    </span>
-                                                                </div>
-                                                                <div class="single-star-rating">
-                                                                    <ul class="skills">
-                                                                        <div class="mob-skill-full">
-                                                                            <div class="full-content-str">  <div class="mob-st-str">5</div><div class="sonny_progressbar" data-width="6"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="targetBar" style="width:6%;background-color:#CCC;"></span><span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 6%;"></span></div></div><div class="mob-count">6</div></div>
-                                                                            <div class="full-content-str"> <div class="mob-st-str">4</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                            <div class="full-content-str"><div class="mob-st-str">3</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                            <div class="full-content-str"><div class="mob-st-str">2</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(254, 242, 0); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                            <div class="full-content-str"><div class="mob-st-str">1</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(249, 115, 82); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                        </div>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div class="syn-product-name">
-                                                                <span>
-                                                                    <a href="" title="">Nokia 3310 (2017)</a>
-                                                                </span>
-                                                            </div>
-                                                            <div class="syn-product-price"> ৳4,500</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="syn-product col-lg-8 col-sm-8">
-                                                        <div class="category-express-delivery">
-                                                            <img class="img-responsive syncategory-express-delivery" src="{{ asset('assets/img/fastpick.png') }}">
-                                                        </div>
-                                                        <a href="" title="" class="product-image ">
-                                                            <img class="img-responsive em-alt-org" src="{{ asset('assets/img/symphony-inova.jpg') }}" alt="" align="middle" width="150" height="150">
-                                                        </a>
-                                                        <div class="syn-extra-info">
-                                                            <div class="syn-product-rating">
-                                                                <div class="mobile-review-rating">
-                                                                    <div class="mobile-rating">
-                                                                        <p class="amount-mobile">4.85 / 5</p>
-                                                                    </div>
-                                                                    <div class="mobile-two-ratings">
-                                                                        <div class="rating-box-txt">
-                                                                            <div class="rating-mobile" style="width:97%"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="ratings">
-                                                                    <div class="rating-box">
-                                                                        <div class="rating" style="width:97%"></div>
-                                                                    </div>
-                                                                    <span class="amount">
-                                                                        <a href="#" onclick="var t = opener ? opener.window : window;
-                                                                                t.location.href = '';
-                                                                                return false;">(2)
-                                                                        </a>
-                                                                    </span>
-                                                                </div>
-                                                                <div class="single-star-rating">
-                                                                    <ul class="skills">
-                                                                        <div class="mob-skill-full">
-                                                                            <div class="full-content-str">  <div class="mob-st-str">5</div><div class="sonny_progressbar" data-width="8"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="targetBar" style="width:8%;background-color:#CCC;"></span><span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 8%;"></span></div></div><div class="mob-count">8</div></div>
-                                                                            <div class="full-content-str"> <div class="mob-st-str">4</div><div class="sonny_progressbar" data-width="4"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="targetBar" style="width:4%;background-color:#CCC;"></span><span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 4%;"></span></div></div><div class="mob-count">4</div></div>
-                                                                            <div class="full-content-str"><div class="mob-st-str">3</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(97, 188, 71); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                            <div class="full-content-str"><div class="mob-st-str">2</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(254, 242, 0); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                            <div class="full-content-str"><div class="mob-st-str">1</div><div class="sonny_progressbar" data-width="0"><p class="title"></p><div class="bar-container shadow" style="background-color:#E0E0E0;height:30px;"><span class="backgroundBar"></span><span class="bar" style="background-color: rgb(249, 115, 82); opacity: 1; display: inline-block; width: 0%;"></span></div></div><div class="mob-count">0</div></div>
-                                                                        </div>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div class="syn-product-name">
-                                                                <span>
-                                                                    <a href="" title="">Symphony INOVA 2GB/16GB</a>
-                                                                </span>
-                                                            </div>
-                                                            <div class="syn-product-price">৳8,390</div>
-                                                        </div>
-                                                    </div>
+                                                  @endforeach
                                                 </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="syn-home-category-cms">
-                                        <div class="widget widget-static-block">
-                                            <div>
-                                                <a title="mobile accessories" href="">
-                                                    <img class="img-responsive" title="mobile accessories" alt="mobile accessories" src="{{ asset('assets/img/Category-banner-mobile-accesories.jpg') }}">
-                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                {{-- Computers product end --}}
+
+                                <div class="em-wrapper-area04">
+                                    <div class="row hidden-xs">
+                                        <div class="em-wrapper-category-banners">
+                                            <div class="col-sm-24  text-center">
+                                                <div class="img-category-banner">
+                                                  @foreach ($banner as $element)
+                                                    <a class="banner-img" href="{{ $element->bannerlink }}">
+                                                        <img class="img-responsive" title="Nova 2i" alt="Nova 2i" src="{{ asset('assets/img/banner/'.$element->banner) }}">
+                                                    </a>
+                                                  @endforeach
+                      
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- Electronics & Appliances start --}}
+                                <div class="syn-category row red mone">
+                                    <div class="syn-category-products">
+                                        <div id="" class="emfilter-ajaxblock-loaded">
+                                            <div class="syn-homepage-category">
+
+                                                <div class="syn-category-tab">
+                                                    <div class="syn-category-header">
+                                                        <img class="img-responsive syn-homepage-catimage" src="{{asset('assets/img/tv-electronics-img.png')}}" alt="">
+                                                        <h3>Electronics & Appliances</h3>
+                                                        <span class="syn-button-viewall">
+                                                            <a href="http://dpunch.com/product/electronics-appliances">View all</a>
+                                                        </span>
+                                                    </div>
+                                                    <div class="syn-subcategory">
+                                                        <ul>
+                                                          @foreach ($electronics as $element)
+                                                            <a href="{{ route('subcategoryproduct',['category'=>$element->category->slug,'subcategory'=>$element->slug]) }}"><li class="syn-subcategory-list">{{ $element->name }}</li></a>
+                                                          @endforeach
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="syn-category-product-grid">
+                                                  @foreach ($electronic_appliances as $element)
+                                                    <div class="syn-product col-lg-8 col-sm-8">
+                                                        <a href="{{ route('singleproduct',['sku'=>$element->sku,'slug'=>$element->slug]) }}" title="" class="product-image ">
+                                                            <img class="img-responsive em-alt-org" src="{{ asset('images/thumbnail/'.$element->image0) }}" alt="" align="middle" width="150" height="150">
+                                                        </a>
+                                                        <div class="syn-extra-info">
+                                                          @if($element->reviews->count() <= 0)
+                                                            <div class="syn-product-rating">
+                                                              <div class="averag-no-rating-home" style="width:%">
+                                                                @for ($i = 0; $i
+                                                                < 5; $i++) <i class="fa fa-star" aria-hidden="true"></i>
+                                                                  @endfor
+                                                              </div>
+                                                                <div class="ratings">
+                                                                    <span class="amount">
+                                                                        <a href="#">({{ $element->reviews->count() }})</a>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                          @else
+                                                            <div class="syn-product-rating">
+                                                              <div class="averag-rating-home" style="width:%">
+                                                                @for ($i = 0; $i
+                                                                < $element->reviews->avg('rating'); $i++) <i class="fa fa-star" aria-hidden="true"></i>
+                                                                  @endfor
+                                                              </div>
+                                                                <div class="ratings">
+                                                                    <span class="amount">
+                                                                        <a href="#">({{ $element->reviews->count() }})</a>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                          @endif
+                                                            <div class="syn-product-name">
+                                                                <span>
+                                                                    <a href="" title="">{{ str_limit($element->title, 20, '...')}}</a>
+                                                                </span>
+                                                            </div>
+                                                            <div class="syn-product-price">৳{{ number_format((float)$element->price, 2, '.', '') }}
+                                                              <span class="syn-price-product-grid">@if ($element->discount !=0)
+                                                                ৳{{ $element->main_price }}
+                                                              @endif </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- Electronics & Appliances start --}}
+
+                                <div class="em-wrapper-area04">
+                                    <div class="row hidden-xs">
+                                        <div class="em-wrapper-category-banners">
+                                            <div class="col-sm-24  text-center">
+                                                <div class="img-category-banner">
+                                                  @foreach ($banner as $element)
+                                                    <a class="banner-img" href="{{ $element->bannerlink }}">
+                                                        <img class="img-responsive" title="Nova 2i" alt="Nova 2i" src="{{ asset('assets/img/banner/'.$element->banner) }}">
+                                                    </a>
+                                                  @endforeach
+                      
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- Entertainment product Start --}}
+                                <div class="syn-category row red mone">
+                                    <div class="syn-category-products">
+                                        <div id="" class="emfilter-ajaxblock-loaded">
+                                            <div class="syn-homepage-category">
+
+                                                <div class="syn-category-tab">
+                                                    <div class="syn-category-header">
+                                                        <img class="img-responsive syn-homepage-catimage" src="{{asset('assets/img/home-appliances-img.png')}}" alt="">
+                                                        <h3>Entertainment</h3>
+                                                        <span class="syn-button-viewall">
+                                                            <a href="http://dpunch.com/product/entertainment">View all</a>
+                                                        </span>
+                                                    </div>
+                                                    <div class="syn-subcategory">
+                                                        <ul>
+                                                          @foreach ($entertainment_menus as $element)
+                                                            <a href="{{ route('subcategoryproduct',['category'=>$element->category->slug,'subcategory'=>$element->slug]) }}"><li class="syn-subcategory-list">{{ $element->name }}</li></a>
+                                                          @endforeach
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="syn-category-product-grid">
+                                                  @foreach ($entertainments as $element)
+                                                    <div class="syn-product col-lg-8 col-sm-8">
+                                                        <a href="{{ route('singleproduct',['sku'=>$element->sku,'slug'=>$element->slug]) }}" title="" class="product-image ">
+                                                            <img class="img-responsive em-alt-org" src="{{ asset('images/thumbnail/'.$element->image0) }}" alt="" align="middle" width="150" height="150">
+                                                        </a>
+                                                        <div class="syn-extra-info">
+                                                          @if($element->reviews->count() <= 0)
+                                                            <div class="syn-product-rating">
+                                                              <div class="averag-no-rating-home" style="width:%">
+                                                                @for ($i = 0; $i
+                                                                < 5; $i++) <i class="fa fa-star" aria-hidden="true"></i>
+                                                                  @endfor
+                                                              </div>
+                                                                <div class="ratings">
+                                                                    <span class="amount">
+                                                                        <a href="#">({{ $element->reviews->count() }})</a>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                          @else
+                                                            <div class="syn-product-rating">
+                                                              <div class="averag-rating-home" style="width:%">
+                                                                @for ($i = 0; $i
+                                                                < $element->reviews->avg('rating'); $i++) <i class="fa fa-star" aria-hidden="true"></i>
+                                                                  @endfor
+                                                              </div>
+                                                                <div class="ratings">
+                                                                    <span class="amount">
+                                                                        <a href="#">({{ $element->reviews->count() }})</a>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                          @endif
+                                                            <div class="syn-product-name">
+                                                                <span>
+                                                                    <a href="" title="">{{ str_limit($element->title, 20, '...')}}</a>
+                                                                </span>
+                                                            </div>
+                                                            <div class="syn-product-price">৳{{ number_format((float)$element->price, 2, '.', '') }}
+                                                              <span class="syn-price-product-grid">@if ($element->discount !=0)
+                                                                ৳{{ $element->main_price }}
+                                                              @endif </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- Entertainment product <Start>nd</Start> --}}
+
+                                <div class="em-wrapper-area04">
+                                    <div class="row hidden-xs">
+                                        <div class="em-wrapper-category-banners">
+                                            <div class="col-sm-24  text-center">
+                                                <div class="img-category-banner">
+                                                  @foreach ($banner as $element)
+                                                    <a class="banner-img" href="{{ $element->bannerlink }}">
+                                                        <img class="img-responsive" title="Nova 2i" alt="Nova 2i" src="{{ asset('assets/img/banner/'.$element->banner) }}">
+                                                    </a>
+                                                  @endforeach
+                      
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- Cars And Bikes start --}}
+                                <div class="syn-category row red mone">
+                                    <div class="syn-category-products">
+                                        <div id="" class="emfilter-ajaxblock-loaded">
+                                            <div class="syn-homepage-category">
+
+                                                <div class="syn-category-tab">
+                                                    <div class="syn-category-header">
+                                                        <img class="img-responsive syn-homepage-catimage" src="{{asset('assets/img/mob-tablet.png')}}" alt="">
+                                                        <h3>Cars & Bikes</h3>
+                                                        <span class="syn-button-viewall">
+                                                            <a href="http://dpunch.com/product/cars-bikes">View all</a>
+                                                        </span>
+                                                    </div>
+                                                    <div class="syn-subcategory">
+                                                        <ul>
+                                                          @foreach ($car_bikes as $element)
+                                                              <a href="{{ route('subcategoryproduct',['category'=>$element->category->slug,'subcategory'=>$element->slug]) }}"><li class="syn-subcategory-list">{{ $element->name }}</li></a>
+                                                          @endforeach
+
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="syn-category-product-grid">
+                                                  @foreach ($carbikes as $element)
+                                                    <div class="syn-product col-lg-8 col-sm-8">
+                                                        <a href="{{ route('singleproduct',['sku'=>$element->sku,'slug'=>$element->slug]) }}" title="" class="product-image ">
+                                                            <img class="img-responsive em-alt-org" src="{{ asset('images/thumbnail/'.$element->image0) }}" alt="" align="middle" width="150" height="150">
+                                                        </a>
+                                                        <div class="syn-extra-info">
+                                                          @if($element->reviews->count() <= 0)
+                                                            <div class="syn-product-rating">
+                                                              <div class="averag-no-rating-home" style="width:%">
+                                                                @for ($i = 0; $i
+                                                                < 5; $i++) <i class="fa fa-star" aria-hidden="true"></i>
+                                                                  @endfor
+                                                              </div>
+                                                                <div class="ratings">
+                                                                    <span class="amount">
+                                                                        <a href="#">({{ $element->reviews->count() }})</a>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                          @else
+                                                            <div class="syn-product-rating">
+                                                              <div class="averag-rating-home" style="width:%">
+                                                                @for ($i = 0; $i
+                                                                < $element->reviews->avg('rating'); $i++) <i class="fa fa-star" aria-hidden="true"></i>
+                                                                  @endfor
+                                                              </div>
+                                                                <div class="ratings">
+                                                                    <span class="amount">
+                                                                        <a href="#">({{ $element->reviews->count() }})</a>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                          @endif
+                                                            <div class="syn-product-name">
+                                                                <span>
+                                                                    <a href="" title="">{{ str_limit($element->title, 20, '...')}}</a>
+                                                                </span>
+                                                            </div>
+                                                            <div class="syn-product-price">৳{{ number_format((float)$element->price, 2, '.', '') }}
+                                                              <span class="syn-price-product-grid">@if ($element->discount !=0)
+                                                                ৳{{ $element->main_price }}
+                                                              @endif </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- Cars and Bikes end --}}
+
                                 <div class="em-wrapper-area05">
                                     <div class="em-wrapper-banners hidden-xs">
                                         <div class="row"><div class="col-sm-24">
                                                 <div class="img-banner-small">
                                                     <div class="effect-hover-text2">
                                                         <a class="banner-img" title="Enjoy Interest Free Installment" href="">
-                                                            <img class="img-responsive" title="" alt="" src="{{ asset('assets/img/Pickaboo-Service-Bank-EMI-Logo-final_3_.jpg') }}">
+                                                            <img class="img-responsive" title="" alt="" src="">
                                                         </a>
                                                     </div>
                                                 </div>

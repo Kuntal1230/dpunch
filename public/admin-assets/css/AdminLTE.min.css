@@ -2812,7 +2812,7 @@ a:hover, a:active, a:focus {
 }
 
 .table>thead>tr>th {
-  border-bottom: 2px solid #f4f4f4
+  border-bottom: 2px solid #d0cdcc
 }
 
 .table tr td .progress {
@@ -5211,4 +5211,8 @@ table.text-center, table.text-center td, table.text-center th {
   .table-responsive>.table tr th, .table-responsive>.table tr td {
     white-space: normal !important
   }
+}
+
+a.orderbtn {
+    margin-right: 10px;
 }

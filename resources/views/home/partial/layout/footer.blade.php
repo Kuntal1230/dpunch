@@ -6,38 +6,38 @@
                                       <div class="col-sm-24">
                                           <div class="em-footer-info">
                                               <div class="row">
-                                                  <div class="col-sm-6 first text-center">
+                                                  <div class="col-sm-6 first">
                                                       <div class="em-block-title" data-collapse-target="#collapse01">
                                                           <p class="h4 em-text-upercase"><span>Get to Know Us</span></p>
                                                       </div>
                                                       <ul id="collapse01" class="em-links em-block-content block-info">
                                                           <li class="em-links-item"><span>
-                                                                  <a title="About" href="">About Us</a></span>
+                                                                  <a title="" href="{{ route('single.page','about-us') }}">About Us</a></span>
                                                           </li>
                                                           <li class="em-links-item">
-                                                              <a title="Privacy Policy" href=""><span>Privacy Policy</span></a>
+                                                              <a title="Privacy Policy" href="{{ route('single.page','privacy-policy') }}"><span>Privacy Policy</span></a>
                                                           </li>
                                                           <li class="em-links-item">
-                                                              <a title="Cookies " href=""><span>Cookie Policy</span></a>
+                                                              <a title="Cookies " href="{{ route('single.page','cookie-policy') }}"><span>Cookie Policy</span></a>
                                                           </li>
                                                           <li class="em-links-item"><span>
-                                                                  <a title="Warranty Policy" href="">Warranty Policy</a></span>
+                                                                  <a title="Warranty Policy" href="{{ route('single.page','warranty-policy') }}">Warranty Policy</a></span>
                                                           </li>
                                                           <li class="em-links-item">
-                                                              <a title="Why Shop with US" href=""><span>Why Shop with Us</span></a>
+                                                              <a title="Why Shop with US" href="{{ route('single.page','why-shop-with-us') }}"><span>Why Shop with Us</span></a>
                                                           </li>
                                                           <li class="em-links-item">
-                                                              <a title="FAQ" href=""><span>FAQ</span></a>
+                                                              <a title="FAQ" href="{{ route('single.page','faq') }}"><span>FAQ</span></a>
                                                           </li>
                                                           <li class="em-links-item">
-                                                              <a title="Returns and Replacement" href=""><span>Returns and Replacement</span></a>
+                                                              <a title="Returns and Replacement" href="{{ route('single.page','returns-and-replacement') }}"><span>Returns and Replacement</span></a>
                                                           </li>
                                                           <li class="em-links-item">
-                                                              <a title="Terms &amp; Conditions" href=""><span>Terms &amp; Conditions</span></a>
+                                                              <a title="Terms &amp; Conditions" href="{{ route('single.page','terms-conditions') }}"><span>Terms &amp; Conditions</span></a>
                                                           </li>
                                                       </ul>
                                                   </div>
-                                                  <div class="col-sm-6 text-center">
+                                                  <div class="col-sm-6">
                                                       <div class="em-block-title" data-collapse-target="#collapse02">
                                                           <p class="h4 em-text-upercase"><span>Let Us Help You</span></p>
                                                       </div>
@@ -65,77 +65,49 @@
                                                           </li>
                                                       </ul>
                                                   </div>
-                                                  <div class="col-sm-6 text-center">
-                                                      <div class="em-block-title" data-collapse-target="#collapse03">
-                                                          <p class="h4 em-text-upercase"><span>Get in Touch with Us</span></p>
-                                                      </div>
-                                                      <ul id="collapse03" class="em-links em-block-content block-info">
-                                                          <li class="em-links-item">
-                                                              <span>
-                                                                  <a title="Contact Us" href="">Contact Us</a>
-                                                              </span>
-                                                          </li>
-                                                          <li class="em-links-item">
-                                                              <span>
-                                                                  <a title="Blog" href="" target="_blank">Blog</a>
-                                                              </span>
-                                                          </li>
-                                                      </ul>
+                                                  <div class="col-sm-6">
                                                       <div class="em-block-title" data-collapse-target="#collapse04">
                                                           <p class="h4 em-text-upercase"><span>Make Money With Us</span></p>
                                                       </div>
                                                       <ul id="collapse04" class="em-links em-block-content block-info">
                                                           <li class="em-links-item">
-                                                              <a title="Sell on " href=""><span>Sell on </span></a>
+                                                              <a title="Sell on " href="{{ route('seller') }}"><span>Sell on Dpunch</span></a>
                                                           </li>
                                                           <li class="em-links-item">
-                                                              <a title="Club" href=""><span>Club</span></a>
+                                                              <a title="Club" href="{{ url('dpunch/club') }}"><span>Dpunch Club</span></a>
                                                           </li>
                                                           <li class="em-links-item">
-                                                              <a title="Club Partners" href=""><span>Club Partners</span></a>
+                                                              <a title="Club Partners" href=""><span>Dpunch Club Partners</span></a>
                                                           </li>
                                                       </ul>
                                                       <div class="em-block-title" data-collapse-target="#collapse10">
-                                                          <p class="h4 em-text-upercase"><span>Payment Methods</span></p>
+                                                          
                                                       </div>
-                                                      <ul id="collapse10" class="em-links em-block-content block-info" style="width: 89%; float: right; padding: 0px 0px 10px;">
-                                                          <li style="float: left; width: 50px;">
-                                                              <a href="#"><img title="Visa" alt="Visa" src="{{ asset('assets/img/visacard.png') }}"></a>
-                                                          </li>
-                                                          <li style="float: left; width: 50px;">
-                                                              <a href="#"><img title="MasterCard" alt="MasterCard" src="{{ asset('assets/img/mastercard.gif') }}"></a>
-                                                          </li>
-                                                          <li style="float: left; width: 50px;">
-                                                              <a href="#"><img title="American Express" alt="American Express" src="{{ asset('assets/img/American_Express-48x48.png') }}"></a>
-                                                          </li>
-                                                          <li style="float: left; margin-top: -10px; width: 45px;">
-                                                              <a href="#"><img title="bKash" alt="bKash" src="{{ asset('assets/img/bkash_1.png') }}"></a>
-                                                          </li>
-                                                      </ul>
+                                                      
                                                   </div>
-                                                  <div class="col-sm-6 text-center">
+                                                  <div class="col-sm-6">
                                                       <div>
                                                           <div class="em-block-title" data-collapse-target="#collapse09">
-                                                              <p class="h4 em-text-upercase"><span><span itemprop="name">example.com</span></span></p>
+                                                              <p class="h4 em-text-upercase"><span><span itemprop="name">Dpunch.com</span></span></p>
                                                           </div>
                                                           <div id="collapse09">
                                                               <div itemprop="address">
-                                                                  <span itemprop="streetAddress"><span class="fa fa-fw"></span> Flat no B-5 Plot 06 <br>Block SW(H)</span>,
-                                                                  <span itemprop="addressLocality">Mirpur Avenue</span>,
+                                                                  <span itemprop="streetAddress"><span class="fa fa-fw"></span> Road no-12, House no-834 <br> Avenue 4</span>,
+                                                                  <span itemprop="addressLocality">Mirpur DOHS</span>,
                                                                   <br> <span itemprop="addressRegion">Dhaka</span> -
-                                                                  <span itemprop="postalCode">1212</span>,
+                                                                  <span itemprop="postalCode">1216</span>,
                                                                   <span itemprop="addressCountry">Bangladesh</span>
                                                               </div>
-                                                              <p class="em-phone"><span itemprop="telephone"><span class="fa fa-fw"></span> +1 877-216-8883</span></p>
-                                                              <p class="em-email"><span itemprop="email"><span class="fa fa-fw"></span> support@example.com</span></p>
+                                                              <p class="em-phone"><span itemprop="telephone"><span class="fa fa-fw"></span> +8801521515206</span></p>
+                                                              <p class="em-email"><span itemprop="email"><span class="fa fa-fw"></span> support@dpunch.com</span></p>
                                                           </div>
                                                       </div> &nbsp;
-                                                      <a class="dwn-app-google-play" href=""><img alt="" src="{{ asset('assets/img/dwn-app-google-play_1_.png') }}"></a>
+                                                      
                                                   </div>
                                               </div>
                                               <div class="em-footer-info-bottom">
                                                   <div class="row">
-                                                      <div class="col-sm-15 first">
+                                                      <div class="col-sm-12 first">
                                                           <div class="em-wrapper-newsletter">
                                                               <div class="em-block-title" data-collapse-target="#collapse07">
                                                                   <p class="h4 em-text-upercase"><span>Sign Up For Newsletter</span></p>
@@ -162,7 +134,7 @@
                                                               </div>
                                                           </div>
                                                       </div>
-                                                      <div class="col-sm-9 last">
+                                                      <div class="col-sm-12 last">
                                                           <div class="em-wrapper-social f-right">
                                                               <div class="em-block-title" data-collapse-target="#collapse08">
                                                                   <p class="h4 em-text-upercase"><span>Follow Us</span></p>
@@ -193,7 +165,7 @@
 
                                           </div>
                                           <div class="em-footer-address">
-                                              <address class="f-left">© 2018 Example.com | All Rights Reserved. </address>
+                                              <address class="f-left">© 2018 Dpunch.com | All Rights Reserved. </address>
                                               <p>&nbsp;</p>
                                           </div>
                                       </div>
@@ -244,88 +216,72 @@
                     width: 100%; min-height: 100% !important;
                     margin: 0px;}
               </style>
-              <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
-              <script src="https://cdn.jsdelivr.net/vue.resource/1.3.1/vue-resource.min.js"></script>
               <script>
-    (function($) {
-        var _token = '<?php echo csrf_token() ?>';
-        $(document).ready(function() {
-            var app = new Vue({
-                el: '#app',
-                data: {
-                    details: {
-                        sub_total: 0,
-                        total: 0,
-                        total_quantity: 0
-                    },
-                    itemCount: 0,
-                    items: [],
-                    item: {
-                        id: '',
-                        name: '',
-                        price: 0.00,
-                        qty: 1
-                    }
-                },
-                mounted:function(){
-                    this.loadItems();
-                },
-                methods: {
-                    addItem: function() {
-                        var _this = this;
-                        console.log(_this.item.id)
-                        this.$http.post('/cart',{
-                            _token:_token,
-                            id:_this.item.id,
 
-                            // name:_this.item.name,
-                            // price:_this.item.price,
-                            // qty:_this.item.qty
-                        }).then(function(success) {
-                            _this.loadItems();
-                        }, function(error) {
-                            console.log(error);
-                        });
-                    },
-                    removeItem: function(id) {
-                        var _this = this;
-                        this.$http.delete('/cart/'+id,{
-                            params: {
-                                _token:_token
-                            }
-                        }).then(function(success) {
-                            _this.loadItems();
-                        }, function(error) {
-                            console.log(error);
-                        });
-                    },
-                    loadItems: function() {
-                        var _this = this;
-                        this.$http.get('/cart',{
-                            params: {
-                                limit:10
-                            }
-                        }).then(function(success) {
-                            _this.items = success.body.data;
-                            _this.itemCount = success.body.data.length;
-                            _this.loadCartDetails();
-                        }, function(error) {
-                            console.log(error);
-                        });
-                    },
-                    loadCartDetails: function() {
-                        var _this = this;
-                        this.$http.get('/cart/details').then(function(success) {
-                            _this.details = success.body.data;
-                        }, function(error) {
-                            console.log(error);
-                        });
-                    }
-                }
-            });
-        });
-    })(jQuery);
-</script>
+              (function($) {
+                  $(document).ready(function() {
+                    $('#configurable_swatch_size').on('click','.swatch-label',function() {
+                      var size = $(this).attr('data-size');
+                      $('#select_label_size').html(size);
+                    });
+                  });
+
+                  $('.cart-btn').click(function() {
+                    var size = $('#select_label_size').html();
+                    var qty = $('#qty').val();
+                    var productID = $(this).attr('data-productid');
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                         type:"POST",
+                         url:"/cart/add",
+                         data: {productID:productID,size:size,qty:qty},
+                         success : function(result) {
+                           location.reload();
+
+                         }
+                    });
+                  });
+
+                  $('.btn-update').click(function() {
+                      var qty = $(this).parent().closest('.cart-item').children('.qty').children('.qty').val();
+                      var itemHash = $(this).attr('data-itemHash');
+                      $.ajaxSetup({
+                          headers: {
+                              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                          }
+                      });
+                      $.ajax({
+                           type:"POST",
+                           url:"/cart/update",
+                           data: {itemHash:itemHash,qty:qty},
+                           success : function(result) {
+                             location.reload();
+                           }
+                      });
+                  });
+
+                  $('#empty_cart_button').click(function() {
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                         type:"get",
+                         url:"/cart/empty",
+                         success : function(result) {
+                           location.reload();
+
+                         }
+                    });
+                  });
+
+            })(jQuery);
+        </script>
 
 @yield('js-script')
       </body>

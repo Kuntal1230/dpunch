@@ -37,9 +37,9 @@
                   <th>#</th>
                   <th>Seller</th>
                   <th>Category</th>
-                  <th>Brand</th>
                   <th>Title</th>
                   <th>Status</th>
+                  <th>Promote</th>
                   <th class="text-center" style="width:130px">Action</th>
                 </tr>
                 </thead>
@@ -50,14 +50,16 @@
                       <td>{{ $product->sku }}</td>
                       <td>{{ $product->seller }}</td>
                       <td>{{ $product->category->name }}</td>
-                      <td>{{ $product->brand->name }}</td>
                       <td>{{ $product->title }}</td>
                       <td>
                         @if ($product->status == 1)
-                          Unpublished
-                        @else
                           Published
+                        @else
+                          Unpublished
                         @endif
+                      </td>
+                      <td>
+                        <a class="btn btn-primary" href="{{ route('seller.promoteproduct', $product->id) }}">Promote</a>
                       </td>
                       <td class="text-right">
                         <a class="btn btn-primary" href="{{ route('seller.editproduct', $product->id) }}">Edit <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> |
@@ -77,7 +79,6 @@
                   <th>#</th>
                   <th>Seller</th>
                   <th>Category</th>
-                  <th>Brand</th>
                   <th>Title</th>
                   <th>Status</th>
                   <th class="text-center">Action</th>

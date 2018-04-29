@@ -11,4 +11,13 @@ class Store extends Model
     {
       return $this->belongsTo(Seller::class);
     }
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'seller_id',
+    ];
+
 }

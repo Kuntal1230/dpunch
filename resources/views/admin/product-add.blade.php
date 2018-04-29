@@ -74,7 +74,7 @@
                 </div>
                 <!-- /.form-group -->
                 <div class="form-group">
-                   <label for="" class="col-sm-3 control-label">Product Brand <span class="text-red">* </span> :</label>
+                   <label for="" class="col-sm-3 control-label">Product Brand:</label>
                    <div class="col-sm-9">
                      <select class="form-control select2" id="brand" name="brand_id" style="width: 100%;">
                        <option value="" disabled selected>Select Product Brand</option>
@@ -114,10 +114,10 @@
                 </div>
                 <!-- /.form-group -->
                 <div class="form-group">
-                  <label for="color" class="col-sm-3 control-label">Product Color <span class="text-red">* </span> :</label>
+                  <label for="color" class="col-sm-3 control-label">Product Color :</label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="color" name="color" placeholder="Product Color" required value="{{ old('color') }}">
+                    <input type="text" class="form-control" id="color" name="color" placeholder="Product Color" value="{{ old('color') }}">
                   </div>
                 </div>
                 <!-- /.form-group -->
@@ -127,7 +127,7 @@
                       <label for="price" class="col-sm-6 control-label">Product Price <span class="text-red">* </span> :</label>
 
                       <div class="col-sm-6 input-group">
-                        <input type="number" class="form-control" id="price" name="price" placeholder="0.00" required value="{{ old('price') }}">
+                        <input type="text" class="form-control" id="price" name="price" placeholder="0.00" required value="{{ old('main_price') }}">
                         <div class="input-group-addon">৳</div>
                       </div>
                     </div>
@@ -137,7 +137,7 @@
                       <label for="discount" class="col-sm-6 control-label">Product Discount :</label>
 
                       <div class="col-sm-6 input-group">
-                        <input type="number" class="form-control" id="discount" name="discount" placeholder="00" value="{{ old('discount') }}">
+                        <input type="text" class="form-control" id="discount" name="discount" placeholder="00" value="{{ old('discount') }}">
                         <div class="input-group-addon">%</div>
                       </div>
                     </div>
@@ -195,7 +195,7 @@
                 <!-- /.form-group -->
 
                 <div class="form-group">
-                  <label for="detailes" class="col-sm-3 control-label">Product Detailes <span class="text-red">* </span> :</label>
+                  <label for="detailes" class="col-sm-3 control-label">Product Detailes :</label>
 
                   <div class="col-sm-9">
                     <textarea id="detailes" name="detailes" rows="10" cols="60" required>{{ old('detailes') }}</textarea>
@@ -203,7 +203,7 @@
                 </div>
                 <!-- /.form-group -->
                 <div class="form-group">
-                  <label for="specification" class="col-sm-3 control-label">Product Specifications <span class="text-red">* </span> :</label>
+                  <label for="specification" class="col-sm-3 control-label">Product Specifications :</label>
 
                   <div class="col-sm-9">
                     <textarea id="specification" name="specification" rows="30" cols="60" required>{{ old('specification') }}</textarea>
@@ -258,9 +258,21 @@
               options += '<option value="">No data available</option>';
               $("select#subcategory").html(options);
               var id =($(this).val());
+              // $.post( "/admin/ajaxsubcategory",{id:id},function( result ) {
+              //   // console.log(result);
+              //   if (result.length>0) {
+              //     var options = '';
+              //     options += '<option value="" disabled selected>Select subcategory</option>';
+              //        for (var i = 0; i < result.length; i++) {
+              //          options += '<option value="' + result[i].id + '">' + result[i].name + '</option>';
+              //        }
+              //        $("select#subcategory").html(options);
+              //   }
+              //
+              //   });
               $.ajax({
                    type:"POST",
-                   url:"/admin/ajaxsubcategory/",
+                   url:"/admin/ajaxsubcategory",
                    data: {id:id},
                    success : function(result) {
                      console.log(result);
@@ -293,7 +305,7 @@
               console.log(id);
               $.ajax({
                    type:"POST",
-                   url:"/admin/ajaxundersubcategory/",
+                   url:"/admin/ajaxundersubcategory",
                    data: {id:id},
                    success : function(result) {
                      if (result.length>0) {
@@ -311,9 +323,11 @@
                        var options = '';
                        options += '<option value="">No data available</option>';
                        $("select#brand").html(options);
+                       $("select#brand").attr('disabled',true);
+                       $("select#brand").attr('required',false);
                        $.ajax({
                          type:"POST",
-                         url:"/admin/ajaxbrandbysubcat/",
+                         url:"/admin/ajaxbrandbysubcat",
                          data: {id:id},
                          success : function(result) {
                            if (result.length>0) {
@@ -323,6 +337,7 @@
                                   options += '<option value="' + result[i].id + '">' + result[i].name + '</option>';
                                 }
                                 $("select#brand").html(options);
+                                $("select#brand").attr('disabled',false);
                                 $("select#brand").attr('required',true);
 
                            }
@@ -347,7 +362,7 @@
               var id =($(this).val());
               $.ajax({
                    type:"POST",
-                   url:"/admin/ajaxbrand/",
+                   url:"/admin/ajaxbrand",
                    data: {id:id},
                    success : function(result) {
                      if (result.length>0) {

@@ -102,7 +102,7 @@
 
               $.ajax({
                    type:"POST",
-                   url:"/admin/updateseller/",
+                   url:"/admin/updateseller",
                    data: {id:id,status:status},
                    success : function(result) {
                       console.log(result);

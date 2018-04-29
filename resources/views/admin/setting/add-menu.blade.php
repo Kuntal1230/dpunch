@@ -21,121 +21,7 @@
   <!-- Main content -->
   <section class="content">
     <!-- Small boxes (Stat box) -->
-    <div class="row">
-      <div class="col-md-4">
-        <div class="box box-primary">
-            <div class="box-header with-border text-center">
-              <h3 class="box-title">Manage Main Menu</h3>
 
-              @if (session('menustatus'))
-                  <div class="alert alert-success">
-                      {{ session('menustatus') }}
-                  </div>
-              @endif
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form role="form" method="post" action="{{ route('admin.addcategory') }}">
-              {{ csrf_field() }}
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="mainmenu">Main Menu Name</label>
-                  <input type="text" class="form-control" id="mainmenu" name="category" placeholder="Main menu name">
-                </div>
-              </div>
-              <!-- /.box-body -->
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary pull-right">Submit</button>
-              </div>
-            </form>
-          </div>
-      </div>
-      <div class="col-md-4">
-        <div class="box box-primary">
-            <div class="box-header with-border text-center">
-              <h3 class="box-title">Manage Sub Menu</h3>
-              @if (session('submenustatus'))
-                  <div class="alert alert-success">
-                      {{ session('submenustatus') }}
-                  </div>
-              @endif
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form role="form" method="post" action="{{ route('admin.addsubcategory') }}">
-              {{ csrf_field() }}
-              <div class="box-body">
-                <div class="form-group">
-                   <label>Main menu</label>
-                   <select class="form-control select2" name="category_id" style="width: 100%;">
-                     <option value="" disabled selected>Select Product Category</option>
-                     @foreach ($allcategory as $category)
-                       <option value="{{ $category->id }}">{{ $category->name }}</option>
-                     @endforeach
-
-                   </select>
-                </div>
-                <!-- /.form-group -->
-                <div class="form-group">
-                  <label for="submenu">Sub Menu Name</label>
-                  <input type="text" class="form-control" id="submenu" name="subcategory" placeholder="Sub menu name">
-                </div>
-              </div>
-              <!-- /.box-body -->
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary pull-right">Submit</button>
-              </div>
-            </form>
-          </div>
-      </div>
-      <div class="col-md-4">
-        <div class="box box-primary">
-            <div class="box-header with-border text-center">
-              <h3 class="box-title">Manage Category wise Menu</h3>
-              @if (session('childmenustatus'))
-                  <div class="alert alert-success">
-                      {{ session('childmenustatus') }}
-                  </div>
-              @endif
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form role="form" method="post" action="{{ route('admin.addundersubcategory') }}">
-              {{ csrf_field() }}
-              <div class="box-body">
-                <div class="form-group">
-                   <label>Main menu</label>
-                   <select class="form-control select2" id="cat_for_subcat" name="category_id" style="width: 100%;">
-                     <option value="" disabled selected>Select Product Category</option>
-                     @foreach ($allcategory as $category)
-                       <option value="{{ $category->id }}">{{ $category->name }}</option>
-                     @endforeach
-
-                   </select>
-                </div>
-                <!-- /.form-group -->
-                <div class="form-group">
-                   <label>Sub menu</label>
-                   <select class="form-control select2" id="sub_cat" name="subcategory_id" style="width: 100%;">
-                     <option value="" disabled selected>Select Product Subcategory</option>
-
-                   </select>
-                </div>
-                <!-- /.form-group -->
-                <div class="form-group">
-                  <label for="categorymenu">Category Wise Menu Name</label>
-                  <input type="text" class="form-control" id="categorymenu" name="undersubcategory" placeholder="Category name">
-                </div>
-              </div>
-              <!-- /.box-body -->
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary pull-right">Submit</button>
-              </div>
-            </form>
-          </div>
-      </div>
-
-    </div>
     <!-- /.row -->
     <div class="row">
       <div class="col-md-12">
@@ -216,7 +102,7 @@
           console.log(id);
           $.ajax({
                type:"POST",
-               url:"/admin/ajaxsubcategory/",
+               url:"/admin/ajaxsubcategory",
                data: {id:id},
                success : function(result) {
                  if (result.length>0) {
@@ -245,7 +131,7 @@
           console.log(id);
           $.ajax({
                type:"POST",
-               url:"/admin/ajaxsubcategory/",
+               url:"/admin/ajaxsubcategory",
                data: {id:id},
                success : function(result) {
                  if (result.length>0) {
@@ -274,7 +160,7 @@
           console.log(id);
           $.ajax({
                type:"POST",
-               url:"/admin/ajaxundersubcategory/",
+               url:"/admin/ajaxundersubcategory",
                data: {id:id},
                success : function(result) {
                  if (result.length>0) {

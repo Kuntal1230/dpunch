@@ -35,4 +35,15 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'facebook' => [
+    'client_id' => '436364246805540',
+    'client_secret' => '920cab2f16202bd2e239be3ff4c244af',
+    'redirect' => 'http://dpunch.com/login/facebook/callback',
+    ],
+    'google' => [
+    'client_id' => '3476262945-dls1nffovogcfvb3ukt20vb482877uta.apps.googleusercontent.com',
+    'client_secret' => 'RHVpifn_GsG6pqmuWJZ1CZs3',
+    'redirect' => 'http://dpunch.com/login/google/callback',
+    ],
+
 ];

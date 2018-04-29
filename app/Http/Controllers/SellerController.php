@@ -10,6 +10,7 @@ use Intervention\Image\Facades\Image;
 use App\Store;
 use App\Brand;
 use App\Product;
+use App\Promote;
 use App\Category;
 use App\Subcategory;
 use App\Undersubcategory;
@@ -46,8 +47,8 @@ class SellerController extends Controller
     if ($image != '') {
       $imageName = time().'-'.$image->getClientOriginalName();
       $path = base_path();
-      // $public_path = str_replace("laravel5.5", "public_html", $path);
-      $destinationPath = $path.'\public\store-banar';
+      $public_path = str_replace("dpunch", "dpunch.com", $path);
+      $destinationPath = $public_path.'/store-banar';
       $img = Image::make($image->getRealPath());
       $img->resize(250, 250, function ($constraint) {
         $constraint->aspectRatio();})->save($destinationPath.'/'.$imageName);
@@ -56,8 +57,7 @@ class SellerController extends Controller
     if (isset($imageName) && $imageName != null) {
       $store_banar = $imageName;
     }
-    $store = new Store;
-    $store->seller_id = Auth::user()->id;
+    $store = Store::firstOrNew(array('seller_id' => Auth::user()->id));
     $store->mobile = $request->mobile;
     $store->address = $request->address;
     $store->store_name = $request->store_name;
@@ -135,11 +135,17 @@ class SellerController extends Controller
                 $imageName = time().'-'.$image->getClientOriginalName();
                 $productimage[] = $imageName;
                 $path = base_path();
-                // $public_path = str_replace("laravel5.5", "public_html", $path);
-                $destinationPath = $path.'\public\images';
+                $public_path = str_replace("dpunch", "dpunch.com", $path);
+                $destinationPathsmall = $public_path .'/images/small';
+                $destinationPaththumbnail = $public_path .'/images/thumbnail';
+                $destinationPathzoom = $public_path .'/images/zoom';
                 $img = Image::make($image->getRealPath());
-                $img->resize(250, 250, function ($constraint) {
-                  $constraint->aspectRatio();})->save($destinationPath.'/'.$imageName);
+                $img->resize(800, 800, function ($constraint) {
+                  $constraint->aspectRatio();})->save($destinationPathzoom.'/'.$imageName);
+                $img->resize(450, 450, function ($constraint) {
+                  $constraint->aspectRatio();})->save($destinationPaththumbnail.'/'.$imageName);
+                $img->resize(100, 100, function ($constraint) {
+                  $constraint->aspectRatio();})->save($destinationPathsmall.'/'.$imageName);
             }
         }
         $image0="";
@@ -171,9 +177,9 @@ class SellerController extends Controller
           $seller_name = Auth::guard('seller')->user()->name;
           $seller_id = Auth::guard('seller')->user()->id;
         }
-        $brands = Brand::findOrFail($request->brand_id);
-        $brand = $brands->name;
-        $sku = "DPN".$seller_id.strtoupper(substr($brand,0,3)).date("s", time());
+        $subcategoris = Subcategory::findOrFail($request->subcategory_id);
+        $subcategory = $subcategoris->name;
+        $sku = "DPN".$seller_id.strtoupper(substr($subcategory,0,3)).date("s", time());
 
         $product = new Product;
         $product->seller = $seller_name;
@@ -185,9 +191,11 @@ class SellerController extends Controller
         $product->product_condition = $request->product_condition;
         $product->product_origin = $request->product_origin;
         $product->title = $request->title;
+        $product->slug = str_slug($request->title, "-");
         $product->color = $request->color;
-        $product->price = $request->price;
+        $product->main_price = $request->price;
         $product->discount = $request->discount;
+        $product->price = $request->price-($request->price*($request->discount/100));
         $product->size_1 = $request->size_1;
         $product->size_2 = $request->size_2;
         $product->size_3 = $request->size_3;
@@ -203,7 +211,7 @@ class SellerController extends Controller
         $product->image5 = $image5;
         $product->detailes = $request->detailes;
         $product->specification = $request->specification;
-        $product->status = "1";
+        $product->status = 0;
         $product->save();
         Session::flash('message', 'Product Add Successfully!');
         return back();
@@ -227,33 +235,51 @@ class SellerController extends Controller
         $productimage = array();
         if ($request->image != '') {
           if($prev_img0){
-              unlink(base_path('public/images/'.$prev_img0));
+              unlink(base_path('dpunch.com/images/small'.$prev_img0));
+              unlink(base_path('dpunch.com/images/thumbnail'.$prev_img0));
+              unlink(base_path('dpunch.com/images/zoom'.$prev_img0));
               }
           if($prev_img1){
-              unlink(base_path('public/images/'.$prev_img1));
+              unlink(base_path('dpunch.com/images/small'.$prev_img1));
+              unlink(base_path('dpunch.com/images/thumbnail'.$prev_img1));
+              unlink(base_path('dpunch.com/images/zoom'.$prev_img1));
               }
           if($prev_img2){
-              unlink(base_path('public/images/'.$prev_img2));
+              unlink(base_path('dpunch.com/images/small'.$prev_img2));
+              unlink(base_path('dpunch.com/images/thumbnail'.$prev_img2));
+              unlink(base_path('dpunch.com/images/zoom'.$prev_img2));
               }
           if($prev_img3){
-              unlink(base_path('public/images/'.$prev_img3));
+              unlink(base_path('dpunch.com/images/small'.$prev_img3));
+              unlink(base_path('dpunch.com/images/thumbnail'.$prev_img3));
+              unlink(base_path('dpunch.com/images/zoom'.$prev_img3));
               }
           if($prev_img4){
-              unlink(base_path('public/images/'.$prev_img4));
+              unlink(base_path('dpunch.com/images/small'.$prev_img4));
+              unlink(base_path('dpunch.com/images/thumbnail'.$prev_img4));
+              unlink(base_path('dpunch.com/images/zoom'.$prev_img4));
               }
           if($prev_img5){
-              unlink(base_path('public/images/'.$prev_img5));
+              unlink(base_path('dpunch.com/images/small'.$prev_img5));
+              unlink(base_path('dpunch.com/images/thumbnail'.$prev_img5));
+              unlink(base_path('dpunch.com/images/zoom'.$prev_img5));
               }
             foreach ($request->image as $image){
                 $imageName = time().'-'.$image->getClientOriginalName();
                 $productimage[] = $imageName;
 
                 $path = base_path();
-                // $public_path = str_replace("laravel5.5", "public_html", $path);
-                $destinationPath = $path.'\public\images';
+                $public_path = str_replace("dpunch", "dpunch.com", $path);
+                $destinationPathsmall = $public_path .'/images/small';
+                $destinationPaththumbnail = $public_path .'/images/thumbnail';
+                $destinationPathzoom = $public_path .'/images/zoom';
                 $img = Image::make($image->getRealPath());
-                $img->resize(250, 250, function ($constraint) {
-                  $constraint->aspectRatio();})->save($destinationPath.'/'.$imageName);
+                $img->resize(800, 800, function ($constraint) {
+                  $constraint->aspectRatio();})->save($destinationPathzoom.'/'.$imageName);
+                $img->resize(450, 450, function ($constraint) {
+                  $constraint->aspectRatio();})->save($destinationPaththumbnail.'/'.$imageName);
+                $img->resize(100, 100, function ($constraint) {
+                  $constraint->aspectRatio();})->save($destinationPathsmall.'/'.$imageName);
             }
         }
         $image0=$prev_img0;
@@ -290,8 +316,9 @@ class SellerController extends Controller
         $product->product_origin = $request->product_origin;
         $product->title = $request->title;
         $product->color = $request->color;
-        $product->price = $request->price;
+        $product->main_price = $request->price;
         $product->discount = $request->discount;
+        $product->price = $request->price-($request->price*($request->discount/100));
         $product->size_1 = $request->size_1;
         $product->size_2 = $request->size_2;
         $product->size_3 = $request->size_3;
@@ -322,6 +349,27 @@ class SellerController extends Controller
       // redirect
       Session::flash('message', 'Successfully deleted the Product!');
       return Redirect::to('admin/manageproduct');
+
+  }
+
+  public function promoteProductFrom($id)
+  {
+    $product = Product::findOrFail($id);
+    return view('seller.product-promote',compact('product'));
+  }
+
+  public function promoteProduct(Request $request,$id)
+  {
+    $product = Product::findOrFail($id);
+    $product->main_price = $request->price;
+    $product->discount = $request->discount;
+    $product->price = $request->price-($request->price*($request->discount/100));
+
+          $promote = new Promote;
+          $promote->product_id = $product->id;
+          $promote->message = $request->message;
+          $promote->save();
+    $product->save();
 
   }
 
